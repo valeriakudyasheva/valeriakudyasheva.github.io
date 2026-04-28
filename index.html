@@ -215,7 +215,7 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
     <a href="#services" data-key="nav-services">Услуги</a>
     <a href="#cases" data-key="nav-cases">Кейсы</a>
     <a href="https://t.me/valeriakudyasheva" class="nav-cta">Написать</a>
-    <button onclick="toggleLang()" id="lang-btn" style="background:transparent;border:1.5px solid var(--gray-200);border-radius:8px;padding:6px 14px;font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer;color:var(--gray-600);transition:border-color 0.2s">EN</button>
+    <button id="lang-btn" style="background:transparent;border:1.5px solid var(--gray-200);border-radius:8px;padding:6px 14px;font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer;color:var(--gray-600);transition:border-color 0.2s">EN</button>
   </div>
 </nav>
 
@@ -462,19 +462,7 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
 
 
 <script>
-const reveals = document.querySelectorAll('.reveal');
-const obs = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('visible'), i * 60);
-      obs.unobserve(e.target);
-    }
-  });
-}, {threshold: 0.08});
-reveals.forEach(el => obs.observe(el));
-</script>
-
-<script>
+// Language switcher
 const T = {
   ru: {
     'nav-about':'О себе','nav-services':'Услуги','nav-cases':'Кейсы',
@@ -498,7 +486,7 @@ const T = {
     'reviews-placeholder':'Отзывы клиентов появятся здесь совсем скоро',
     'cta-tag':'Начнём?','cta-title':'Давайте разберём<br>ваш <em>проект</em>',
     'cta-desc':'Расскажите, что не работает — и я скажу, можно ли это исправить',
-    'cta-btn1':'Написать в Telegram','cta-btn2':'Написать на email',
+    'cta-btn1':'Написать в Telegram','cta-btn2':'Написать на email'
   },
   en: {
     'nav-about':'About','nav-services':'Services','nav-cases':'Cases',
@@ -509,35 +497,57 @@ const T = {
     'pain-1':'Spent budget on influencers — got impressive reach numbers, but zero actual sales',
     'pain-2':'Working with bloggers ad hoc — no system, no understanding of what actually works',
     'pain-3':'Team drowns in operations: briefs, contracts, ad labeling — no time left for strategy',
-    'pain-4':'Want to reach a new audience but don't know where to start or how to adapt your approach',
+    'pain-4':'Want to reach a new audience but do not know where to start or how to adapt',
     'about-tag':'About me','about-title':'A specialist who helps<br>build the <em>system</em>',
-    'about-p1':'I'm Valeria Kudyasheva, a marketer focused on influencer marketing, partnerships, and brand development. <strong>5+ years</strong> in B2B and B2C.',
+    'about-p1':'I am Valeria Kudyasheva, a marketer focused on influencer marketing, partnerships, and brand development. <strong>5+ years</strong> in B2B and B2C.',
     'about-p2':'Currently at <strong>MoySklad</strong> — managing influencer campaigns, developing partnerships with educational schools, and growing the brand in Kazakhstan.',
     'about-p3':'Taking a brand strategy course at <strong>Yandex Practicum</strong>. Actively using <strong>AI tools</strong> in my daily work.',
     'services-tag':'Services','services-title':'How I can help<br>your <em>business</em>',
     'services-note':'I work on a project basis — handling both strategy and operations',
     'cases-tag':'Cases','cases-title':'Results in numbers',
-    'cases-subtitle':'Not reach for reach's sake — measurable business results',
+    'cases-subtitle':'Not reach for reach sake — measurable business results',
     'reviews-tag':'Reviews','reviews-title':'What clients say',
     'reviews-placeholder':'Client reviews coming soon',
-    'cta-tag':'Ready to start?','cta-title':'Let's talk about<br>your <em>project</em>',
-    'cta-desc':'Tell me what's not working — and I'll tell you if I can fix it',
-    'cta-btn1':'Write on Telegram','cta-btn2':'Write an email',
+    'cta-tag':'Ready to start?','cta-title':'Let us talk about<br>your <em>project</em>',
+    'cta-desc':'Tell me what is not working — and I will tell you if I can fix it',
+    'cta-btn1':'Write on Telegram','cta-btn2':'Write an email'
   }
 };
 
-let lang = 'ru';
+var lang = 'ru';
 
-function toggleLang() {
-  lang = lang === 'ru' ? 'en' : 'ru';
+function applyLang() {
+  var els = document.querySelectorAll('[data-key]');
+  for (var i = 0; i < els.length; i++) {
+    var key = els[i].getAttribute('data-key');
+    if (T[lang][key] !== undefined) {
+      els[i].innerHTML = T[lang][key];
+    }
+  }
   document.getElementById('lang-btn').textContent = lang === 'ru' ? 'EN' : 'RU';
-  document.querySelectorAll('[data-key]').forEach(el => {
-    const val = T[lang][el.dataset.key];
-    if (!val) return;
-    if (el.tagName === 'INPUT' || el.tagName === 'BUTTON') el.value = val;
-    else el.innerHTML = val;
-  });
 }
+
+window.onload = function() {
+  var btn = document.getElementById('lang-btn');
+  if (btn) {
+    btn.onclick = function() {
+      lang = lang === 'ru' ? 'en' : 'ru';
+      applyLang();
+    };
+  }
+
+  // Scroll reveal
+  var reveals = document.querySelectorAll('.reveal');
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e, i) {
+      if (e.isIntersecting) {
+        setTimeout(function() { e.target.classList.add('visible'); }, i * 60);
+        obs.unobserve(e.target);
+      }
+    });
+  }, {threshold: 0.08});
+  reveals.forEach(function(el) { obs.observe(el); });
+};
 </script>
 </body>
 </html>
