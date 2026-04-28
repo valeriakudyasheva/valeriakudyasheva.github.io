@@ -214,7 +214,8 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
     <a href="#about">О себе</a>
     <a href="#services">Услуги</a>
     <a href="#cases">Кейсы</a>
-    <a href="https://t.me/valeriakudyasheva" class="nav-cta">Написать</a>
+    <a href="https://t.me/valeriakudyasheva" class="nav-cta" data-ru="Написать" data-en="Contact">Написать</a>
+    <button onclick="toggleLang()" id="lang-btn" style="background:transparent;border:1.5px solid var(--gray-200);border-radius:8px;padding:6px 14px;font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer;color:var(--gray-600);transition:border-color 0.2s">EN</button>
   </div>
 </nav>
 
@@ -226,7 +227,7 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
       <p class="hero-desc">Помогаю стартапам и среднему бизнесу выстроить системную работу с инфлюенсерами — так, чтобы каждое размещение работало на рост бренда.</p>
       <div class="hero-btns">
         <a href="https://t.me/valeriakudyasheva" class="btn-dark">Написать в Telegram</a>
-        <a href="mailto:valeriakudyasheva@gmail.com" class="btn-light">Написать на почту</a>
+        <a href="mailto:valeriakudyasheva@gmail.com" class="btn-light" data-ru="Написать на почту" data-en="Email me">Написать на почту</a>
         <a href="#services" class="btn-light">Смотреть услуги</a>
       </div>
     </div>
@@ -292,6 +293,7 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
         <p class="about-text">Я — Валерия Кудяшева, маркетолог с фокусом на инфлюенс-маркетинг, партнёрства и развитие бренда. Работаю в B2B и B2C уже <strong>5+ лет</strong>.</p>
         <p class="about-text">Сейчас работаю в <strong>МойСклад</strong> — веду работу с блогерами, развиваю направление партнёрств с образовательными школами и бренд-направление в Казахстане.</p>
         <p class="about-text">Прохожу курс по бренд-стратегии в <strong>Яндекс Практикуме</strong> — чтобы соединить практический опыт с системным подходом к брендингу. Активно осваиваю <strong>AI-инструменты</strong> и применяю их в работе.</p>
+        <p class="about-text">Выступала спикером модуля «Продвижение через блогеров» в курсе <a href="https://skillbox.ru/course/smm-marketer/" target="_blank" style="color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-light)"><strong>«SMM-специалист с нуля»</strong> на Skillbox</a>.</p>
         <div class="timeline">
           <div class="timeline-row">
             <div class="t-year">2024 →</div>
@@ -413,6 +415,18 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
         <div class="case-title">Рост охватов для FMCG-бренда</div>
         <div class="case-desc">20 000+ новых подписчиков по 280 руб. Снижение CPV на 20% за год. YouTube и Telegram.</div>
       </div>
+      <div class="case-card reveal" style="grid-column:1/-1">
+        <div class="case-chip">E-com · Арт · MST Agency</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:32px;margin-bottom:24px;margin-top:16px">
+          <div><div class="case-num">50<em></em></div><div class="case-title" style="font-size:13px;color:var(--gray-400)">художников и арт-преподавателей</div></div>
+          <div><div class="case-num">35<em>K</em></div><div class="case-title" style="font-size:13px;color:var(--gray-400)">просмотров экспертных интеграций</div></div>
+          <div><div class="case-num">+35<em>%</em></div><div class="case-title" style="font-size:13px;color:var(--gray-400)">рост брендовых запросов</div></div>
+          <div><div class="case-num">0.5<em>₽</em></div><div class="case-title" style="font-size:13px;color:var(--gray-400)">средняя стоимость просмотра</div></div>
+        </div>
+        <div class="case-title">Интеграция бренда «Гамма» в образовательную среду художников</div>
+        <div class="case-desc" style="margin-top:8px">Выстроили системную модель работы с нишевыми инфлюенсерами — 50 художников и арт-преподавателей. Вместо охватных размещений сделали ставку на профессиональное доверие и встроили продукт в реальный процесс обучения. Результат: 3 000 переходов в карточки товаров на маркетплейсах, 22% вовлечённости.</div>
+        <a href="https://mstagency.ru/cases/vovlekli-50-hudozhnikov-i-integrirovali-gammu-v-obrazovatelnuyu-sredu/" target="_blank" style="display:inline-block;margin-top:20px;font-size:13px;color:var(--accent);font-weight:500;text-decoration:none;border-bottom:1px solid var(--accent-light);padding-bottom:2px">Читать кейс →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -444,6 +458,151 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
     <a href="mailto:valeriakudyasheva@gmail.com">Email</a>
   </div>
 </footer>
+
+
+<script>
+const translations = {
+  ru: {
+    // NAV
+    'nav-about': 'О себе',
+    'nav-services': 'Услуги',
+    'nav-cases': 'Кейсы',
+    'nav-contact': 'Написать',
+    // HERO
+    'hero-badge': 'Инфлюенс-маркетинг и развитие бренда',
+    'hero-h1': 'Блогеры были.<br>Результата<br><em>не было?</em>',
+    'hero-desc': 'Помогаю стартапам и среднему бизнесу выстроить системную работу с инфлюенсерами — так, чтобы каждое размещение работало на рост бренда.',
+    'hero-btn1': 'Написать в Telegram',
+    'hero-btn2': 'Написать на почту',
+    'hero-btn3': 'Смотреть услуги',
+    // PAIN
+    'pain-tag': 'Узнаёте себя?',
+    'pain-title': 'Когда продвижение<br>не даёт результата',
+    'pain-1': 'Потратили бюджет на блогеров — получили красивые цифры охватов, но ни одной реальной продажи',
+    'pain-2': 'Работаете с блогерами от случая к случаю — нет системы, нет понимания что работает',
+    'pain-3': 'Команда тонет в операционке: ТЗ, договоры, маркировка ОРД — и некогда думать о стратегии',
+    'pain-4': 'Хотите выйти на новую аудиторию, но не знаете с чего начать и как адаптировать подход',
+    // ABOUT
+    'about-tag': 'Обо мне',
+    'about-title': 'Специалист, который помогает<br>выстраивать <em>систему</em>',
+    'about-p1': 'Я — Валерия Кудяшева, маркетолог с фокусом на инфлюенс-маркетинг, партнёрства и развитие бренда. Работаю в B2B и B2C уже <strong>5+ лет</strong>.',
+    'about-p2': 'Сейчас работаю в <strong>МойСклад</strong> — веду работу с блогерами, развиваю направление партнёрств с образовательными школами и бренд-направление в Казахстане.',
+    'about-p3': 'Прохожу курс по бренд-стратегии в <strong>Яндекс Практикуме</strong> — чтобы соединить практический опыт с системным подходом к брендингу. Активно осваиваю <strong>AI-инструменты</strong> и применяю их в работе.',
+    // SERVICES
+    'services-tag': 'Услуги',
+    'services-title': 'Чем могу помочь<br>вашему <em>бизнесу</em>',
+    'services-note': 'Работаю проектно — берусь и за стратегию, и за операционку',
+    // CASES
+    'cases-tag': 'Кейсы',
+    'cases-title': 'Результаты в цифрах',
+    'cases-subtitle': 'Не охваты ради охватов — измеримые результаты для бизнеса',
+    // REVIEWS
+    'reviews-tag': 'Отзывы',
+    'reviews-title': 'Что говорят клиенты',
+    'reviews-placeholder': 'Отзывы клиентов появятся здесь совсем скоро',
+    // CTA
+    'cta-tag': 'Начнём?',
+    'cta-title': 'Давайте разберём<br>ваш <em>проект</em>',
+    'cta-desc': 'Расскажите, что не работает — и я скажу, можно ли это исправить',
+    'cta-btn1': 'Написать в Telegram',
+    'cta-btn2': 'Написать на email',
+  },
+  en: {
+    'nav-about': 'About',
+    'nav-services': 'Services',
+    'nav-cases': 'Cases',
+    'nav-contact': 'Contact',
+    'hero-badge': 'Influencer marketing & brand development',
+    'hero-h1': 'Ran influencer campaigns.<br>Got no<br><em>results?</em>',
+    'hero-desc': 'I help startups and mid-size businesses build a systematic approach to influencer marketing — so every placement drives brand growth.',
+    'hero-btn1': 'Write on Telegram',
+    'hero-btn2': 'Email me',
+    'hero-btn3': 'View services',
+    'pain-tag': 'Sound familiar?',
+    'pain-title': 'When promotion<br>delivers no results',
+    'pain-1': 'Spent budget on influencers — got impressive reach numbers, but zero actual sales',
+    'pain-2': 'Working with bloggers ad hoc — no system, no understanding of what actually works',
+    'pain-3': 'Team drowns in operations: briefs, contracts, ad labeling — no time left for strategy',
+    'pain-4': 'Want to reach a new audience but don't know where to start or how to adapt your approach',
+    'about-tag': 'About me',
+    'about-title': 'A specialist who helps<br>build the <em>system</em>',
+    'about-p1': 'I'm Valeria Kudyasheva, a marketer focused on influencer marketing, partnerships, and brand development. <strong>5+ years</strong> in B2B and B2C.',
+    'about-p2': 'Currently at <strong>MoySklad</strong> — managing influencer campaigns, developing partnerships with educational schools, and growing the brand in Kazakhstan.',
+    'about-p3': 'Taking a brand strategy course at <strong>Yandex Practicum</strong>. Actively using <strong>AI tools</strong> in my daily work.',
+    'services-tag': 'Services',
+    'services-title': 'How I can help<br>your <em>business</em>',
+    'services-note': 'I work on a project basis — handling both strategy and day-to-day operations',
+    'cases-tag': 'Cases',
+    'cases-title': 'Results in numbers',
+    'cases-subtitle': 'Not reach for reach's sake — measurable business results',
+    'reviews-tag': 'Reviews',
+    'reviews-title': 'What clients say',
+    'reviews-placeholder': 'Client reviews coming soon',
+    'cta-tag': 'Ready to start?',
+    'cta-title': 'Let's talk about<br>your <em>project</em>',
+    'cta-desc': 'Tell me what's not working — and I'll tell you if I can fix it',
+    'cta-btn1': 'Write on Telegram',
+    'cta-btn2': 'Write an email',
+  }
+};
+
+let currentLang = 'ru';
+
+function toggleLang() {
+  currentLang = currentLang === 'ru' ? 'en' : 'ru';
+  const btn = document.getElementById('lang-btn');
+  btn.textContent = currentLang === 'ru' ? 'EN' : 'RU';
+  applyTranslations();
+}
+
+function applyTranslations() {
+  const t = translations[currentLang];
+  const setHtml = (sel, key) => { const el = document.querySelector(sel); if (el && t[key]) el.innerHTML = t[key]; };
+  const setText = (sel, key) => { const el = document.querySelector(sel); if (el && t[key]) el.textContent = t[key]; };
+
+  // Nav
+  document.querySelectorAll('.nav-links a:not(.nav-cta)').forEach((a, i) => {
+    const keys = ['nav-about','nav-services','nav-cases'];
+    if (keys[i] && t[keys[i]]) a.textContent = t[keys[i]];
+  });
+
+  // Hero
+  setHtml('.hero-badge', 'hero-badge');
+  setHtml('h1', 'hero-h1');
+  setText('.hero-desc', 'hero-desc');
+  const heroBtns = document.querySelectorAll('.hero-btns a');
+  if (heroBtns[0]) heroBtns[0].textContent = t['hero-btn1'];
+  if (heroBtns[1]) heroBtns[1].textContent = t['hero-btn2'];
+  if (heroBtns[2]) heroBtns[2].textContent = t['hero-btn3'];
+
+  // Pain
+  const painCards = document.querySelectorAll('.pain-card .pain-text');
+  ['pain-1','pain-2','pain-3','pain-4'].forEach((k,i) => { if (painCards[i] && t[k]) painCards[i].textContent = t[k]; });
+
+  // About
+  const aboutPs = document.querySelectorAll('.about-text');
+  ['about-p1','about-p2','about-p3'].forEach((k,i) => { if (aboutPs[i] && t[k]) aboutPs[i].innerHTML = t[k]; });
+
+  // Section tags & titles
+  document.querySelectorAll('.section-tag').forEach(el => {
+    const map = {'Обо мне':'about-tag','О себе':'about-tag','Услуги':'services-tag','Кейсы':'cases-tag','Отзывы':'reviews-tag','Начнём?':'cta-tag','Узнаёте себя?':'pain-tag',
+                 'About me':'about-tag','About':'about-tag','Services':'services-tag','Cases':'cases-tag','Reviews':'reviews-tag','Ready to start?':'cta-tag','Sound familiar?':'pain-tag'};
+    const key = map[el.textContent.trim()];
+    if (key && t[key]) el.textContent = t[key];
+  });
+
+  // Reviews placeholder
+  const rp = document.querySelector('.reviews-placeholder p');
+  if (rp && t['reviews-placeholder']) rp.textContent = t['reviews-placeholder'];
+
+  // CTA
+  const ctaBtns = document.querySelectorAll('.cta-btns a');
+  if (ctaBtns[0] && t['cta-btn1']) ctaBtns[0].textContent = t['cta-btn1'];
+  if (ctaBtns[1] && t['cta-btn2']) ctaBtns[1].textContent = t['cta-btn2'];
+  const ctaDesc = document.querySelector('.cta-desc');
+  if (ctaDesc && t['cta-desc']) ctaDesc.textContent = t['cta-desc'];
+}
+</script>
 
 <script>
 const reveals = document.querySelectorAll('.reveal');
