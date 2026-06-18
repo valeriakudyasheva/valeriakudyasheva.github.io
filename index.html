@@ -5,28 +5,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Валерия Кудяшева — Маркетинг и продвижение</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --black:#0f0f0f;
+  --black:#1a2820;
   --white:#ffffff;
-  --gray-50:#f8f8f7;
-  --gray-100:#f0efed;
-  --gray-200:#e2e0dc;
-  --gray-400:#9b9791;
-  --gray-600:#5c5a56;
-  --gray-900:#1a1917;
-  --accent:#4a7c59;
+  --cream:#f6f3ec;
+  --cream-deep:#efe9dc;
+  --gray-50:#f1efe8;
+  --gray-100:#e9e5da;
+  --gray-200:#ddd7c8;
+  --gray-400:#928c7c;
+  --gray-600:#56544c;
+  --gray-900:#1f2a23;
+  --accent:#3e6b4f;
+  --accent-deep:#1f3a2e;
   --accent-light:#a8c5b0;
-  --accent-bg:#f0f5f1;
+  --accent-bg:#e8efe7;
+  --terra:#c4623a;
+  --terra-soft:#d98c66;
   --sans:'Inter',sans-serif;
-  --serif:'Playfair Display',Georgia,serif;
+  --serif:'Fraunces',Georgia,serif;
+  --hand:'Caveat',cursive;
   --radius:12px;
   --radius-lg:20px;
 }
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);color:var(--gray-900);background:var(--white);line-height:1.6;overflow-x:hidden;font-size:16px;font-weight:400}
+body{font-family:var(--sans);color:var(--gray-900);background:var(--cream);line-height:1.6;overflow-x:hidden;font-size:16px;font-weight:400}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:0.4;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E")}
+nav,.hero,.stats,.section,.final-cta,footer{position:relative;z-index:1}
+
+/* HAND-DRAWN ANNOTATIONS */
+.hand-note{font-family:var(--hand);color:var(--terra);font-weight:600;line-height:1;display:inline-block}
+.underline-draw{position:relative;display:inline-block}
+.underline-draw svg{position:absolute;left:-4%;right:-4%;bottom:-0.32em;width:108%;height:0.5em;overflow:visible;pointer-events:none}
+.underline-draw svg path{fill:none;stroke:var(--terra);stroke-width:3.2;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 0.9s ease 0.25s}
+.underline-draw.drawn svg path{stroke-dashoffset:0}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--gray-200);padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between}
@@ -36,16 +51,27 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .nav-links a:hover{color:var(--gray-900)}
 .nav-cta{background:var(--gray-900);color:var(--white)!important;padding:8px 20px;border-radius:8px;font-weight:500;font-size:13px!important}
 .nav-cta:hover{background:var(--accent)!important;color:var(--white)!important}
+.lang-btn{background:transparent;border:1.5px solid var(--gray-200);border-radius:8px;padding:6px 14px;font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer;color:var(--gray-600);transition:border-color 0.2s}
+.lang-btn:hover{border-color:var(--gray-400)}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:transparent;border:none;cursor:pointer;padding:8px;-webkit-tap-highlight-color:transparent}
+.nav-toggle span{display:block;height:2px;width:22px;background:var(--gray-900);border-radius:2px;transition:transform 0.25s,opacity 0.25s}
+.nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.open span:nth-child(2){opacity:0}
+.nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 /* HERO */
-.hero{min-height:100vh;padding:120px 40px 80px;display:flex;align-items:center;background:var(--white);position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(196,92,58,0.06) 0%,transparent 70%);pointer-events:none}
+.hero{min-height:100vh;padding:120px 40px 80px;display:flex;align-items:center;background:var(--cream);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(62,107,79,0.08) 0%,transparent 70%);pointer-events:none}
 .hero-inner{max-width:860px;margin:0 auto;width:100%}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent-bg);border:1px solid var(--accent-light);border-radius:100px;padding:6px 14px;font-size:13px;color:var(--accent);font-weight:500;margin-bottom:28px}
 .hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0}
-h1{font-family:var(--sans);font-size:clamp(56px,7vw,96px);font-weight:600;line-height:1.0;letter-spacing:-0.04em;color:var(--gray-900);margin-bottom:32px}
-h1 em{font-style:normal;color:var(--accent)}
+h1{font-family:var(--serif);font-size:clamp(52px,7vw,92px);font-weight:500;line-height:1.02;letter-spacing:-0.02em;color:var(--accent-deep);margin-bottom:32px}
+h1 em{font-style:italic;color:var(--accent);font-weight:500}
 .hero-desc{font-size:22px;color:var(--gray-600);line-height:1.7;margin-bottom:48px;max-width:680px;font-weight:300}
+.hero-note{position:relative;font-family:var(--hand);font-size:26px;color:var(--terra);margin:-18px 0 30px;padding-left:6px;transform:rotate(-2.5deg);opacity:0;transition:opacity 0.6s ease 0.5s,transform 0.6s ease 0.5s}
+.hero-note.shown{opacity:1}
+.hero-note svg{display:inline-block;width:34px;height:24px;vertical-align:-4px;margin-right:6px;overflow:visible}
+.hero-note svg path{fill:none;stroke:var(--terra);stroke-width:2.4;stroke-linecap:round}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
 .btn-dark{background:var(--gray-900);color:var(--white);border:none;padding:14px 28px;border-radius:10px;font-family:var(--sans);font-size:15px;font-weight:500;cursor:pointer;text-decoration:none;transition:background 0.2s,transform 0.15s;display:inline-block}
 .btn-dark:hover{background:var(--accent);transform:translateY(-1px)}
@@ -56,8 +82,8 @@ h1 em{font-style:normal;color:var(--accent)}
 .stats{padding:60px 40px;background:var(--gray-50);border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)}
 .stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--gray-200)}
 .stat-item{background:var(--gray-50);padding:32px 40px}
-.stat-num{font-size:40px;font-weight:600;color:var(--gray-900);letter-spacing:-0.03em;line-height:1;margin-bottom:8px}
-.stat-num em{color:var(--accent);font-style:normal}
+.stat-num{font-family:var(--serif);font-size:46px;font-weight:500;color:var(--accent-deep);letter-spacing:-0.02em;line-height:1;margin-bottom:8px}
+.stat-num em{color:var(--terra);font-style:italic}
 .stat-label{font-size:14px;color:var(--gray-600);line-height:1.4}
 
 /* SECTION COMMON */
@@ -65,9 +91,12 @@ h1 em{font-style:normal;color:var(--accent)}
 .section-inner{max-width:1100px;margin:0 auto}
 .section-tag{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
 .section-tag::before{content:'';width:20px;height:1.5px;background:var(--accent);flex-shrink:0}
-.section-title{font-size:clamp(28px,4vw,44px);font-weight:600;letter-spacing:-0.02em;line-height:1.15;color:var(--gray-900);margin-bottom:16px}
-.section-title em{color:var(--accent);font-style:normal}
+.section-title{font-family:var(--serif);font-size:clamp(28px,4vw,46px);font-weight:500;letter-spacing:-0.015em;line-height:1.12;color:var(--accent-deep);margin-bottom:16px}
+.section-title em{color:var(--accent);font-style:italic;font-weight:500}
 .section-subtitle{font-size:17px;color:var(--gray-600);line-height:1.7;max-width:560px;font-weight:300}
+.sec-note{font-family:var(--hand);font-size:24px;color:var(--terra);line-height:1.2;transform:rotate(-1.5deg);display:inline-block;margin-top:14px;opacity:0;transition:opacity 0.6s ease 0.3s,transform 0.6s ease 0.3s}
+.sec-note.shown{opacity:1}
+.sec-note::before{content:'↳';margin-right:8px;font-family:var(--sans);font-size:20px}
 
 /* PAIN */
 .pain{background:var(--gray-900)}
@@ -97,6 +126,9 @@ h1 em{font-style:normal;color:var(--accent)}
 
 /* SERVICES */
 .services{background:var(--gray-50)}
+.services .section-title em{position:relative}
+.services .section-title em::after{content:'';position:absolute;left:0;right:0;bottom:-0.14em;height:0.5em;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 20' preserveAspectRatio='none'%3E%3Cpath d='M3 13 C 70 6, 140 18, 215 9 C 255 5, 280 11, 297 7' fill='none' stroke='%23c4623a' stroke-width='3.4' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-size:100% 100%;transform:scaleX(0);transform-origin:left;transition:transform 0.9s ease 0.3s}
+.services .section-title.visible em::after{transform:scaleX(1)}
 .services-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;gap:40px}
 .services-note{font-size:14px;color:var(--gray-400);max-width:260px;text-align:right;line-height:1.5}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -125,7 +157,7 @@ h1 em{font-style:normal;color:var(--accent)}
 .price-includes li{font-size:13px;color:var(--gray-600);padding:6px 0;display:flex;align-items:flex-start;gap:10px;line-height:1.4}
 .price-card.featured .price-includes li{color:rgba(255,255,255,0.6)}
 .price-includes li::before{content:'';width:16px;height:16px;border-radius:50%;background:var(--accent-bg);border:1.5px solid var(--accent-light);flex-shrink:0;margin-top:1px}
-.price-card.featured .price-includes li::before{background:rgba(196,92,58,0.2);border-color:rgba(196,92,58,0.4)}
+.price-card.featured .price-includes li::before{background:rgba(196,98,58,0.2);border-color:rgba(196,98,58,0.45)}
 .tiers{margin-top:24px;border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;display:flex;flex-direction:column;gap:10px}
 .tier-row{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-radius:8px;background:rgba(255,255,255,0.05)}
 .tier-label{font-size:13px;color:rgba(255,255,255,0.55)}
@@ -138,8 +170,9 @@ h1 em{font-style:normal;color:var(--accent)}
 .case-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:36px;transition:border-color 0.2s,transform 0.2s}
 .case-card:hover{border-color:var(--accent);transform:translateY(-4px)}
 .case-chip{display:inline-block;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);background:var(--accent-bg);border:1px solid var(--accent-light);border-radius:100px;padding:4px 12px;margin-bottom:24px}
-.case-num{font-size:52px;font-weight:600;color:var(--gray-900);letter-spacing:-0.03em;line-height:1;margin-bottom:8px}
-.case-num em{color:var(--accent);font-style:normal;font-size:28px}
+.case-num{font-family:var(--serif);font-size:54px;font-weight:500;color:var(--accent-deep);letter-spacing:-0.02em;line-height:1;margin-bottom:8px}
+.case-mega-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:32px;margin-bottom:24px;margin-top:16px}
+.case-num em{color:var(--terra);font-style:italic;font-size:30px}
 .case-title{font-size:16px;font-weight:500;color:var(--gray-900);margin-bottom:10px}
 .case-desc{font-size:13px;color:var(--gray-400);line-height:1.6}
 
@@ -150,13 +183,21 @@ h1 em{font-style:normal;color:var(--accent)}
 
 /* FINAL CTA */
 .final-cta{background:var(--gray-900);padding:120px 40px;text-align:center;position:relative;overflow:hidden}
-.final-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(196,92,58,0.15) 0%,transparent 60%);pointer-events:none}
+.final-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(196,98,58,0.18) 0%,transparent 60%);pointer-events:none}
 .final-cta .section-tag{color:var(--accent-light);justify-content:center}
 .final-cta .section-tag::before{background:var(--accent-light)}
-.cta-title{font-size:clamp(32px,5vw,56px);font-weight:600;color:var(--white);letter-spacing:-0.03em;line-height:1.1;margin-bottom:20px;position:relative}
-.cta-title em{color:var(--accent-light);font-style:normal}
+.cta-title{font-family:var(--serif);font-size:clamp(32px,5vw,58px);font-weight:500;color:var(--white);letter-spacing:-0.015em;line-height:1.08;margin-bottom:20px;position:relative}
+.cta-title em{color:var(--terra-soft);font-style:italic;font-weight:500}
 .cta-desc{font-size:17px;color:rgba(255,255,255,0.45);margin-bottom:48px;position:relative;font-weight:300}
 .cta-btns{display:flex;gap:12px;justify-content:center;position:relative;flex-wrap:wrap}
+/* CTA hand-drawn + motion */
+.cta-note{position:relative;z-index:2;font-family:var(--hand);font-size:24px;color:var(--terra-soft);margin-top:26px;transform:rotate(-2deg);opacity:0;transition:opacity 0.7s ease 0.4s,transform 0.7s ease 0.4s}
+.cta-note.shown{opacity:1}
+.cta-note svg{display:inline-block;width:30px;height:26px;vertical-align:-6px;margin-right:4px;overflow:visible}
+.cta-note svg path{fill:none;stroke:var(--terra-soft);stroke-width:2.2;stroke-linecap:round}
+.cta-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--terra-soft);margin-left:2px;vertical-align:middle}
+.final-cta.lit .cta-dot{animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:0.6}}
 .btn-white{background:var(--white);color:var(--gray-900);border:none;padding:16px 32px;border-radius:10px;font-family:var(--sans);font-size:15px;font-weight:500;cursor:pointer;text-decoration:none;transition:background 0.2s,transform 0.15s;display:inline-block}
 .btn-white:hover{background:var(--gray-100);transform:translateY(-1px)}
 .btn-ghost{background:transparent;color:rgba(255,255,255,0.7);border:1.5px solid rgba(255,255,255,0.2);padding:16px 32px;border-radius:10px;font-family:var(--sans);font-size:15px;font-weight:400;cursor:pointer;text-decoration:none;transition:border-color 0.2s,transform 0.15s;display:inline-block}
@@ -175,7 +216,13 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
 /* RESPONSIVE */
 @media(max-width:900px){
   nav{padding:0 20px}
-  .hero{padding:100px 20px 60px}
+  .nav-toggle{display:flex}
+  .nav-links{position:fixed;top:64px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:rgba(255,255,255,0.98);backdrop-filter:blur(12px);border-bottom:1px solid var(--gray-200);padding:8px 20px 20px;max-height:0;overflow:hidden;opacity:0;pointer-events:none;transition:max-height 0.3s ease,opacity 0.25s ease}
+  .nav-links.open{max-height:80vh;opacity:1;pointer-events:auto}
+  .nav-links a{padding:14px 4px;font-size:16px;border-bottom:1px solid var(--gray-100)}
+  .nav-cta{text-align:center;margin-top:12px;padding:14px 20px;font-size:15px!important;border-radius:10px}
+  .lang-btn{margin-top:12px;width:100%;padding:12px;font-size:15px}
+  .hero{padding:100px 20px 60px;min-height:auto}
   .stats-inner{grid-template-columns:repeat(2,1fr)}
   .stat-item{padding:24px}
   .section{padding:72px 20px}
@@ -186,8 +233,41 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
   .services-grid{grid-template-columns:1fr}
   .price-card.featured{grid-column:1;grid-template-columns:1fr}
   .cases-grid{grid-template-columns:1fr}
+  .case-mega-grid{grid-template-columns:1fr 1fr}
   .final-cta{padding:80px 20px}
   footer{flex-direction:column;gap:12px;text-align:center;padding:24px 20px}
+}
+@media(max-width:600px){
+  .hero{padding:88px 20px 48px}
+  h1{font-size:clamp(40px,12vw,56px);margin-bottom:24px}
+  .hero-desc{font-size:18px;margin-bottom:32px}
+  .hero-btns{flex-direction:column;align-items:stretch}
+  .btn-dark,.btn-light{text-align:center;padding:15px 24px}
+  .stats{padding:40px 20px}
+  .stat-num{font-size:32px}
+  .section{padding:56px 20px}
+  .price-card,.case-card{padding:28px 24px}
+  .price-card.featured{padding:28px 24px;gap:28px}
+  .reviews-placeholder{padding:40px 24px}
+  .reviews-placeholder p{font-size:18px}
+  .final-cta{padding:64px 20px}
+  .cta-btns{flex-direction:column;align-items:stretch}
+  .btn-white,.btn-ghost{text-align:center}
+  .cta-note{font-size:21px;line-height:1.3;padding:0 8px}
+  .timeline-row{grid-template-columns:64px 1fr;gap:16px}
+}
+@media(max-width:420px){
+  .stats-inner{grid-template-columns:1fr}
+  .case-mega-grid{grid-template-columns:1fr;gap:20px}
+  .case-num{font-size:44px}
+  .pain-card{padding:28px 24px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  .hero-note,.sec-note,.cta-note{opacity:1}
+  .underline-draw svg path{stroke-dashoffset:0}
+  .services .section-title em::after{transform:scaleX(1)}
 }
 </style>
 </head>
@@ -195,12 +275,15 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
 
 <nav>
   <a href="#" class="nav-logo" data-key="nav-logo">Валерия Кудяшева</a>
-  <div class="nav-links">
+  <button id="nav-toggle" class="nav-toggle" aria-label="Меню" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
     <a href="#about" data-key="nav-about">О себе</a>
     <a href="#services" data-key="nav-services">Услуги</a>
     <a href="#cases" data-key="nav-cases">Кейсы</a>
     <a href="https://t.me/valeriakudyasheva" class="nav-cta" data-key="nav-cta">Написать</a>
-    <button id="lang-btn" style="background:transparent;border:1.5px solid var(--gray-200);border-radius:8px;padding:6px 14px;font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer;color:var(--gray-600);transition:border-color 0.2s">EN</button>
+    <button id="lang-btn" class="lang-btn">EN</button>
   </div>
 </nav>
 
@@ -209,6 +292,7 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
     <div class="hero-left">
       <div class="hero-badge" data-key="hero-badge">Маркетолог · B2B · Инфлюенс · СНГ</div>
       <h1 data-key="hero-h1">Маркетинг,<br>который<br><em>работает</em></h1>
+      <div class="hero-note" aria-hidden="true"><svg viewBox="0 0 34 24"><path d="M2 4 C 10 22, 22 22, 32 8 M32 8 L24 9 M32 8 L30 16"/></svg>не «для галочки», а под задачу бизнеса</div>
       <p class="hero-desc" data-key="hero-desc">Инфлюенс-маркетинг, вебинары, партнёрства с образовательными школами и выход на рынки СНГ. 5+ лет в B2B и B2C.</p>
       <div class="hero-btns">
         <a href="https://t.me/valeriakudyasheva" class="btn-dark" data-key="hero-btn1">Написать в Telegram</a>
@@ -309,15 +393,15 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
           <div class="tiers">
             <div class="tier-row">
               <div class="tier-label" data-key="tier-1">до 5 блогеров</div>
-              <div class="tier-price" data-key="tier-price-1">15 000 <em>₽</em></div>
+              <div class="tier-price" data-key="tier-price-1">20 000 <em>₽</em></div>
             </div>
             <div class="tier-row">
               <div class="tier-label" data-key="tier-2">до 10 блогеров</div>
-              <div class="tier-price" data-key="tier-price-2">28 000 <em>₽</em></div>
+              <div class="tier-price" data-key="tier-price-2">35 000 <em>₽</em></div>
             </div>
             <div class="tier-row">
               <div class="tier-label" data-key="tier-3">15–25 блогеров</div>
-              <div class="tier-price" data-key="tier-price-3">40 000 <em>₽</em></div>
+              <div class="tier-price" data-key="tier-price-3">60–65 000 <em>₽</em></div>
             </div>
           </div>
         </div>
@@ -335,7 +419,7 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
         <div class="price-label" data-key="price-audit-label">Диагностика</div>
         <div class="price-title" data-key="price-audit-title">Аудит инфлюенс-маркетинга</div>
         <div class="price-desc" data-key="price-audit-desc">Разберём, почему предыдущие размещения не сработали. Конкретные рекомендации на выходе.</div>
-        <div class="price-amount" data-key="price-audit-amount">10 000 <span>₽</span></div>
+        <div class="price-amount" data-key="price-audit-amount">15 000 <span>₽</span></div>
       </div>
 
       <div class="price-card reveal">
@@ -375,6 +459,7 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
     <div class="section-tag reveal" data-key="cases-tag">Кейсы</div>
     <h2 class="section-title reveal" data-key="cases-title">Результаты в цифрах</h2>
     <p class="section-subtitle reveal" data-key="cases-subtitle">Не охваты ради охватов — измеримые результаты для бизнеса</p>
+    <div class="sec-note" aria-hidden="true">именно это спрашивают на следующей встрече</div>
     <div class="cases-grid">
       <div class="case-card reveal">
         <div class="case-chip" data-key="chip-1">B2B · Вебинары</div>
@@ -396,7 +481,7 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
       </div>
       <div class="case-card reveal" style="grid-column:1/-1">
         <div class="case-chip" data-key="chip-4">E-com · Арт · MST Agency</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:32px;margin-bottom:24px;margin-top:16px">
+        <div class="case-mega-grid">
           <div><div class="case-num">50<em></em></div><div class="case-title" data-key="gamma-1" style="font-size:13px;color:var(--gray-400)">художников и арт-преподавателей</div></div>
           <div><div class="case-num">35<em>K</em></div><div class="case-title" data-key="gamma-2" style="font-size:13px;color:var(--gray-400)">просмотров экспертных интеграций</div></div>
           <div><div class="case-num">+35<em>%</em></div><div class="case-title" data-key="gamma-3" style="font-size:13px;color:var(--gray-400)">рост брендовых запросов</div></div>
@@ -428,6 +513,7 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
     <a href="https://t.me/valeriakudyasheva" class="btn-white" data-key="cta-btn1">Написать в Telegram</a>
     <a href="mailto:valeriakudyasheva@gmail.com" class="btn-ghost" data-key="cta-btn2">Написать на email</a>
   </div>
+  <div class="cta-note"><svg viewBox="0 0 30 26" aria-hidden="true"><path d="M3 3 C 5 14, 12 22, 27 20 M27 20 L20 16 M27 20 L21 24"/></svg><span data-key="cta-note">отвечаю обычно в тот же день</span><span class="cta-dot"></span></div>
 </section>
 
 <footer>
@@ -461,6 +547,7 @@ const T = {
     'reviews-tag':'Отзывы','reviews-title':'Что говорят клиенты',
     'reviews-placeholder':'Отзывы клиентов появятся здесь совсем скоро',
     'cta-tag':'Начнём?','cta-title':'Давайте разберём<br>ваш <em>проект</em>',
+    'cta-note':'отвечаю обычно в тот же день',
     'cta-desc':'Расскажите, что не работает — и я скажу, можно ли это исправить',
     'cta-btn1':'Написать в Telegram','cta-btn2':'Написать на email',
     'price-flagship-label':'Флагман','price-flagship-title':'Работа с блогерами под ключ',
@@ -474,7 +561,7 @@ const T = {
     'price-flagship-fit':'Нужно запустить или перезапустить работу с блогерами, выйти на новую аудиторию или масштабировать текущие кампании.',
     'price-flagship-btn':'Обсудить проект',
     'tier-1':'до 5 блогеров','tier-2':'до 10 блогеров','tier-3':'15–25 блогеров',
-    'price-audit-amount':'10 000 ₽','price-consult-amount':'5 000 ₽',
+    'price-audit-amount':'15 000 ₽','price-consult-amount':'5 000 ₽',
     'price-includes-1':'Подбор блогеров под задачу и аудиторию',
     'price-includes-2':'Разработка ТЗ и согласование сценариев',
     'price-includes-3':'Контроль выхода, маркировка ОРД',
@@ -495,7 +582,7 @@ const T = {
     'about-skillbox':'Выступала спикером модуля «Продвижение через блогеров» в курсе <a href="https://skillbox.ru/course/smm-marketer/" target="_blank" style="color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-light)"><strong>«SMM-специалист с нуля»</strong> на Skillbox</a>.',
     'footer-copy':'© 2026 Валерия Кудяшева',
     'nav-logo':'Валерия Кудяшева','nav-cta':'Написать',
-    'tier-price-1':'15 000 <em>₽</em>','tier-price-2':'28 000 <em>₽</em>','tier-price-3':'40 000 <em>₽</em>','case-1-suffix':' рег.',
+    'tier-price-1':'20 000 <em>₽</em>','tier-price-2':'35 000 <em>₽</em>','tier-price-3':'60–65 000 <em>₽</em>','case-1-suffix':' рег.',
     'chip-1':'B2B · Вебинары','chip-2':'СНГ · Казахстан','chip-3':'FMCG · Охваты','chip-4':'E-com · Арт · MST Agency',
     'gamma-1':'художников и арт-преподавателей','gamma-2':'просмотров экспертных интеграций',
     'gamma-3':'рост брендовых запросов','gamma-4':'средняя стоимость просмотра','read-case':'Читать кейс →'
@@ -521,6 +608,7 @@ const T = {
     'reviews-tag':'Reviews','reviews-title':'What clients say',
     'reviews-placeholder':'Client reviews coming soon',
     'cta-tag':'Ready to start?','cta-title':'Let us talk about<br>your <em>project</em>',
+    'cta-note':'usually reply the same day',
     'cta-desc':'Tell me what is not working — and I will tell you if I can fix it',
     'cta-btn1':'Write on Telegram','cta-btn2':'Write an email',
     'price-flagship-label':'Flagship','price-flagship-title':'Influencer campaigns end-to-end',
@@ -534,7 +622,7 @@ const T = {
     'price-flagship-fit':'You need to launch or relaunch influencer work, reach a new audience, or scale current campaigns.',
     'price-flagship-btn':'Discuss the project',
     'tier-1':'up to 5 bloggers','tier-2':'up to 10 bloggers','tier-3':'15–25 bloggers',
-    'price-audit-amount':'~$110','price-consult-amount':'~$55',
+    'price-audit-amount':'~$165','price-consult-amount':'~$55',
     'price-includes-1':'Blogger selection for the task and audience',
     'price-includes-2':'Brief development and scenario approval',
     'price-includes-3':'Placement control, ad labeling',
@@ -555,7 +643,7 @@ const T = {
     'about-skillbox':'Speaker for the module "Promotion through bloggers" in the course <a href="https://skillbox.ru/course/smm-marketer/" target="_blank" style="color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-light)"><strong>"SMM Specialist from Scratch"</strong> on Skillbox</a>.',
     'footer-copy':'© 2026 Valeria Kudyasheva',
     'nav-logo':'Valeria Kudyasheva','nav-cta':'Contact',
-    'tier-price-1':'~$165 <em>USD</em>','tier-price-2':'~$305 <em>USD</em>','tier-price-3':'~$435 <em>USD</em>','case-1-suffix':' reg.',
+    'tier-price-1':'~$245 <em>USD</em>','tier-price-2':'~$380 <em>USD</em>','tier-price-3':'~$680 <em>USD</em>','case-1-suffix':' reg.',
     'chip-1':'B2B · Webinars','chip-2':'CIS · Kazakhstan','chip-3':'FMCG · Reach','chip-4':'E-com · Art · MST Agency',
     'gamma-1':'artists and art educators','gamma-2':'views of expert integrations',
     'gamma-3':'branded search growth','gamma-4':'avg cost per view','read-case':'Read case study →'
@@ -583,6 +671,22 @@ window.onload = function() {
       applyLang();
     };
   }
+  var toggle = document.getElementById('nav-toggle');
+  var links = document.getElementById('nav-links');
+  if (toggle && links) {
+    toggle.onclick = function() {
+      var open = links.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    links.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        links.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
   var reveals = document.querySelectorAll('.reveal');
   var obs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e, i) {
@@ -593,6 +697,31 @@ window.onload = function() {
     });
   }, {threshold: 0.08});
   reveals.forEach(function(el) { obs.observe(el); });
+
+  var notes = document.querySelectorAll('.hero-note,.sec-note,.cta-note,.underline-draw');
+  var noteObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        var t = e.target;
+        setTimeout(function() {
+          t.classList.add('shown');
+          t.classList.add('drawn');
+        }, 200);
+        noteObs.unobserve(t);
+      }
+    });
+  }, {threshold: 0.4});
+  notes.forEach(function(el) { noteObs.observe(el); });
+
+  var cta = document.querySelector('.final-cta');
+  if (cta) {
+    var ctaObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { cta.classList.add('lit'); ctaObs.unobserve(cta); }
+      });
+    }, {threshold: 0.3});
+    ctaObs.observe(cta);
+  }
 };
 </script>
 </body>
