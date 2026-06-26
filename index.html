@@ -62,7 +62,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 /* HERO */
 .hero{min-height:100vh;padding:120px 40px 80px;display:flex;align-items:center;background:var(--cream);position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(62,107,79,0.08) 0%,transparent 70%);pointer-events:none}
-.hero-inner{max-width:860px;margin:0 auto;width:100%}
+.hero-inner{max-width:1200px;margin:0 auto;width:100%}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent-bg);border:1px solid var(--accent-light);border-radius:100px;padding:6px 14px;font-size:13px;color:var(--accent);font-weight:500;margin-bottom:28px}
 .hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0}
 h1{font-family:var(--serif);font-size:clamp(52px,7vw,92px);font-weight:500;line-height:1.02;letter-spacing:-0.02em;color:var(--accent-deep);margin-bottom:32px}
@@ -80,7 +80,7 @@ h1 em{font-style:italic;color:var(--accent);font-weight:500}
 
 /* STATS */
 .stats{padding:60px 40px;background:var(--gray-50);border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)}
-.stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--gray-200)}
+.stats-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--gray-200)}
 .stat-item{background:var(--gray-50);padding:32px 40px}
 .stat-num{font-family:var(--serif);font-size:46px;font-weight:500;color:var(--accent-deep);letter-spacing:-0.02em;line-height:1;margin-bottom:8px}
 .stat-num em{color:var(--terra);font-style:italic}
@@ -88,7 +88,7 @@ h1 em{font-style:italic;color:var(--accent);font-weight:500}
 
 /* SECTION COMMON */
 .section{padding:100px 40px}
-.section-inner{max-width:1100px;margin:0 auto}
+.section-inner{max-width:1200px;margin:0 auto}
 .section-tag{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
 .section-tag::before{content:'';width:20px;height:1.5px;background:var(--accent);flex-shrink:0}
 .section-title{font-family:var(--serif);font-size:clamp(28px,4vw,46px);font-weight:500;letter-spacing:-0.015em;line-height:1.12;color:var(--accent-deep);margin-bottom:16px}
@@ -131,7 +131,7 @@ h1 em{font-style:italic;color:var(--accent);font-weight:500}
 .services .section-title.visible em::after{transform:scaleX(1)}
 .services-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;gap:40px}
 .services-note{font-size:14px;color:var(--gray-400);max-width:260px;text-align:right;line-height:1.5}
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
 
 /* PRICING CARDS */
 .price-card{background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:36px;display:flex;flex-direction:column;transition:border-color 0.2s,transform 0.2s;position:relative}
@@ -479,7 +479,7 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
         <div class="case-title" data-key="case-3-title">Рост охватов для FMCG-бренда</div>
         <div class="case-desc" data-key="case-3-desc">20 000+ новых подписчиков по 280 руб. Снижение CPV на 20% за год. YouTube и Telegram.</div>
       </div>
-      <div class="case-card reveal"><div class="case-chip" data-key="chip-5">E-com · YouTube</div><div class="case-num">6,8<em>млн</em></div><div class="case-title" data-key="case-5-title">YouTube-кампания для «Берлинго»</div><div class="case-desc" data-key="case-5-desc">14 интеграций у блогеров (Ляйсан Утяшева, Masha Zoom). 6,8 млн просмотров, 445 тыс. реакций, 2 видео в трендах YouTube. Подбор по 25+ фильтрам.</div></div><div class="case-card reveal"><div class="case-chip" data-key="chip-6">E-com · Flowwow</div><div class="case-num">0,79<em>₽</em></div><div class="case-title" data-key="case-6-title">Локальные блогеры для Flowwow</div><div class="case-desc" data-key="case-6-desc">Региональные блогеры в 8 городах, сплит 40/60 на 14 февраля и 8 марта. CPV снижен с 1,06 ₽ до 0,79 ₽, +20% к базе CRM, +15% установок приложения.</div></div><div class="case-card reveal"><div class="case-chip" data-key="chip-7">Edtech · Партнёрства</div><div class="case-num">739<em>рег.</em></div><div class="case-title" data-key="case-7-title">Партнёрства с онлайн-школами</div><div class="case-desc" data-key="case-7-desc">Уроки для Эдюсон, Синергии, МАЭД и Яндекс Практикума, совместные посты с Нетологией и Skillbox. 739 регистраций в сервис: Синергия — 502, Эдюсон — 175, Практикум — 51, МАЭД — 11. 2025–2026.</div></div><div class="case-card reveal" style="grid-column:1/-1">
+      <div class="case-card reveal"><div class="case-chip" data-key="chip-5">E-com · YouTube</div><div class="case-num">6,8<em>млн</em></div><div class="case-title" data-key="case-5-title">YouTube-кампания для «Берлинго»</div><div class="case-desc" data-key="case-5-desc">14 интеграций у блогеров (Ляйсан Утяшева, Masha Zoom). 6,8 млн просмотров, 445 тыс. реакций, 2 видео в трендах YouTube. Подбор по 25+ фильтрам.</div><a href="https://mstagency.ru/cases/68-mln-prosmotrov-dlya-berlingo-cherez-youtube-inflyuenserov/" target="_blank" data-key="read-case" style="display:inline-block;margin-top:20px;font-size:13px;color:var(--accent);font-weight:500;text-decoration:none;border-bottom:1px solid var(--accent-light);padding-bottom:2px">Читать кейс →</a></div><div class="case-card reveal"><div class="case-chip" data-key="chip-6">E-com · Flowwow</div><div class="case-num">0,79<em>₽</em></div><div class="case-title" data-key="case-6-title">Локальные блогеры для Flowwow</div><div class="case-desc" data-key="case-6-desc">Региональные блогеры в 8 городах, сплит 40/60 на 14 февраля и 8 марта. CPV снижен с 1,06 ₽ до 0,79 ₽, +20% к базе CRM, +15% установок приложения.</div><a href="https://mstagency.ru/cases/uvelichili-prodazhi-s-pomoshhyu-lokalnyh-blogerov/" target="_blank" data-key="read-case" style="display:inline-block;margin-top:20px;font-size:13px;color:var(--accent);font-weight:500;text-decoration:none;border-bottom:1px solid var(--accent-light);padding-bottom:2px">Читать кейс →</a></div><div class="case-card reveal"><div class="case-chip" data-key="chip-7">Edtech · Партнёрства</div><div class="case-num">739<em>рег.</em></div><div class="case-title" data-key="case-7-title">Партнёрства с онлайн-школами</div><div class="case-desc" data-key="case-7-desc">Уроки для Эдюсон, Синергии, МАЭД и Яндекс Практикума, совместные посты с Нетологией и Skillbox. 739 регистраций в сервис: Синергия — 502, Эдюсон — 175, Практикум — 51, МАЭД — 11. 2025–2026.</div></div><div class="case-card reveal" style="grid-column:1/-1">
         <div class="case-chip" data-key="chip-4">E-com · Арт · MST Agency</div>
         <div class="case-mega-grid">
           <div><div class="case-num">50<em></em></div><div class="case-title" data-key="gamma-1" style="font-size:13px;color:var(--gray-400)">художников и арт-преподавателей</div></div>
