@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Валерия Кудяшева — Маркетинг и продвижение</title>
+<title>Валерия Кудяшева. Маркетинг и продвижение</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --black:#1a2820;
+  --black:#211f1c;
   --white:#ffffff;
   --cream:#f6f3ec;
   --cream-deep:#efe9dc;
@@ -18,11 +18,11 @@
   --gray-200:#ddd7c8;
   --gray-400:#928c7c;
   --gray-600:#56544c;
-  --gray-900:#1f2a23;
-  --accent:#3e6b4f;
-  --accent-deep:#1f3a2e;
-  --accent-light:#a8c5b0;
-  --accent-bg:#e8efe7;
+  --gray-900:#2b2926;
+  --accent:#34322d;
+  --accent-deep:#26241f;
+  --accent-light:#d9cfbd;
+  --accent-bg:#efe9dc;
   --terra:#c4623a;
   --terra-soft:#d98c66;
   --sans:'Inter',sans-serif;
@@ -55,7 +55,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .nav-toggle.open span:nth-child(2){opacity:0}
 .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .hero{min-height:100vh;padding:120px 40px 80px;display:flex;align-items:center;background:var(--cream);position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(62,107,79,0.08) 0%,transparent 70%);pointer-events:none}
 .hero-inner{max-width:1200px;margin:0 auto;width:100%}
 .hero-grid{display:grid;grid-template-columns:1fr 340px;gap:64px;align-items:center}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent-bg);border:1px solid var(--accent-light);border-radius:100px;padding:6px 14px;font-size:13px;color:var(--accent);font-weight:500;margin-bottom:28px}
@@ -162,7 +161,7 @@ h1 em{font-style:italic;color:var(--accent);font-weight:500}
 .svc-btn-tg:hover{background:var(--accent-deep);border-color:var(--accent-deep);transform:translateY(-1px)}
 .svc-btn-mail{background:transparent;color:var(--accent);border:1.5px solid var(--accent-light);width:44px;padding:10px}
 .svc-btn-mail:hover{border-color:var(--accent);background:var(--accent-bg);transform:translateY(-1px)}
-/* Контактные кнопки на тёмном флагмане */
+/* Контактные кнопки на темном флагмане */
 .price-card.featured .svc-contact{margin-top:24px}
 .price-card.featured .svc-btn-tg{background:var(--white);color:var(--gray-900);border-color:var(--white)}
 .price-card.featured .svc-btn-tg:hover{background:var(--gray-100);border-color:var(--gray-100)}
@@ -182,7 +181,6 @@ h1 em{font-style:italic;color:var(--accent);font-weight:500}
 .reviews-placeholder{margin-top:56px;border:1.5px dashed var(--gray-200);border-radius:var(--radius-lg);padding:60px;text-align:center}
 .reviews-placeholder p{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--gray-400);margin-bottom:32px}
 .final-cta{background:var(--gray-900);padding:120px 40px;text-align:center;position:relative;overflow:hidden}
-.final-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(196,98,58,0.18) 0%,transparent 60%);pointer-events:none}
 .final-cta .section-tag{color:var(--accent-light);justify-content:center}
 .final-cta .section-tag::before{background:var(--accent-light)}
 .cta-title{font-family:var(--serif);font-size:clamp(32px,5vw,58px);font-weight:500;color:var(--white);letter-spacing:-0.015em;line-height:1.08;margin-bottom:20px;position:relative}
@@ -255,6 +253,182 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
   .cta-note{font-size:21px;line-height:1.3;padding:0 8px}
   .timeline-row{grid-template-columns:64px 1fr;gap:16px}
 }
+</style>
+<style>
+/* ===== Design layer: glass ===== */
+:root{
+  --gray-400:#6e695c;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --glass-bg:rgba(255,255,255,.52);
+  --glass-bg-strong:rgba(255,255,255,.72);
+  --glass-line:rgba(255,255,255,.78);
+  --glass-ink:rgba(38,36,31,.12);
+  --glass-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 14px 32px -14px rgba(38,36,31,.22),0 2px 6px rgba(38,36,31,.05);
+  --glass-shadow-hover:inset 0 1px 0 rgba(255,255,255,.95),0 24px 44px -16px rgba(38,36,31,.3),0 4px 10px rgba(38,36,31,.07);
+  --glass-blur:blur(18px) saturate(1.45);
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  :root{--glass-bg:rgba(255,255,255,.88);--glass-bg-strong:rgba(255,255,255,.94)}
+}
+html{background:var(--cream);scrollbar-width:thin;scrollbar-color:var(--accent-light) transparent}
+body{background:transparent}
+::selection{background:rgba(196,98,58,.22);color:var(--accent-deep)}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-thumb{background:var(--accent-light);border-radius:10px;border:2px solid var(--cream)}
+::-webkit-scrollbar-track{background:transparent}
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px;border-radius:8px}
+
+
+.hero,.stats,.services,.reviews{background:transparent}
+.stats{border-color:transparent}
+.about,.cases{background:rgba(255,255,255,.34)}
+.reviews{border-top-color:var(--glass-ink)}
+footer{border-top-color:var(--glass-ink)}
+
+/* Навигация: плавающее стекло */
+nav{top:12px;left:16px;right:16px;height:60px;padding:0 20px;border-radius:18px;background:rgba(255,255,255,.55);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);border:1px solid var(--glass-line);box-shadow:var(--glass-shadow)}
+.nav-links a{transition:color .2s}
+.nav-cta,.btn-dark{background-color:var(--gray-900);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 10px 20px -8px rgba(33,31,28,.5),0 2px 4px rgba(33,31,28,.18)}
+.nav-cta{border-radius:11px}
+.btn-dark{border-radius:12px;transition:background-color .25s,transform .35s var(--ease),box-shadow .35s var(--ease)}
+.btn-dark:hover,.nav-cta:hover{background-color:var(--accent)!important;transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 16px 26px -10px rgba(33,31,28,.55),0 3px 6px rgba(33,31,28,.14)}
+.btn-dark:active{transform:translateY(0)}
+
+/* Стеклянные кнопки */
+.btn-light,.lang-btn,.svc-btn-mail{background:var(--glass-bg);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);border:1px solid var(--glass-ink);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 6px 14px -8px rgba(38,36,31,.2)}
+.btn-light{border-radius:12px;transition:background-color .25s,border-color .25s,transform .35s var(--ease),box-shadow .35s var(--ease)}
+.btn-light:hover,.lang-btn:hover,.svc-btn-mail:hover{background:var(--glass-bg-strong);border-color:rgba(52,50,45,.4);box-shadow:inset 0 1px 0 #fff,0 14px 24px -10px rgba(38,36,31,.28)}
+.btn-light:hover{transform:translateY(-2px)}
+.lang-btn{border-radius:11px}
+.svc-btn-tg{box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 8px 16px -8px rgba(38,36,31,.5)}
+.btn-white{border-radius:12px;box-shadow:inset 0 1px 0 #fff,0 14px 28px -12px rgba(0,0,0,.55);transition:background-color .25s,transform .35s var(--ease),box-shadow .35s var(--ease)}
+.btn-white:hover{transform:translateY(-2px);box-shadow:inset 0 1px 0 #fff,0 20px 34px -12px rgba(0,0,0,.6)}
+.btn-ghost{border-radius:12px;background:rgba(255,255,255,.07);backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);border:1px solid rgba(255,255,255,.24);box-shadow:inset 0 1px 0 rgba(255,255,255,.14);transition:background-color .25s,border-color .25s,transform .35s var(--ease)}
+.btn-ghost:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.45)}
+
+/* Hero */
+.hero-grid{grid-template-columns:1fr 390px}
+.hero-badge{background:var(--glass-bg);border:1px solid rgba(217,207,189,.8);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 6px 14px -8px rgba(38,36,31,.2)}
+.hero-results{padding:30px 32px 18px;border-radius:28px;background:var(--glass-bg);border:1px solid var(--glass-line);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);box-shadow:var(--glass-shadow)}
+.res-row{border-bottom-color:var(--glass-ink)}
+.res-num{font-variant-numeric:tabular-nums}
+
+/* Цифры */
+.stats-inner{gap:14px;background:transparent}
+.stat-item{background:var(--glass-bg);border:1px solid var(--glass-line);border-radius:20px;backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);box-shadow:var(--glass-shadow)}
+
+/* Карточки */
+.price-card,.case-card{background:var(--glass-bg);border:1px solid var(--glass-line);box-shadow:var(--glass-shadow);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);transition:opacity .6s ease,transform .5s var(--ease),box-shadow .4s var(--ease),border-color .3s}
+.price-card.reveal.visible:hover,.case-card.reveal.visible:hover{transform:translateY(-5px);border-color:rgba(255,255,255,.95);box-shadow:var(--glass-shadow-hover)}
+.price-icon{background:#fff;border:1px solid rgba(217,207,189,.7);box-shadow:0 6px 12px -6px rgba(52,50,45,.35),inset 0 1px 0 #fff}
+.price-includes,.timeline,.timeline-row{border-color:var(--glass-ink)}
+.price-includes li::before{background:var(--accent-bg);border-color:var(--accent-light)}
+.case-chip{background:rgba(255,255,255,.6);border-color:rgba(217,207,189,.85);box-shadow:inset 0 1px 0 #fff}
+
+/* Флагман: темное стекло с цветными пятнами внутри */
+.price-card.featured{background:var(--gray-900);border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 30px 56px -22px rgba(33,31,28,.6),0 4px 10px rgba(33,31,28,.12);backdrop-filter:none;-webkit-backdrop-filter:none}
+.price-card.featured.reveal.visible:hover{border-color:rgba(255,255,255,.28);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 38px 64px -22px rgba(33,31,28,.7),0 6px 14px rgba(33,31,28,.16)}
+.tier-row{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.price-card.featured .price-includes li::before{background:rgba(196,98,58,.28);border-color:rgba(217,140,102,.6)}
+.price-card.featured .svc-btn-mail{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+.price-card.featured .svc-btn-mail:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.6);box-shadow:inset 0 1px 0 rgba(255,255,255,.2)}
+.price-card.featured .svc-btn-tg{background-image:none;box-shadow:0 8px 16px -8px rgba(0,0,0,.5)}
+.services .section-title em::after{display:none}
+.services-grid{grid-template-columns:repeat(2,1fr);align-items:stretch}
+.price-card:not(.featured) .price-desc{flex:0 1 auto}
+.price-card:not(.featured) .tiers{margin-top:4px;border-top:0;padding-top:0;gap:8px}
+.price-card:not(.featured) .tier-row{background:rgba(255,255,255,.55);border:1px solid var(--glass-ink);box-shadow:inset 0 1px 0 rgba(255,255,255,.9)}
+.price-card:not(.featured) .tier-label{color:var(--gray-600)}
+.price-card:not(.featured) .tier-price{color:var(--gray-900);white-space:nowrap;margin-left:16px}
+.price-card:not(.featured) .tier-price em{color:var(--gray-400)}
+.price-card:not(.featured) .svc-contact{margin-top:20px}
+.card-foot{margin-top:auto;padding-top:24px}
+.card-foot .tiers{margin-top:0}
+.price-card .get-label{margin:22px 0 0;color:var(--accent)}
+.price-card.featured .get-label{color:var(--accent-light)}
+.price-card .get-label + .price-includes{margin-top:10px;padding-top:0;border-top:0}
+.price-card .price-desc{margin-bottom:0}
+.price-card:not(.featured) .price-desc,.price-card.featured .price-desc{margin-bottom:0}
+.price-card .price-title{margin-bottom:10px}
+.variant-term{font-size:13px;font-weight:500;color:var(--accent);margin-top:14px}
+.variant{margin-top:18px;padding-top:18px;border-top:1px solid var(--glass-ink)}
+.variant .variant-term{margin-top:2px}
+.variant-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.variant-name{font-size:17px;font-weight:600;color:var(--gray-900);letter-spacing:-0.01em}
+.variant-price{font-size:18px;font-weight:600;color:var(--gray-900);white-space:nowrap}
+.variant-price em{font-style:normal;font-weight:400;font-size:13px;color:var(--gray-400)}
+.variant .price-includes{margin-top:10px;padding-top:0;border-top:0}
+
+/* Подсветка под курсором (только мышь) */
+@property --spot{syntax:'<number>';inherits:false;initial-value:0}
+.price-card:not(.featured),.case-card,.stat-item,.hero-results{background-image:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,calc(var(--spot) * .85)),rgba(255,255,255,0) 70%);transition:opacity .6s ease,transform .5s var(--ease),box-shadow .4s var(--ease),border-color .3s,--spot .35s ease}
+.price-card:not(.featured):hover,.case-card:hover,.stat-item:hover,.hero-results:hover{--spot:1}
+@media(hover:none){.price-card,.case-card,.stat-item,.hero-results{--spot:0!important}}
+
+/* Текущий раздел в меню */
+.nav-links a:not(.nav-cta){position:relative}
+.nav-links a:not(.nav-cta)::after{content:'';position:absolute;left:0;right:0;bottom:-6px;height:2px;border-radius:2px;background:var(--terra);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.nav-links a.active{color:var(--gray-900)}
+.nav-links a.active:not(.nav-cta)::after{transform:scaleX(1)}
+@media(max-width:900px){.nav-links a:not(.nav-cta)::after{display:none}}
+
+/* О себе, отзывы */
+.about-photo-wrap{padding:8px;border-radius:30px;background:var(--glass-bg);border:1px solid var(--glass-line);box-shadow:var(--glass-shadow);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur)}
+.about-img{border-radius:22px;display:block}
+.reviews-placeholder{background:rgba(255,255,255,.4);border-color:rgba(38,36,31,.2);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur)}
+
+/* Финальный блок: меш-градиент на темном */
+.final-cta{background:var(--gray-900)}
+
+/* Палитра: кремовый фон, рыжий и темно-серый акценты, без градиентов */
+h1 em,.section-title em{color:var(--terra)}
+.btn-dark:hover,.nav-cta:hover{background-color:var(--terra)!important}
+.price-card.wide{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;align-items:start}
+.price-card.featured,.price-card.wide{grid-template-columns:1.1fr 1.1fr .8fr;gap:36px}
+.tier-label{padding-right:10px}
+.price-note{font-size:14px;color:var(--gray-600);line-height:1.6;margin-top:10px}
+.price-card.featured .price-note{color:rgba(255,255,255,.5)}
+.tier-price{white-space:nowrap}
+@media(max-width:900px){.price-card.wide{grid-column:1;grid-template-columns:1fr;gap:28px}}
+
+.prepay{font-size:13px;font-weight:500;color:var(--terra);margin-top:16px}
+.price-card.featured .prepay{color:var(--terra-soft)}
+.price-card:not(.featured) .prepay + .svc-contact,.price-card.featured .prepay + .svc-contact,.price-card.wide .prepay + .svc-contact{margin-top:10px}
+.reviews-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:16px;margin-top:56px;align-items:stretch}
+.review-card{margin:0;padding:36px;border-radius:var(--radius-lg);background:var(--glass-bg);border:1px solid var(--glass-line);box-shadow:var(--glass-shadow);display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.review-card blockquote{font-family:var(--serif);font-size:17px;line-height:1.5;color:var(--accent-deep);letter-spacing:-0.005em}
+.review-card figcaption{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--terra)}
+.cta-mail{position:relative;margin-top:22px}
+.cta-mail a{color:rgba(255,255,255,.7);font-size:15px;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:2px;transition:color .2s,border-color .2s}
+.cta-mail a:hover{color:#fff;border-color:var(--terra-soft)}
+@media(max-width:900px){.reviews-grid{grid-template-columns:1fr}.review-card{padding:28px 24px}.review-card blockquote{font-size:16px}}
+.review-card{position:relative;gap:24px;justify-content:flex-start}
+.review-card blockquote{flex:1;font-size:17px;line-height:1.6;font-style:italic}
+.review-mark{width:34px;height:27px;fill:var(--terra);opacity:.9}
+.review-card .review-by{display:flex;align-items:center;gap:14px;padding-top:22px;border-top:1px solid var(--glass-ink);font-size:inherit;font-weight:400;letter-spacing:0;text-transform:none;color:var(--gray-900)}
+.review-ava{width:52px;height:52px;border-radius:50%;flex-shrink:0;object-fit:cover;border:2px solid #fff;box-shadow:0 6px 14px -6px rgba(38,36,31,.35)}
+.review-mono{display:flex;align-items:center;justify-content:center;background:var(--gray-900);color:#fff;font-family:var(--serif);font-size:17px;letter-spacing:.02em}
+.review-who{display:flex;flex-direction:column;gap:2px;font-size:13px;color:var(--gray-600);line-height:1.4}
+.review-who strong{font-size:15px;font-weight:600;color:var(--gray-900)}
+.btn-mail{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:12px 28px}
+.cta-btns{align-items:stretch}
+.cta-btns .btn-white,.cta-btns .btn-ghost{display:inline-flex;align-items:center;justify-content:center}
+.btn-mail small{font-size:12px;opacity:.65;letter-spacing:.01em}
+@media(max-width:900px){
+  .price-card.featured,.price-card.wide{grid-column:1;grid-template-columns:1fr;gap:28px}
+  .footer-links{flex-wrap:wrap;justify-content:center;gap:8px 20px}
+  nav{top:10px;left:12px;right:12px;padding:0 8px 0 18px;border-radius:16px}
+  .nav-links{top:80px;left:12px;right:12px;border-radius:18px;background:rgba(255,255,255,.92);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);border:1px solid var(--glass-line);box-shadow:var(--glass-shadow)}
+  .nav-links:not(.open){border-color:transparent;box-shadow:none}
+  .nav-links a{border-bottom-color:var(--glass-ink)}
+  .hero-grid{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:1fr}
+  .hero-results{max-width:none;padding:24px 24px 12px;border-radius:24px}
+}
+@media(max-width:600px){
+  .hero-results{padding:22px 20px 8px}
+  .stat-item{padding:22px 20px}
+}
 @media(max-width:420px){
   .stats-inner{grid-template-columns:1fr}
   .case-mega-grid{grid-template-columns:1fr;gap:20px}
@@ -271,6 +445,7 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
   .underline-draw svg path{stroke-dashoffset:0}
   .services .section-title em::after{transform:scaleX(1)}
 }
+.about-grid{margin-top:0}
 </style>
 </head>
 <body>
@@ -293,10 +468,10 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
   <div class="hero-inner">
     <div class="hero-grid">
       <div class="hero-left">
-        <div class="hero-badge" data-key="hero-badge">Маркетолог · B2B · Инфлюенс · СНГ</div>
+        <div class="hero-badge" data-key="hero-badge">Партнерский маркетинг · Инфлюенс · СНГ</div>
         <h1 data-key="hero-h1">Маркетинг,<br>который<br><em>работает</em></h1>
-        <div class="hero-note" aria-hidden="true"><svg viewBox="0 0 34 24"><path d="M2 4 C 10 22, 22 22, 32 8 M32 8 L24 9 M32 8 L30 16"/></svg>не «для галочки», а под задачу бизнеса</div>
-        <p class="hero-desc" data-key="hero-desc">Инфлюенс-маркетинг, вебинары, партнёрства с образовательными школами и выход на рынки СНГ. 5+ лет в B2B и B2C.</p>
+        <div class="hero-note" aria-hidden="true"><svg viewBox="0 0 34 24"><path d="M2 4 C 10 22, 22 22, 32 8 M32 8 L24 9 M32 8 L30 16"/></svg><span data-key="hero-note">не «для галочки», а под задачу бизнеса</span></div>
+        <p class="hero-desc" data-key="hero-desc">Инфлюенс-маркетинг, вебинары, партнерства с образовательными школами и выход на рынки СНГ. 5+ лет в B2B и B2C.</p>
         <div class="hero-btns">
           <a href="https://t.me/valeriakudyasheva" class="btn-dark" data-key="hero-btn1">Написать в Telegram</a>
           <a href="mailto:valeriakudyasheva@gmail.com?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0" class="btn-light" data-key="hero-btn2">Написать на почту</a>
@@ -306,20 +481,20 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
       <div class="hero-results">
         <div class="hero-results-label"><span data-key="res-label">Мои результаты</span></div>
         <div class="res-row">
-          <div class="res-num"><span class="res-count" data-count="4400">0</span><em>+</em></div>
-          <div class="res-txt" data-key="res-1">регистраций на вебинары<span class="res-hand" data-key="res-1-hand">за два года работы</span></div>
+          <div class="res-num"><span class="res-count" data-count="900">0</span><em>+</em></div>
+          <div class="res-txt"><span data-key="res-1">регистраций через партнерский канал</span><span class="res-hand" data-key="res-1-hand">5 онлайн-школ в партнерах</span></div>
         </div>
         <div class="res-row">
           <div class="res-num"><span class="res-count" data-count="30">0</span><em>M+</em></div>
-          <div class="res-txt" data-key="res-2">охватов через блогеров<span class="res-hand" data-key="res-2-hand">YouTube и Telegram</span></div>
+          <div class="res-txt"><span data-key="res-2">охватов через блогеров</span><span class="res-hand" data-key="res-2-hand">YouTube и Telegram</span></div>
         </div>
         <div class="res-row">
-          <div class="res-num"><span class="res-count" data-count="100">0</span><em>+</em></div>
-          <div class="res-txt" data-key="res-3">регистраций в сервис из Казахстана<span class="res-hand" data-key="res-3-hand">рынок подняла с нуля</span></div>
+          <div class="res-num"><span class="res-count" data-count="500">0</span><em>+</em></div>
+          <div class="res-txt"><span data-key="res-3">регистраций в сервис из Казахстана</span><span class="res-hand" data-key="res-3-hand">рынок подняла с нуля</span></div>
         </div>
         <div class="res-row">
-          <div class="res-num"><span class="res-count" data-count="5">0</span></div>
-          <div class="res-txt" data-key="res-4">топовых онлайн-школ в партнёрах<span class="res-hand" data-key="res-4-hand">Синергия, Эдюсон и другие</span></div>
+          <div class="res-num"><span class="res-count" data-count="1000">0</span><em>+</em></div>
+          <div class="res-txt"><span data-key="res-4">регистраций на вебинары</span><span class="res-hand" data-key="res-4-hand">по РФ и СНГ</span></div>
         </div>
       </div>
     </div>
@@ -329,19 +504,19 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
 <div class="stats">
   <div class="stats-inner">
     <div class="stat-item reveal">
-      <div class="stat-num">5<em>+</em></div>
+      <div class="stat-num"><span class="res-count" data-count="5">5</span><em>+</em></div>
       <div class="stat-label" data-key="stat-1">лет в маркетинге и рекламе</div>
     </div>
     <div class="stat-item reveal">
-      <div class="stat-num">30<em>M+</em></div>
-      <div class="stat-label" data-key="stat-2">охватов через блогеров</div>
+      <div class="stat-num"><span class="res-count" data-count="200">200</span><em>+</em></div>
+      <div class="stat-label" data-key="stat-2">согласованных ТЗ и брифов</div>
     </div>
     <div class="stat-item reveal">
-      <div class="stat-num">400<em>+</em></div>
+      <div class="stat-num"><span class="res-count" data-count="400">400</span><em>+</em></div>
       <div class="stat-label" data-key="stat-3">размещений с маркировкой</div>
     </div>
     <div class="stat-item reveal">
-      <div class="stat-num">2<em>M</em></div>
+      <div class="stat-num"><span class="res-count" data-count="2">2</span><em>M</em></div>
       <div class="stat-label" data-key="stat-4">руб./мес. максимальный бюджет</div>
     </div>
   </div>
@@ -349,31 +524,30 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
 
 <section class="section about" id="about">
   <div class="section-inner">
-    <div class="section-tag reveal" data-key="about-tag">Обо мне</div>
     <div class="about-grid">
       <div class="about-photo-wrap reveal">
         <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wgARCAH0AfQDASIAAhEBAxEB/8QAGwABAQADAQEBAAAAAAAAAAAAAAECAwQFBgf/xAAaAQEBAQEBAQEAAAAAAAAAAAAAAQIDBAUG/9oADAMBAAIQAxAAAAH5xXfhAJSRSyiSgUSlFApKCqkqkqkqiiFEqkqkUFEqkVUWxiyVFJFGLKEZQijFRFHGrPSABAACiUBalUlEKBRVJVFSKYmV04y9DHPUKQoKJVJQFqKIoiiKTFlCKJMoRRxKzuKIsABSUBaigoFSUFUFJjnx51r4cuDh6PQ4tO9dW3pzODux0n0HT8l9B14dxenKVSKCiKoqIqooiiSiKSTKEUcKs7iiAAKIqhSUCgVBQUHgY3v8Rzce/b7Hkds37275/kj2+fXgvVycXdHNr6eLWfpPR+M97t5/Vp05FUKRRKpFEUSZQiiKJKSKXhlZ1FEUQClBBVSiKAoKCnH877vhcPTy7+z6Hj6PD9f6j2OXf4bj/SMMdPzbn/SOCPznb7fj9/Nlzd+rpx8brs1n7NMvT5JSwoFIoiiKIpIpYoxUkC8Cs6hSFIoAAFAsUhQFouMeZp4/pvF9H2fd5PS8/syzwqbJC6+Xq0TXl/Lfb+Sny/D9D5Xo8XkaOvh68vt88c/V4yklWooFIoiiKJKIoijFSeerO4oiiKIolAWyUgqigVEyS/Lfa/MfVeH6fsejw+hw9VrVZ03yvnK+u1eR6ubjzbteN+P4H1/yHXh5uHTt9Xi+gp6vEVQoAUShFEURRFhFJAvBKzqFIsACgAEoCgWhRZTk6M8PL7Z3edw+X3foGfyf2Gd+T5Xt/PS6u/zOzpz9rq5fV49uH5H7Lybng9J3NeRhsw+p8WU6+coFIoAAikilgRKIo85ZnYAAACygIoCgoBS05evLj3+ew+g3+T6Xk/pnzf1GN8fm+xnjXzvodpqad3DnWjRJNat3RjqcGjLH6359TfMUAUAQBKIogEoijzhncoQChFACyoAoKCgqjZruenr9Xnej8z7uXufJ9rPqaPG689fWz4d9xl53byZvHd+pN/P4Hoez5+Fl9vzRQKoBSKRKIoiiAiiA84Z2AAAAsqAKAoKCiyiht9Hyej5/1+7g7+fl6vW9H5ba6fSaPG9Ocs9eWMY8XT57PldmGf1/hUazQLKAUAIAAAlgAB50rO4sAABSUQoAoFlFlKUWWhjw9HPtxz8P2vR38HfOvYYY47cdPImznm5Oan2PhLLcBVAsoBQkAURYARYAecsxsiqgFAARZRYKBQoKC2WlDn35c3j9/u9ny/R5Po/RcXk6cuqa+jN6Ms6nyPy/6F+aez5/X93+d/c9OPr3Tu9flCygWCpUAASiASwA84Z3AFEoAAUIsoBQUFKLMgcUuHy2ri8/p+0zuzxfT29Orox02dnP1xnJhrPF8r9L42ufm+7p6evj1el5nV24949vloASpQAlEsAEADzpWdpYFAAAFSosoUAUFBbMC+F6PD4/V8/53dzXX2noae3yfR1dGWed3o5sjLHDXrHNzdXzuuX0OPi+vry4bL5tnt9HyfZ6eH0LwujU9VwdvXlml3CEVAABAA85GNhSwUAAFAsqLBQVp5Ma9HR515dXn93m8t6vW+U+nmvmurb6N39L2bu7ze7m5/Y5183ky+J1y+yw+IvTh9N8ruw1zuWPYz685c+et+WGwyu3bHJj2adOr0Pmu/1ef11np88WABABBXnDGwALFAAFlRZQx043fJ0d3DtnhvcenHtmBv8AM7/Js8L3vL9Dpn29HP6PHr2/X/C9men2XE+Pd8OXl2b8fNz+3nZ4nT24xrzymaxx76nVjctmeMlYc/VWjk389n0XR53o/Q8RL0wlgAgAvnDGgoACpQBYKlTl5s3h9fn+ly7s3dZnLhz92quHzva1WeXn6OJ5mHpazyNHtZ6nl+ty+zLk3uW+d0I5NXZhqce/twMJMs25qXg26rOrLLyC7t/n13fQ/L/Ue3yid+NIWCpYgHnjOwAABSWUBGOWjOubfp7Pn+zzNtxs6TBelM41Yb8TVcxqbsjTsuUuvVsiZ5krC5WYY83OdOOPUY7cquLZ4aY+rp6q5N3JkZcm6Rr+q+W+g9XDqS+vziFgCIC8EM6AAoAAKlHB38HPfB73z/0Pi9PHq6MJUss37cMpaWMVCWLKpy7ebssly5o2+Xp6qx7M92WOdLjm1nL4+nt6Z9fk3TN16r25a+Tfx1s9bzu7vz9Me7yEACCELwkxqoqgAqCpQCeT3+Lw69Pt+R63l76dW7VLnq3arOnKWUSLJDOyGXL06jLY4i+TPRqduWeayhFYK8nv+S3J9L53s6zebds57m3ORxc/Xz2bN2nLpj20fR8dgCFgEHDYxsLAKlAFlBjHF5u7V5PTn7fzfvc9bDPGsdO/RZ0ZYpQGGeNZ4PF1PZnNnm5+Buz1Oru07c3blosvRNXInVeXI4Pnerb2x7ndj08d69jCVjRq5ejgq7+bo6c/eR9HxgEAhUJw2M7WCoKBYKgvJ0+bx6adWyebvxez43TX0FOWmvPGrcbFiVcscDPDDXK58vF1nX9D4vuameWOrGt84czrujfLPM9Ljs+a+k8r3emOnFs5b0zfF1Z3E5+XbnZc9e3pj2R9DxkAhYhUHGjO6gqUAqEqU5uLp8/yejNcOe+bVu019Dv+b9XF7pMs3IxqzHyLO7HwfRrunPjLp8zc6Y7/AE+Xdz1edhLJFmO7fsMPG9DwtT6Du8PZL7Wfj7c31HF0Rlo3Q0Z5WtW/m7u3LuR7fLYBAIEHIibqWAsBVguPF4PLf0PF4u3z9vW08++XXhu0mrs4ln0PT4vo89dWGrmMfnevzemezr4tx36sOeXX6XF7Bs048+bsureZdeO3NcM01o4svP64z35+gcOPoZS+bl3YJr6+XCX2evw/axef2fH9308aj0+dZCoCEIrlGOgAFQXk6/J578vo6t/m7cHZ1bZryvP+3969Pyrr/Q/Odtn51+n/AJxNYd/id+vF38+zz8uPXj19c553fi6uPf0V6GDhxrNr6Ez7NfTm5ef0YrxYZcOpo05+t0xj39W3lviy78peDLqRz83o8pju1bDZ6fN0e7yVHXmQVAQhC8wzsBYKir5HV5Pn65+vo38Ovt/ReVwT3fU6PlOnPT6nfx9i+Xq9iL+e/J/tejfl/LtX0Xh3z+X37cmfF6/W8+zzvZ3yXzNXr9seL6PdM3LZoyzduzCk831JZ8zp+ly0+f6/Yked252WYZ4xjr2wmGWvefSzj6PiqQpCoEQqDnsZ3YFQWNMvNoxni9OXTy9Nm9j9Znr430HRunt87v1+LN/TX5r0830N0vTnr+Q+0+KxwNaefPCQ1XX0aaqhMNqNezHE346cTe5wxmNbstGUZsBkgprNXoed6/r89R6eFQWQVIVAQmgZ6WBUF17EvhZbeTzdunZx5Zv1/s/G7c+36mfI/TZ7+xjq6Jfmuf7XTNef6enYYfHfRfN3x7GLPHLDLBNTbjounYVMYskAKxGOjo4q6M9GZussQg5+jk1PQ68b9HxCWVBYhUCIVBqGegAA1xo4OjXx6eXl3cUv3nf+cfQY9f1uHkXl6vQ6ufna6unyMZr6Hp+Y9fU+e4vU8eeLdlpZ578MME365RGFZTDKKkKgqQy5t+NapuFuKM2OBr7sPR9fDS6MvRx5Z2U4ndTgehTzXpjy56w8l6w+7ZuHowbBqbRpx6By4dsOHX6OC+N4H2nLOnx+H0/Lx9fhuzhl3dHl5R6m7g3tcPzP2urp4vld/wBJsmPmcPrdkfIY/Zbj4Sff5H59j+jbK/M8P1PM/J365lX5C/YMj8d9H9Stn5t0/oVr4bp+xHzHZ7cPO2dqzlvTbOa9A0N8NLcrVNo1Ng1sx1wKAAAJUC0UJZBYEUWBmgQQBAAAgAEAABCEKtKBEACAgAr/xAAvEAACAgIBAgQFBAIDAQAAAAABAgADBBESECEFExQxICIyQFAVIzAzQUIGFjRw/9oACAEBAAEFAv8A6yBD26MyieYk86swMD+Y32uucQvZvepddEZybFbSBliZNglNqWr+Vt2q2Os+YndYiWpOREJdh5LEuHBUlTi3+aPyeRlcRbe7yoyvydDFxnPp/D655eKkazlAEaEcjsxHAtoyUf8AIn2zbthzyOvmSUzbaFbEqMdY9kZjKHGrsfZaAhhg3cx+Py341W/QIq7NVR3XiuZ6N5ZgtDhtpsdhDWZWLN+oZTaS0I0cZtXfj8kGxrq+L0Y7NKMImY2EFgqAnliNUI9AluODMzH4HbCeZyUBIxPKuL9P45rOJor8+3FoUBUAAHwNGEvq8xcmjTtWRHVwz65Ayv8Ar/Gt9N5nhiaopg6b6mGGZtfJfetiAcgdlHK1Pp/Gn2t73YY1VVB1E7Rrq9mxISDHl6cJljcvO68Bd5X4/NXVmP2FcUiEzlMjKFavlZOQ2PjKAK6dcUE1LhtDLJ4SO/4/LTnQL2Ffr70OP4jtlt5dMitWlti0j1zCVZm4r8oPZh2ykK3Jio87VVseX5DGYJVbkVieqCtjZO2rG0ygQGQPkZ2G5vpxB5WPSwnHQaZNfIhlUMA1bDQ/HsJipzysnGtL4VDKKV1VYnKWUdxSJUsHaWGMe7zIp500PLv7Px6jZagbSjcWvjF/r6GsQLqNLDGPSvcI4lu5/Hp7qAYigRdG3txMaziwfc3GMs99dzK/bKJX8lS0DS6wqy5Iatcm4OoNzAFYDGhmpZ2GNe1ljsXb8jWdFTLUBTHoZTUikKuoYYetx7Yi8V/Jq05jXqFU+t1FzbYuXY7K24T0Yyw7KDS/kxLQ7SmqmVpSk57ie03CZY8H5VpuLBSTK6iJwmoTHsijZ/LONSrUrMBE5S20RrSYsXp44bq4MvIBTJt8zHs5r+Sf9uJfBkQ3kzZaKIggEM8RrFuMylWpXlaO0rbmPyGVlLSPUu2SVixRFEErHQ+1/tk1rzw1LOYCVNbhx+OyreAvYljKTyr13WCCLCYT2tMsXZxawqt0x/q/G2NxW7vLxqHvMQao1BBBN9uUYxzCNlRoNNRXWsrdU34wuojHmbZmH5qV21Q/brG5x6CMejRo+bxevxGV212jUzewRWMUFZswXsIuSsUgj8I1yCW3M0NnEUZeQ9tpl/8Abirt6l+Wle7JCsQbN2RRW/q8Yw5FMysqvyjAIH4nFyeQtIawdNTU1AWQ1ZAP4FrEEe8ze+hEyxxrWzhKyLcfLqIbw/gDWgKompxjrMy3yaXU9dwkCBHeV1BYIJuL3gUDqRPc4l/f72ywKPNe9gsYdAeniH0Tw6zgtyghF0Ma80mmxLUMyLAldvKx2WOBOJMWhotarNQdNxE6Do7aiysduwmOxKfdMwVWPbIfnKV4pCJroDMk7FabIEqtKjipgQShnqau9HrzszzLTdY0Wm94tCLCBCJroTArNK0C9B0Y8QvzMPpubQqX5sN+R+6vMs/q4xe46EQiGXLyi16nGETlYI9l5n7hNd7pKaUYKqpO81OM1CJ7xaZrXQdBLG5so0LG4JuP+0nhx1b91b3lg+WUxovtCIVnCcYUnCGueTBjdqsS7zKuz66amoYELQKqgnoB0EyH0KBBHdrrUQVB/msxTq77lzpXlnsZXG9k9hNQiampqanGcYBCO9Xt1M4xnAhsnvFHQCWMFXfNkXQyTuVBaq2O4B86fUO/3Nsb2YdiIvufpi/xWnjXUNJ0952WWXQbMCRV+DLt5PjU8Q7cVo25sfZEI1YPrxTyo+4ymKyqxntMIhEHdIPh18Nvc66a3HdUD2FyiRVgHwZNnBKBqJ2Wwec9rdkTc46ln9v++D/V9xk95h9743vFHZfdf4q/neal1oQElzWkVYB8DHtlW87MNe2yYxCqq7KiZDai93I74P3BOh5nmPirq2P0/wBV9x/DkEhEXisyLuM7sa0gHwmZ1vFKlNlg7D6R7lV6ZEURvpwz+99vk/0USk/N/g9D7L7j+HW7ZdbxHdjVX2A+J20MqznZiLxqrXiD3KrNdLfZfY/Rif8Ap+3zD8i/LFP7ifSYBGiQfCD05AwEGL7O2hY7WWVqIuvg3qF5vtm2aVBzsx1mtwKB0PRoO0JmN/6vtidCw8ifpU96TsQRug+HUbZBsCoNikdhl3TFq0B12ZyjuYo3HPFcl9zBrlI0nTfVj23BMX/1fbXmPD7exxW7GDpr49w6Mf3vfiKv3L0Xtr4vaZhbR+d6E41jtDYJ5gnIQMJsS0/Ks1oYX9/2pOgdkv8AUY8xH038JacoTGaZD7mKvZPpjPqcjOUDCCGWHtijb1q2uImh17QhZYAYgIjt3wf7Ptbz8qHc/wB2jQdjj2hk5TfxHIQnlNzcteH5jUPlHYEw9dmVswLmZtnbDq4V7m5vqTqHc10f2wPb7XJlR7/5aN0qbRRoPgMzLpSYDAY5+Wwype9YhMJ6GAbiVx2ADNoVfuZHq9wXQWRbYLhBYJ2M0Zqal304Y/Y+0J1GPKOvfe4ep7St5W3UmX2aFjbKxTAZaYe5qWewYzcEAiLHbQJmU2qsfsl3a2tXIPKfPPmgZxFucRMowZIityW6UjjV9nfkpXLctmPqXgzGgya2nIGGGGIZW8V4XjvL3n+0UwEyxpQvJhpQxhMEURFjHQdtzcyzubIlSeY2pwnlzhOE47nlmV17KDQsG7Ps8jZU47sfQwYUFaoHRDNU7JAGFj25VreF4TUupqtRopm5YZYdlPcdN6X6jVX5SO0JgiiIIflD2bm4TLz81abNXc+U8CkdPLM8pZxEdZWNTcrXlf8AZ5FhFoISIWfpXXbZE8PyTMXHNQyfD8PIK0V4jLZPFfl8T3KH3DL27L3YLqI3Oz5Qch9nCrljCEwRREE9o1Frz0bS9LKZzhHIpjgyry6h54gdXnHU0JxmpZ77iqZSO32eU6I+PWbGlOEwFXFVLiebqIymMFYWYgl+DRkU5XgLiW1XY1u9r5IJNDqyyxSpqBSmpWtsL8AzbMQSupjFrUTYE3voyiytsapRY2pytihzFQwAiKTojc0RNx15FVAlj6CDiv2WRYVCpzbcxrAmQ+ShD5UbIczER7Gx9TYhUzl0voruTxDwjjP0+0QVZVZC2TkFmQGvZMZkrGLaYMRdpi0icUWcuggEMEacVnATSzQmh13NzcJlA53fZHsH61ibm5j1WOK8e0KlnBkecpsNBoGMoIbs3UhYPmntN9OInATjAPgLRz32Ztpub+K5tChOFf2V50m+olas742NRWGaI3yWVrYLFeo15Zi3KwpZCnYGWH9zfwU/TD8e5s9Gm/4CZUPMu+zsG0ZhsdN9/Da1NA0IbqhPNJlIVhbi1PMjw/IQ0o3KkNBLn4Vb+Bz8tf0kkQNv+J/YfFvpa2hjJxq+0yaNFTGOopmLbeoVryaxlbx3bjX2itA8fg0HywGeIvxx/gs+iGf5/hM/zuA9SejRF8277VzLE2bC3JWnhdlL4gRZoRppwQ7gNnY6xLEslWi7KoHiVvO/c3N9H+k/ykd9dF+C1pQnBPtLOwbo2jHq1MezTYeVd6uzNatqvEEc8jorznpUaeiAlaZKGtrXXxHDNR+Anv13/Efg5CbhdRKKXZvKsnkXT0909NfPS3z0mRPR5E9FkT0ORPQ5E9BkT9PyJ+n5E/T8icROInETiJxWcFnBZwE4CcBOIhVZZTUw9Dji00JvyUE5eXPUAQZdAgyqCPUUyrISeNZnGkZVcF9ZgdTNzezynOcpuchPNE85Z56z1Czz55zTnbN5ExsfItn6DYYngMHgNMXwPFEXwjEETBoSeQsFQnlzhOE4TjOM1NTU1NTU1/HqcBDUJZh1vG8Orj+GmWeEOY3gjz9FtEHhF0Tw20RfDLN2eDi2f9exzP8ArmLB/wAdxJ/1/Fn6DjQeBYkHgmJP0bDn6PhT9JwoPDMODw/Fnoseekpnp6p5KTylnlrAizjNTX4PU0JoTQmhNfiv/8QAKBEAAQQABgIDAAIDAAAAAAAAAQACAxEQEiAhMDEEQBMyQSJQM0JR/9oACAEDAQE/Af66llKyH3WttVWNJzK69pjbwARagMCns/R7MY2TYSU2MBUF8YUkdKvahbaOITxmCcKRR9jxtwjoCmCk2Hs+Id6XX7i2RxPSJTm2g0BeUAJTXseP/kC+G91VYWgEUDtupXZnk+xGcrgV2iEG0igiV5PkV/FvteNLmYhZ6RjciCO8Cnbn2vGkyuUb6RkKJwKeKd7cHkf6uQOidlOtFuYIivYAtNblTdDxYVKRoIv2ImUEdym9aJH0Fad0vh/4jCUWkekGEoRKqTSm/bdDCWXLsF85TnF3emlJH+jnawlNYBiUF2mSUnyABWqVa3inczRQ10hxTDflbufTmG3LH2h6Uv15YwhylDRJ9eVopDUTWB0nfS/68kYs3xDSNMn15GdYjQDgdJKGmX68YYttRxGk9oaZjxMG+FJkJco/FJduvKhDBYQ4u9Uht3ExtboJoa0bpuVFE5hRT4B+Jza7wpDVWlxocQ7xYwuTeqwDUTupuaZ35xg3hCf44tcU7dTcpNImzxAYxS/mHaoJzT3al+3LKfxUVlKylZSspWUrKdcZDTaEwXzBfKEZW0nusq1atWrVq1av+s//xAAoEQACAgECBQUAAwEAAAAAAAAAAQIREAMSICEwMUAEEzJBURRQYSL/2gAIAQIBAT8B/r7RuXmt1wWRnflSlWbLzGf75M+49RIlOy2bmRneV5Go+GLoixC8jX5FZeNNkOfk+oXKzv8AWFzHCKxF0WaN7F5Gt8D3Po75YsQVRS8iauNYvFjxoaP2/K1obZFG3gj28rXhuiKVDm82Rdry9bR+1h50pWqN+1id+Q3SsctwxlFEeQ3ZpTadeRqztkew+BKxqiLpn8j9F6hEZqXbwnNIev8Ahu3dycS/+cxjZsEqHmxSNPV+n15TUSWo3ldyX4dho2lG4csdi8o03cetN3Lgsss3Ik/wvN8FY0Hy6s3SH1u4z/MenfOurq/El1kqWUaHy6us/olxrHbghG2SfBpfLqzluZLihHcMX7wxVIfBp/JdTWlSrD40rJcCJvh0vl1NTvlrgccLkPNkENMrNGh8unLU/BplZaxFDKJPhiuQ2WWUh8j06++lqvkWWyzciDsaEdsdlw0XSGyyxDNFVHpakr5Hcf8Ahzx2FPDZusbstF5s3G4vMFufSl24GVhxrr6EfvpuNFDV5bL60VbEqXSbrFElmiPah9XRjXNlotFotFotG5dBxZsZsIpo22e2e2e2e2e2e2bEbEbV/Wf/xAA5EAABAwEDCwMDAwQBBQAAAAABAAIRIRASMQMgIjAyQEFQUWGRM3GBE0KhBFKSIzRisXIUYHDB4f/aAAgBAQAGPwL/AMtVWIVXhYrFUPOYZgtJ5lYfLisQVsOhUlTJXX3UtPxzaH6IUjAKVJvFaGTWkDPZbA+QqALGvQhX2y08VXa5pDcVpOJVfCBLQPdf1CwnpVbTWn8oxlQ4/lUmnGV1/CuzI4K7IMK83FQaHvzKGGmCNhKvcVDVLnN+XKoDv+KmnZreC4riflXsnTsr0VXHyrjjJHMI6qOllVSczCykyokK5lMm0eyvATY0jHmAybflXa2YKubgsFCuvyYPwjdP/wAV1yvcQhy8nqpWGohd0Oh4dFeEFGcF+E325cbGnrqpHCw8LG90OXweCb7Z8FwW0qWXwrzbGjpXmF7qhnXWaIWmarZWjSwosKLYT3fHMHdRVNOTbeMKrFDm26SoFw8qv4M5nytPBRkMk1oV6I5hc6GFBxWA8oKVRQ/AK9k6tLg7R/0qgfULi7R4ZkrSMCYWivevMHKcpgnNDaXr0jihNuFmGbo4oBHmVUNUABKcfu680GqF2pKuEQePNLwUgquTF3/lVSRo5/FpyRx6q84yea7RWGocf3OJ5toiVQhq0QXfCj6Th1zY5tR8BaQcT7qWsaFjz2mfPN+2qY/J5RzWmhgr1n+UHX3T7rSx5nI8al2T6qDimt7qnMoFXJr3umuqLoC7CyQu/L4GKNjT1GqpaeXd8xntqYzJcYCo8csq4BE+LIQQ1Eo3WrSyfhaJsYO9m0VtO8rGVpCFIM8lxn2XQJzoQYLte1hQzrrspVeotsJzWVJtlpqoyoj/ACU9MLarCyWmFD6HryHFaNFWuYbuKY/tCDwgXBSDIzCGnTdh2zugzaZpX03/ABv5jZzgLPpv2TgjZ24hXmGwuKL3G2lVpGFhmUUuzZKceq7rSxG9yV2V0YIDOe74Ft11QsFgrzKK+dGMeykO0eAVFpOuhV0iqDVSVeKKuNsyg773Cb7agNGGZR7h8r1X+VtO8oscXPBxEoOnGqoM6il2dAwUWdSVH3FEdRvjfbXYLSMNlFv7RGtuhSpKhonopNXWA70bBuBd1ObXPlTZ9MfKoIzJ3kDcXHshbSyBn/TbUqXYouX1HbP+7fixvjeaCUGncAzWd1OLjxsufYNpXW5pHfefhDcC/hwzK6imAV4qArotAClNTxvEqeCcdfAxdRBosgY6mBiVdCDWrvnD3Tx23h/tuM9MLZ1MqeJUnHUHeLvFDcobqbqhTwGp87vKLjrjCbIP1P28aKeJshVxzqi0lXuqjU+d3uobgBZJ4ansg23FYrFY5p9t2lTmRrSbJ1JJRysUmAq0swGZgFAophQnHtvc6m63W1suDigTq3nd41l0Z0qc6qiFKvmoC6Z2Ob7nda2SN7PdT1RUkrFYrFYnMkWNHbdOptqFWiod5AVCr78M6gthNb1O6XWqpW0vU/C2CfhVyJ8KktXqBXGmG8XdFcukO/cDVPyRMljoz6qlvfjqj2VcFAWyVUWdFWqoLJsaegndC1Xspj0Umgs0GlyqGt9yrt4H4X9T9OyeraI5PJNIbPGzK962RmtyVCXGFxUBfUInoqUzYapJAXqDwtIU62NbOJWNFS2mbFk7pfxcvqZT4Fgflv4qlLcVDgCFOTeW9kMn+oyckfcMVP6bLB/+LqK7lWOY7ugZgLba5YKqdokzgr2Uov8AautoFW3BVKoLSx2BWjkx8rRY2fZcc2qoqrGyG4oN6bnDVedYxzsAVtCFSy9lXG70VBSyWqDZcyrA9vdXsllXDJ/t6KmUCwLlpfpj8LSY4fCAyZBarogf+1V4hVLlsyqNGowCwCw1N7g3d5tlrCtpqh2iba21RGZggc3HUUVTqQOPHc6Zoa3ErZvu6mzFVWg5Q9UcoNVFjvfe+wruhUDMOU+6VUrGVotj3WlVUp7KWabfyqgg2ud0CrmFRu3c13W+z5GYW5PDissctP8AgFsKMq2O+ZUWnvTNO7RwGO73m4qosay80OGIRosLJbRS6FDsoApY8O9lpIlohMZ0rvULucd4qpaVEwV9N+UJY9tJ6qDChwu/ClsLSkrBSw3fZere91Dl/wBRwdQ1zQN0xV8tPZbBXplemV6ZXpr0/wArY/K2PytkeVsjysG/yWDfK+zyvs8rALALALALALALALAeFsjwtkeFsjwtkeFVjfCJAhEWUVVV0L1AtsKMUxgbRxVStoLGyVjqdl3hUyT/AAqZB/hf271ByV2eq9eFXLvVXvPyvu/kvT/K0cm0LDfKz5VC4fKplXL+4evWeV6hW2sVtvC/qPefdVLltPW1lPK28t/JbeV/kscp/JYO/ktj8r0gvQYvQZ4Xos8L0meF6bfC2G+FshYBYLD/ALV//8QAKxABAAICAQQBAwQDAQEBAAAAAQARITFBEFFhcYFAUJEgobHxwdHw4TBw/9oACAEBAAE/If8A9ZR1O6IV/wCkH/YsGFCwZwPMLxJD7ukS67xfADnzKCxtvUsPywD3XMC/z7/64XryNRtj+Vxulv4mV4bOU3pc8j7q6xmVDZFy7lkXBiparpfbiUPaXyx1UD3YnsizStrzMDIe5f8AML/C4CVrQcJmJR4OoFYAbrn7nYWvBA2O1xO/cM5tUvsruynsE7viHVsAZmIa7ZRhL6+eRhmPbRUGTPNvAlkfMaJUqXh3nGpwYi433HYJjs22XmAj8eo6IOPKlQItrrtYi0Th8x7EACxrVq+VYTmjFafsxeNL9zH7cOE5PbVLjZB2DuaWKhk4jea+4YA0qpWg5fmfOUFL8mI+27uQYxRFxogW6zBaHswnSVLGVH7QiyA5Bs/zEVYaYZtF3Fsj24DOB+3njxadBHWyrvOKWVzU81KpFvmHYJ4IrgnBCBw2H0YIsZJ7GYYFB7JA1nPBCXTfnG4rTuD9vG2pVzK9G/MMRjhKOr1RJy4nBV3QCgyFWE36guFFrxKbLzm3efsH25UniJdu2XgZzhqaQYfoTcEvdmURazNwg7pTbts4SMIzQx3goHgr7d4Ll6Bpyp9hFmFqFzPQog8j9zs0EtCeJlZGwdbIC4HbMn2ltGM0Pt9PwpMX4jCVIBN4/azPexqFFX2zCaIpQU8RitdyOkVi1AB2kFqZPuAQVgpHcqL7GJcBHxFJAdyAMMYjfCUCrsHMuaHaVpUp5gwkbuBi+LyaYFssfO3rcwKLbDv9vSxO8wsW0MWegTsD6XAyMMr4cxemsT/qACTChhDbxG27UDJ0QUMpER7IJgFuCKkGUrCHtUoPJ/d9wUWeGYUu15l+i2gUGqL+ICHJXPMqb7QLXKrZeZY1cpNIASjolmIXcupVjruStBowfcL2+SpoxndK7Q9MvT1BzEHibJ0TK6WSOZslb8QDMrfZFa/cFRgvRAM6IIrFnESpdwhjMZColXQFCxYuBq4ysvwfuWYhVBXBuZlMcT5Jf+CXaA1fMXrNdBEMM47YvDE6OISWDb9yxsvIyHmY7RDF5EIYleZg9CRoJkwabP3NHvyTTLcnEGcHvE1iX8PPs6KwSmXMUWUHTFWfdHSjH0aTceYKZMso+XgnpIoOOmsnGblm2GvugxZ0C3JmZhktW5ccymcYxLEDEd/ddn+kxXKi5uRNQHMxBDm2CM0KRUZl0/dwrW7mHM4fz9z161gzmVaWc1FXRe5VBzFNvR7MYYw0kc7kTS4VqDbybPuLCnt8EEw0fE5iG4PQPRddJW5ZNyU4hNQoEYal5qZrFDZ9vy/nz2mYNzCeLBmMefX1mTpNx0hEirYOhzePt2WNtS9ryz8yK1EQbwZkQMPQUhszDLFntUCggxGDFwxcZz/mofa26Y9xeA1A4Jp5QvMp9MoTGViLPQIlgq3gI6wTzM1Yu6ljve3MYWU5P7QXVHmEavTC+z3wVSfYjGk8iUpDufZFDbU5N6JbVfbImYPAsvGi50IQNS7dK35mD6mf0WDptYVNhmoE0m7JjSKrgtlZmMKAcka9dn+xK2yYKWYUPdnl+J4QvtLAFHT+OP2HC5PYzE4Hu7lnafaUQWajmM+Rz2jWytzzZB4w4fEH4ZQgJNVDM0h0zGYemx3l5bW+8RlnYmk8g9puJcFbBjoItp+ZsMsCJPFKxOJuGOf+JX1qxw1vtCwEP7ww6ZZ0CLE3uJbLzYWuzLCCtwwRl0EeYw3cOfEVT48TuzOksCMXVxfjCc0uxNR8oQItQzrJlv8ABDGplLgHO+CXX5pmvKFlbXEo/Zr3+rYaiO2uoZRCZ0uOnXQdTUmu46PpQ+ICvJe0A0BeYLzuTh9x2hTZY4xMSYozKe2h+T3GAMB1FQgjPYgms9RiCsryRfknGDy9p7r3YZnAr6vF4Eaic5TaMCJAs6uKlYFRQqo0iRPR3YhTMHmXe8XwQ5EcCKAHc4Te/MbbmXQ9JSqFs8wykXB07mPwiUMH5uIq/wC1OT7/AI+s0Fk92Un2hKnOaTKKxLXpU3UZwR8ZbxM+Jfa18S8wiTOcwAXBANsS3qGIdiY0dNblk1DeZnjLOVKHaJ6wiW/8vaJRZ7uPqrBNILTxDbMXprGZR6nWViIJgToNRITTtlgXAx0ULZ/GYclkFU7sCpZFS4grW2VNxRbRVvx2g0vJb3l5mZMLdiKh3Z+peO89LB9dDDotTXoyuodQlQ7MPcpHFdcqoxWxmIWMyiVUC44Ig+sJo5/jAc0ECuRft/roZWYCBp7lpdhb4+prXAJpsWZkySrMUHLX6NSv0OZcfcluC4xNQ5JtE8ElmXo0ypVs1L1PT3LDfkRgkc9M67vaCAKCM86iBiL9srHz/qL0vqZsneRa7DHUwhlDmcj9NzcqV09+VGYd0pBuWWOV/QG5olcWguAjvC4ij8726Sc0yiJ3KXSKm8xfkH6gFWjLMy3ICfE04g6aXS0/UdbD01YACgKOgGy4M9yyvcrgdGailsnAQx8j2hqXqBMjKogVBzCJudhP+q5+oVZI7zuwD3hBiZ/Tx6m4TMuFp6Ne3MaIS1ubLKwgMI/SsJF4itw4hlTnncB0nPNIw3I27Rlo684/UD52ZQ0NyoxX0Mk16j1ZUy6lyi+11Dt+4q989M2mqUogVB6oEyx2S8Dvcc+9zL0p2IpdcUYLIsiWY8zX6/h9OSLRF2R6KUZjZz0aQKZpH9G0IW1YlLnARaH9lMsk0Wr1c7iVCXMzRvb5hqHQDmXqXMh0hougiNNsRtenqFAUS4iY7yyVKZMFvzMx6+nX4e2cENKXC7oCM2/+AJfMovebhrU7kFcBveeYU1BikvoQDTE43zYUDlgBXqONin5ivGHbfmbKPzBjCSpQKwq+5k3n9MSLiJC5mUawzIpvPRZf6gIwsEU4Ki3zuEJczR5l1KmIXZYZxzmI4johmgqDjOAqYV+puXtpb5geg+JRKJXYficz8UzjDFg+mcAjD6n+f01VZUjt1UkOIFtyRHEbQ/RYFriK0ccwttvpTMVXvLMUlIDcxTt01cZceKCaNRbmGud5zZrHiVgYDpU4m4kzzhOSD3UPptPiUXR36iTFSzpOqqUlnuUN3PN0c7ziZ2XdDYujfQqhbirwy5XEVo7FP7TPVXNkv5g94BzO9ieZeUEZW56FVJUHuP0pC1RD9ZTyJgs3zHEWJFa5iJaQ6ES3zHnqVHJZKcdi4sczniWUE8sehc9PQS9nn2EPnKNYc5hlgOoBpT2y+9NBLYsD5lLOYAamPU8Dj6QChhh+oDAc05g4DwstGzPiUvQOupXXmDcFmSX9Bc+48zgzyy39Ejha8R6JVBQZSFpg7xvCz0PjGF4WRBziOMAzono++kbWRdswHILs/EB3+EVw8kMZy5TVnN8VLwOeZQwWW/5ma2bDcu8Mko05qZpg6KyXkNxcxFVpLIuIrSc6jCcuivmXQtaiIXMdZYvZUyX/AKzFC3gJ/TzCISr4lu69oDBoqggXqVuhYPN/h9JQjtUFu8eyCZuA6OV64mpn/jUM+S4M1qHXf9pm9ZnaxqzNWUM+SEKwckUrUVNxm8MOoIC2s+4NYwhBqNzdXGneDLvbvLZk9LLLRRbFqL5mKD8JhqVyvExKHMxiho7QUiX36BVJue4Sx3nqDWPBEQhd2PpFPAo8TgntP5hwBntAaAWi2fmMJQHBK+4BMY7p4PEkt+0MkCHq4h6YMkPa/OpQOuBv/cAzY5lmh6wam8SoREo3yTOwWVYjyxGQY4vW32igCBRGs2lq9Euz5sB3eoYZEyR1DksKZTVpvaAk85XENV0m7slLMVuOwgeaO0lzSUCU+J5/3O8TEpThX0dRLZ2n4HmBqiZisiFkq5C8zLTgmF+JR5Gr79xKwAaCC8Ymw34YcGmULH7twdTTw5F/1jsP4ZRgvhsliwvcwN+TcEOOLzcELZlvcfgW3NgvUBz8jOFfiK7y15gvpLoOLJbr8EIx2keKd+WaJfQ9DFbMo/8AX6N2MRfmLBnMlDpNIXzxLXG4+Y1A73Bmo4wmAvoiBYweIa6YikVsx0hTHpNkU7x4oM9k9HRvtKYAUSmBuUOwnYnj03L/AEhcm2fb6NL+4imMJgVczpfsQGo9rMNGJXnkxmgmZoduINpPZMeGGCO7vHAOOI+J+adFy4uIsZd7hzCX0ZcWW7s8jMzzhjRB6nVQnIylvuv8fSVfx0RUNkwmgmVL7Eo4SMVm7Ep63eMs38wdLPuoyY/FBaeYSwZfcz3HKdjBOdncs60XdpoG41KmZfS5cX9OcqXD9DT3PLLFlUvdfS2XP/yQ2Y0VlzK2wmI8CugteZmTD3K237NTB3OEjTuZg1lwBxSSzUqF5cHW4oUXM4FdC9L/AFZEydSGE4CBFRKBd76VxL2cIfzgKsTPUzDFftzuA0JeIEYEw4mQPSVMJ3cRO3fmFVLurgpUTt3nxRUpXRtCCCLgOXJEQj0f/n9JNLirrUKOo23e+lPByxSyAKAk/jJlBhNZlWlFcqEUAq8T5DDhHPKOkzOdTzFVIjnFd8JhVB2ywg981KA7BlXS5cufOLlrDUWMDnpcuXLlkuXKbgSsywxKOYFmI27GZhV8Eg+pjdH/AO+J5/5J/wBBP+4nhfjP6bP6/wDpYuZ/pp/TT+mn9NP6qf0Uf/KjOMkwTNcv8aPj8ZFpquKzXqBbT8S9qGhFdpwn4ZpeLcTKsNKVcI2/i57TtD3NZ+aaQSveAW+NEoQniLelLmI8x75+Y9/954GV4aLNj5S/Zi/X4Jo8wygq1eBc7s9PTd2w/lO4fbZ/G5ANCA4gO0rK/SLBUTFIiZc28M6DiNP4J/4LHfyGcSQ4GzaZj4yRUaXVtT/cUOb8kHGFKR4nZ8oHl+UB5vtwDm9rAP8ARBajFr8eB6/FgOpgtQB/65/XTx/xBaEpKdFSpUqV0qVKlSpUqVKlSpX/ANjpRKdp4J4p4p4pSIfaf//aAAwDAQACAAMAAAAQgMfynvTs0Ysjp68HSqr+SqQ6wBB11BvAyMPPPTuYotXfAgPTj0X1WqGIAAAB1JVAzzlPbiI0QJloI1uu9y+bq+W9CAAAcJV97zPPz8YowZYYVXknKaStHRJcpAAU8gfCTjjfEOQll9YcUtAwn9pECt1I088vgA7O7rrSeGaFjm4SfVWLEBnec340IiiAe6A/xy6yympvxwZ21+1iS7wC/wBWTEZOsshuTmGtjshnz92GDOu8Cnas+UZcSNjCOcr2wZDijnql4mmnmMsCSwfwmFYWHJLTWcz2wQIPIOlq355pujnJ0Mw0Ya+3BGMUc8z8zSCAAFK34222r9j3aqeX1VQaXBPbXa1/zUNPHONc3l6rkyb6nnr1AK9RKHAf89b9zsjDOENa714hlqNcnL5UY2KNBLCQQUfV/wADzCADwOtcdZLp8s7ia7cw1wT0kMtXl/5FTABTwuvNdZa9cWIoeufGfMH8g2X2F/M7ywADwKudNeSuGDdbpBBaTFfDAXWk2n333xgDyknCm644vy9zjTMNgXZRTP1Xl3BrBTwgCZtattTUMf1hgbLjJbv87gWVjfMEEFTih21L+oT78jif7nOlC/aw9+gRofJnXwDDAjATDmSslDjX2lciApwt/DAzhnwc0HUwjTQE0mTssX1V6qWbgFRBMMxiRDybH0lGgZrmke+FWj10jhENOviEj8jAyQG211G13FcyVi1W07t1wUijNOzik7A3RQ0wxjA0uu2apaRklAmJI+0V4atPj8dIqb4wpHyx4pV5n8ne/lYUF4lIYTHQLCKaqv3LLY4Y8Rk+uQdlu0SevKb/ACw1++hD+CL+zyuNJnVeToNRGeA7PTPN63Snvh1G3C2+jTPJehOqbC8yhlEUfd19SX/lFvsDekoz3dPinv8AuGssGdi2vo4cz7NJdVKdPFgvggDDvbCxQp2LqYN9+Ot4zlHKc5SFPDJNfbgIkFTED2ip6qh2/wDlbRrF4JYH24bhigxwAF0Jxz/yGD8J+N/8P/8Af/hffgieCg+A/8QAIREBAQEAAgIDAQEBAQAAAAAAAQARECEwMSBBYUBRUJH/2gAIAQMBAT8Q/wCdpvwvxkx7828749UDpyl6Z+3p/PvOvWAPVrYSy/UIQ/pPVuwvc2/1anUjmJsnfj75fCGsSPywdHBw6TjdLsvj3xvDNJcLkaSId2Oj4d/gdRs33MMsw0LPPSDbPdxkE+n9Dz9JL0xgBdjGiC9YTE/QH+jdPpn/ABLt7TAPUs74x0m7/VlD7OrbkWbdLCfU9X+oM30wxRaRDbQP3+vvP/SFOrLJvTOmHCRY/wBDPCPue7saQyyw5M46nP2PFvlxfV2T7YdBHAQz6nIsv9gPqAoZ17QvTe5P4vREP2wT1bOWDgq7KvsiXNgLZbZIfcIed9DwGcLq99ljdX1as9zrgDjdgzliQPNkkdcMmwWNpt/dlnAf7wzepui+U4EcndlllmX38twjvtj/AHjqPlHwjk4P942OV1s3rhhq8pbt0n4k8e46l4eEeWHby48vbk4ZoMtcI49Wy1HrlvZPj7R9XuOmfgcLnEt4fUe952fcu3kOCJl1HC2nC1g5NvqkBbzs88Znt6jBhbN6YZZw2w+/hsoN7sbG1IVvUeImYRuQ76iYuo6WSlvcY3vq9RFssGoLLJjq2PFg1A3Lt4mjR6l31P7ovzJXggy6dwyxsgOE23ZBZwLMuvx34HQTben9RQ/4lHrgVxl6HGfPvzgcd4W3oA2Z9SfYxvdvtLsPgfLeSG28vzxsbLRjbYgHB934gPuc46cz4E5V6X5R/hfhH+V+F+d+XOWWWWpSzts/UM9zZupb+X92rVtts+Y+LPlfn//EACARAQEBAAICAgMBAAAAAAAAAAEAESExEDBBYSBAUXH/2gAIAQIBAT8Q/Uz9I9G33X2Qj+5mlXl8mOrqP7WT7l3uXI1Ig+YcmXPUz8s9LnESdL7rJ8Qdhunrz2Lk4MeGbVtr4dPa+ruGsidNm2PiSTq5j9HfQYJuOJzDWMR3JaIbxs1p699p1RkxLpWJGUoD9ah870DO4wXL1HCEGSKF+1zJ02kyETw5ZEMJ7j2cgdlh6kdSsMcrJf28dt8Fju/xVsoCJ+qeT2T9+rg5coUcLm0tWxH4Pr3yenQ7uOOi4aZ6rZ4CdcS9pgSMdJLyXZPy69nfsnwlKZAhJ5ElkfJs/wBi4Eg7l50g2cdSDxbvve87iLfBjEmPC0hLce2wdSN3cdpT4zCUwr7txl48bGOfDHzARBNW2T/Hg/sG8wljOi0Z7dFlb46tttyWevGAXLdWQayQcE6ELle4HEhibY8vF/lmdyxzLco3TtuQ+ZYfamTmkR5OZ7uDsqwAl/ENV8HU8PsXLQY8eDqfI61gDDDU8zBshcnPXye1cI7Yjpc+SYLZlncJ5kfC5G4MnLiwjqPH2c3bFi+Ag1wsGyONlvlHVy6/Ex1l3JZ4Hfwb+YHHKS63DvwmngCz5hsabDizbMlg8HMy4WJSJ0uz1EOMu2hncgcSpG+SGt0ydPi3kYNdZljPljXUjK1eJ/qUSlrZv36hX8Ty+rOxmMOtl+bjsZG1wSP/ABZT/E/cdwh4sfzwQ22yiQYZ6UjS5m4O7E/xO2Ddkc8a/EueOfwOvxxNepNMurdNtkmd3XVxXKTgsj+SyfiHH4OQREHqyTzcpni5J5kSOnY454Dnx3Z+O+MWMfJfZfZfdfdfdfdfZbba222ybauIpf8AZzWTyZH9v9X+r/V/qx5n6rPGR+kex/I/D//EACgQAQACAQMDAwQDAQAAAAAAAAEAESEQMUFRYXEggZGhscHRMOHw8f/aAAgBAQABPxCvWE5lTnWtKlQleklaBKlSoECVKlQJUNKgaBpUCBKlSpWlRJWlSpUqVKlEZxHSpUrSpWtakqVoEqVDStAgSpWu8CUypUCVCViVKlSpUqVK0qJKlRGVK0qV2iRJWtStK0qVK1qVCBpWhoQJWYECBKgegJzAhnQNAlaVKlEqVKlSpUqJONKlSsypUqVE7a1KlSpUo1qVKzK0DQNKlTjQIQMwhA8LzUYMBNy9vMTLoKvIJZqNXuwaAF4Q+LjWqzVlp94MerhuB3gSpUCVAgSsypUqVKlVKlSpU5lSpUqVKlStK9FSta9YaVCBAlQlSpsTAEcK2uJcqiHLsS+PHaOKytmh4f7rG4tnYn8mfcV5hqWabCr5q4ILDdV8LhpFdrAxvZWPtKB5eGnt1hKhV0RhzTvDhabmE7/uBrUrSoQJWhrWJUqMqVKlSokqVo6V6D0EqV20rWpzKhpUrRokK6BEZHqUOWKrPx+Zh0NRUe3Tnb+0pPYDm+GMxUbNng9y/wBxIYNnLXsL9ZsPJL0zsSG0ozgPPCXiuSmr+/vG5ewvr24+IBB0ByNsO52iwi2FgdT9SoQJUqBCVKlaVKlSmVKlRJUqVKlStKla1rUqVK0IGlErSiEIGtBIWIPP68sL09fa9uPfeHULkMASgDHI2hfd3L4DPeBxbRkG2Cir4ub3QY3fY5PbvEttwhs2xS591O0t77tuPVVtj1YRoT5KxGoVln+Lz8HMBVIppPHefeF75IW2OKc3BxWucaunaPEbALfwwzKhK0rSpUCYlStKlSpUqVK0qVE1qVqENK150DQIEqBoECMdSggVL3mKG54+8vI0IZbAr8RqIU2PETEHYu1DUugdBYTG50Y0w4R9vjtMQZdgD71mM2Qhymv8hNtHuboK49i8xUbRbLh3rb5jUShZYr2iZHsvjdetdT4gCBqqkdR5mCchYW+vaH7BfI6nr5hDeVKlQJUqBK0rRJUSJK0qVpU5ieitSHqNCVpxAhojMCt0N1iRbdg1Auurph9u5D2gxuH2cQ5sG26R2FvLuszMrykWI9xxKHY3A98kQKjqIXHbiNPs/M34WBzuWYd/tGghZ0Hol/4g4QYuK74YpBQ8jGgBiXucneB2CXKlaVzK0qBKxKla1KlaVpUr0VpXoIR9VStPMqBCEGAtkK6hen3cELwKhuTzUbGlwBdy+L5/wnsai4cBohTQM9oOty9SBpF2IQEKS7AiNWElpl90qN9RlKUhTBSvOx4lJ7XQtdadvbE28xvFZx/3rFFqFUpu3+0zd+UJzpWh1laVrU8xNa0qVK09vXUD08yoakJWJUCVMGXYhNvl1yBg+DbzKgOZHdi+5BUJjpDAB7QqUQgFcShtAS/JHQAMvowSM5KBz/0jEorphVZp7dIIS8m73dXvBB5SzF7G4j2/f6QIDufaNKiQJXpqVrUrStGVK0qV6jRlegNK0JWhCYo2UMGaQp4rj7Q95ZvvAoMqDxLTiBtm4N7ETuQszoIjvbmCebqVvUX8GyHZMy4qhFiNYyPWCwUb0HAtO5Y+JhIABy2ivrRT4IGgQPTWlRlehJUSVpRqaVqfwEwys6hqbXsEKynDfK8SoComrGB36QZXAtd5ixmGWp8zpe1biOPq3OgCFXKFMiVMQU90XFI8na3Pe4TJLAmDcx+fvEse1uMfvHxBi4HoNKhK9FStKnGlRIkqVKh6ONKlSoaGteghDStcXnGLGpgOwftKK4oAy4qNcCImw4mKb7hkPPWIHRa5JlLFxXWCBTjZM0GjsW4iEhbtuQXBEUPWqv8ADM79Id06n09FSpWhGowLlSpWvOjCVGVH11rUIznQm8qGoQhCdZFPUzFJp0OFvDojAsxElRyW3mHUGzrGtpeesz+wyHME5TZ5hJK1XY5+CUegGGDyGT3JQomQmYwL0lz4qU4SsdmEa7RY01zTEBzAqvw+7CAtubYDTK1CHidtA0rGtR31r1OtemvSQ2gaZ05m+hCArsEloWO7g2fRIqtV5iwMMx2+yhsXUCNVbkoIrcUooCO7Vn5MMsDCSgsTMzWzKTS1wZVxwRUUM2lMADuEY2IYABTrTFo2DstmzU3ZcW/wR0FV9oTi4aBKlSpWtXKlT2lStX0E40dTUPQED0VKqBCZ0N2r93CP2ISFGgWJhCGIpCJwBs4VmM8gS1247SojIJSBYss0AlVM+8z7f0czDUEyyiUkEZlZnBZuZtHUmSMxSosNvMdKrGdJXorQ0JWhHVnMqVKlSvSypWudTXac6kJUIQIBhZhe8rkDwkZlmNrRfCIiFbR5DVicjeDohjGgIVqxBIDJ1lJvkmN1YlPiKwUHDZbywtLttse0tHl9BKlQ0PXR6U0f4a0PQ6HpCEISoRcGIDdWhECNx8yoEwYgNUneCz19EMWF5mC7AllywAI3DF7BK7LHEC01z5hH3R2T4nOoa41Jz6a9FaMqOj6D0GYY/hIbwgQgo2bkNe/aWnaI1QrXYimnbG5fEWVngFh5RXwwMV05H1rpL3VxYSb2dJSaxLlxMxSWLoTD6YSx3Ki2F2nMPUQ0NeJxp5neJrX8FTiHorPoIQgakIQhEf3EPco6XOBxh6eIxKfKXhgcDuNZgcAHScdEhvDbtM6/MsuBGYVPKVMKiV65r8Q0PR7aHp2z6KjMel/jPUQ1NSEsUepGbriyBNIDK8RVMDKaJuA3YS39x4O0l96hQCN37yWgU1mA0CUbsBS5jWQyz5z93MIam+hoGdCE59TMeuokN9SV6K9Fekh4hDW+WOJzoCBdxyoHfO+JQW5YoP3lDu+A+YgBg6Evi+IYbQ7AtfpBM2UFj0goBwaEv0mhD1vqYnoz6TQ9J6CGhDQjHRb+I45yMz4PEZBnyw1dX2YDuRsliEHPmEbhdgm/mUuBEd53zKa2dSExoGhpn07+jn1ceo1JedT0EIaHmEJuVFdRXGJhDqIkvAq6g2qFd5c0MRlffmW3bWXEFDDgrVQDkcdS/iUY2Kyn5ht/gSpmY7M17U/ehoaEP409DHXj0no59RDQhDQhMJSWRlhVZT9SG1bPEpZkGRqPeZ4qSkGsxQxKW0BrhKPaB6Q2MMYeRwkVi6z4u36Rrfbg4lcUe1f1qQ1Nv4mPrdaxqekz6DQhCEqGhNU+Xy9+0xTKs4tig4MxBrxvEoW/MACkKGu0ALedoTZMfZBP2glp60VxhuOnALcUyStClI+E6MYV/kE7a40P4XV9L/GQhoaHpIQgPQK0cf2xaVe7OxFvNzJA3n6oXDOCHFQMlZhqu8VGAUIay89ZbTLITEoomfMxRKczEHBV+dSH8bo9PRfpzO/rITbU6aDDQhLEhwF5evgiRtZtXdYWXKtjx9xQb8QqMM0lEqzEWVDzJiXVZlLzU7mYXyXYgAqDSWNk3uT0sMX+IMHnhs+syLMnWU9HQl/xvpqMI+g0NSbQ1NQhCdjCOXxAKIcXbr7y69g38zFTYhuG4vxKSHHEwnJHBcQE0uCiYlsEbxAKQVr0CND7QvKcQEvF1Ke0rToteB7SnaWhVUhyFPzAydLAYKvDn5mYh7hA1C5ufkqfIGZ8bwM47Jf8Do6GrWpo+gh6LhqOhBbIdVqW+0epFg+G2Xywugs4CIZQ0pOZw8QXduauHPlo+0cg3E3ccCOnTURDFTbEVeKiyxKD7D0lQB8kTYYOSLumaYOsW1ywbqXHQrYmZaMcBd+D7kxeP3nV+YiAaIKFPTjYv2W0LGb4lbMeKOO/k5hhC4B/ghn0v8LGGr6OPQaGly5R86jVEeT9CZHjyrg3BBUSOjy1GwAVX4doT6N4SbjhX3txcZmF5Rk71zBUJkrElxDPiIdu8FiNsw7Ugsrk9j0lmoVqrfmHaftBnIeJRpbXmfQAZWUVXo8sqnyHMopVRhMW9EL8HK2lYrvswXDVajLhMVUYdRg3VhXZ6vxoZXrdOf5zTmW6o5Lh7y+i6sxAM5jGSLBLyUYIVaXwAj2RMZsz/VMYLky3KgYqSzxB710R7nRgkmwOV0e8tUTMkGOfiILFO7qgOA7EKZqVVYdNyVxF2MfM/wAzHrNsr5WVmTaCZqBultZ6RGot9BsSgABDudFnyXuSwfYw6EwXVieJnyroENvaFy6VY+a+0WDcdGcaLp7/AMPPpNBzLk+xuxUjVft3gewvQHPeCV3fMukICURRxKs06G4wD5cv2lqGEAKAo2jGzqnL/Ur0Bu0g95VqKcL+YjDwBh6Dkg3RFeHN9O8Bt4h4Or3ZeIXtiCjE6MvtLPybCX4JQADgIjxCsK76CH0Nu8w+y3ZdGIFYgVEhqtiN2Stjg7TK+yKD4MHD9wgpb8l11YsOEdxVfiO0MMvHpY+s17w9JDabdtY+XaOdQXlUDV6MoYqiqhDpN5YSqIFiUINsqRQIo2gOJTEtlAR29Lhl/EC0L1P2QclhkupS7PP3hlgRWB2usSjT6guOoReDcRW0PmUO0ys7EAbOxwQFQBUcqJblhRDvjO8F3qUd+8MghMq3gdWJ2qMBlUbhU8zj0jKtWHvv+JcZeI6Xq68wdT+IlLvx44jKmxj2hG3did3WBEytkL5cwkxMzRUVcFwHiWbJf1e0WDZBIMnYwtFvGcC+aU7XL7qsjYo29rIJWVestqIduIioJa4nzresoBD1lezFWGNlApFVtp5TVcEzvtTMSjvMYqpgODq9JWI54dp+4uVzh4yeFp+82jp9dFo0d9LlR/jIaUJvVHlxBYOAnijXxFseJQ8YhtVBAZUQGAmSJhsVMe0A4JwtE4YZQBVRSHkXibQFjqXiI74gGyIQTG70Jax19ENsLOkZzCpyQAlm3YiNAC4nyrt2igFPTpGa8RbnAd39wDPXlPdjMVYzacRtTCj8IwRNiD3L0YZm095enmWx9RjS/XzTd+D+5VwczGYxT6QLQ3joHaO09SbSo7F9ImYIwkpYdXUqs1Kd5yMcFaAdVgPlmAaBrNwwRcdpfyhjbUve2MuxtctDbcQLgmggBtL2dpS6Hw2Z5H+oQMrptDY1a8wRKCF/P4bREbaMEfuAfLdK1wa/S4qi1e4r7VL0NGO0vFR9DpfpI+ky9dTa3f6SpSmJXELSEoVHMZUIHgmCZihBuUOY3jeGUaI11jfDEYIIEbzsDj6/aEaAehLpluNlgdIzsWGCPAU6IiBhgYqFkQAQ4mJgQ6qoo9YuppzbqwrbmswKKmj7R/MLIKgNggRsQGbVACGcblh67PlHbG/9Qf3L0WMvVl/wkv0c6OH2fIsBEyx+0pAsmZG7mZi8EwKwKhiDFmLGsiECGUVd5l07pmm4YuAsBDC5areypfq72JUUQhutpkxAojlRPkllmJnD8jyypuDu5Zcql9hAY1R/mJw9wAAYiSE5MCFXNXMR9PzHB+PuDS4+i5cucav8bZ0KnaDqjTo1ToZgfNsdjLkSbNQPYTeIarKnEZeIAtQ1DeOSWxDKcXu+xcqwN7EKDMSgQoCZHUlIRmVjEIIVxN1Eqm8Gssw4nubHLNrZb6SBTQFCBWNrd6szG2BRVTmS4KbRiqockA2co+sq4z9Z/bW4sWXrj03rfrNzS6HzEIBX6oiOVmOw9pZvLCQVWDN7zZopcWJVUTdMwcypzAIDnXVlfYiCXA2UBEYrAwahmDQnE2LrSZqgWvSXOwwehOskHmuCEuyZ7do2oimRClIwMy6xGSYqHc+8oX+9MvW9bly9Ccy9T1MuNztm12D/ALKw4K/dJbOElA9osssK6OC3NsVEXTAYCDEgXmGLYNjYHu7eYyS1fCCTdt375l0rWIhECovlliJb1ILIgEN2YZd4bS4KENoEFHVN9IXTpCFtkdDmAzQaPeU/iZxLY0GIsbwXLWyHc2WK0OKfeOh6hBGXGcaXLj6l/gTugtmCjCHQ4JVJyFS9uHcm4uIGV6Db0jAXFbEhGBcvMwhXivZrH1m5ActCIg0dG0zvKqFNpusH1hzqUC5myWKIgDwpW6WfpBwCvBDiZHpFcWOjHgZi6hrh4feNlHZq0x2MvxCDU4LoP3AgxUIYiDmKasi22XHNL1tRF70e3s+8Frem+kuXFly4sWXLYTzLl6cQ9BoSkNjH4SAO62zGuZdjhhVLxUGSUF9ZVJXfsRYYnEWW7QwXFDtUsAO7mEAI2+D+0gkspLBwIc30+sAL9iGC0QaSba5RlwDhLOR2Yg19m0AQeVnt2HpM8LV4gYKChM0dggQQn0Raz5JQLv5ghR+yKFT2Y6lztOZZl4d6SvdH6kvS9GXGXF9VwdDW5ssC/MQkVWxInQh2z55XJzzLADZI4KlBlmTDS5fMK3Yw52gI9YRsm41Q+7Cn2CXNC8PiO0vqieUROcRZrjgtvzCAq8xZlcNmLwAV30lfC0VrexNlRbMnuYG99NZ9IQRDYI8gfEf6NKV/FQgVRt3TxU2Cig/ZMZbkWYfDL+iD5/pqsuLoy9LzL0v0kvQlcGrtfaCp0mXZiohtuYS1XKcTqRblfeJyihtFi1FoQMqxfh30wwQIJ0CMsuJ5PAywu1y01A28yhuaVKsEtJN8am82WUEbFq2GVZOkfe1XYTsUj0dfLAOal/eM5jnvFOIQoXGwmGVxUblC0KBHxKWfpS/zLl6MY+dOY5jo6XB1v0W+mfMstxgp+rFliMywYmRWYoMzIuCcRaghVirX7I6uikbCXalBmUVOcHvLaHdqZobtEqbGDaOKpdeczriVxKLTDAUQKO5tLibLZSgmqYXhBM7qrdmDvp7xUoX90vAmF3ScpOjLmKfEr2QBKYctSyf7KvxBly5cuXF0X+G5zLlPgdY9Zs2j8GzEbYNjKsN3GNmOZjGesuyQq1isl1AFXaWgyjNW1Y6sZqGU7yplmFa8j32iAOWXgYBKriILvSXuGJd421AC0xAY4S6buOAaSsFFyPY2jO0QzNmFZe8Hr5sxiDv88avwrixY9xioN2xmU1b9JdBVi9ztMfZmOkU2vKW/eXLly4suXLxL1JfrXhDptLpamxGbC4yAh4jRTqZeLmOnE6KNCbI+9GKpmMWB1j05jsRT3tcZU2RdxkjkvBHTOV9DaWQNuXg6wVSse8pyw9ukF5YjWJZTWDdlOGiM9XTSYcFrKlg8RS9A7/q9pukmWrERW0rxFfEUsPsTEloQUwGME7AHssuWG23EuXLJZLixZePQRfT5hAVwbh0iBKXCtr7Qv5/7yyorz/mEEgVRLGnlpM2+qLZ0RnBshVL8SonTKAdqOVwSq8RpGm62nxVTbQq8lV+8pGY6EYvrLXMUQ4MEtbJZCw7Ms7sveNx8MWQCKqoEUwAXtaekzoIR002Qql6ESod16TP0AISCsjh1lrM82AfPMqRo793SK/UwC/gjdQlxkSnCQuoS9Ahmguqz8Rq0vvg+JgB0Ahu1Dtb8TBoYf5ZGz7vxLlx0WXFjLl+s1y6bst7DENkKW33d/tKtr86dWLigqW/3mD32lQsObX4tLLMFP1lygZkyvy1s8xyWpWTQYXcOIlLjDhRdVkl924rsaitmZRMEc7EqWxajCNDzCOyAALBlgi0EHdIkdlfkwV2Yvy6+0UBzBbS4trFsy+rioAy9eI2dfoWss5HD/BLU5+C1fMEtrNZb9+PeYFYFyw7Obi4dwGxo912lFelJy/MrwFkBGgRQHZKT9ywMOQ7wPWJCDS0SjhmUcQjtqq9j+1ly5fEvRYsYsv0bTnW59oXapi7U58wMS26p3fghtUU0AtXoQSHQWyzs8bTZWgCgh8DUEhAcS90VwN1HCwcoiq2vaPavJ8wdZIe+t2GQ7NkA/Nh9kOXuECpKytTqOw7lwOBS2XX7ivhpdbu0x2528m55lPkMZEhEkwAac9x2pO8FxlBp7HuwECWS8L+/BLPZkye/ePqGNjj4U3gBQeAgkt87Bg/siCyLFRJjjMXUR7BBX9YvCcUo+jePB9AViK4B3gxRhAXiHizW67QoMhs8zms6MMJyBtvpG0GuldYfcXonVwQM0At1eX5l6LL0vRYsvS5cvR1Uo2FOItaoe4fqGNBRC6bimawl+28tyyxdPVOJelJHru8GSsWZADR8hx2IlgNFREUSQIwTJz2AzMmPE22NXbdR3HuVAVBaTsdRwvVee7HVUNrL7XKFiVuHsw45s/AGDQq62x71H/8Ac51FHgjTnIWTq19oNYOwqKo8NIAPzAyiOXY8YdkEdzruzeRe3hGWZqOIqN5bSvqdYEwOyZu1u4QRVXtKGBG7Ae0SNgOCJCPfFcYljABKmmJchjs7vb4LfiXLly5ZLlxdF6y9D1dtTEC+X9IBzFcwUebBNgN1AhaTeMKxR93Ex8NZAX2udnCiy8PMQXW0FtQ3AajwbtbOO0EMBEejB6j/AAalnabrxoAXJeaz8x21sv34iis09pUd0aozCeHhiMoeSVAvgH6SsdIE4Uqywu1rvABCrMzZSYxxB5H3i6rAiry6WLvRxlmFHNWEQ/zfd+sHtpel5iy5ffS4uIPbS/UtK0J95kM2xfMbcCI4QQrG7sOV7TnRg93Y2I1KAbAYIBrKbXM4EcyzDXlY9pWo4/rl/Y7OZTlCnRRveNoX7UBWWCVUt/uYx5x7pQ3oXFHu8QAqkrvMCGGYsUabTuseEPDFd294PKIERGyEInLBiXmKoJAubjEp2ukxTfjWtnz9pd6XLly5cWXFiy4a8zmc6VCW5Hkz+Ie9byktDliKHllKMoHDiHMZ5Ow1R53jsEd2Vh75gMGm77exHB1W+PYMEvw+yT+pu81Rg9tmUMDcCJAItRQHIRgFW1zKoWE71M7Xk8oISr5lPEttinn2lxwoH2mQQaRC20WNIu9BYSyXBY8zJhhsbiwaViA3iEaMxVnPLsa4IxGt93Oh8feZl6XLjpcuXFly69Fy9QA1aw+/6Q2hzGoHO8IM7xLRl0v3eJh7FYg3WNm63ggLLFwBqRQl+7kjFyNlFkCg2hFCsHSLuB2xmXoq+SV8DG8MnBE8ugg1BVDoN0r5lFjclCm8ZujtBqYaiy0tdFjDEIpLUOQZltOGWEFs/YyvLvAtWgzEObfiNj3fzLly4suLLixYsuLLPTeqglwEtm06QLDNb08/3HSni9q7PMcAcEx2GSC2aXvZFVkLhirxL4L2nJR7VEOkco2XxO6CSOHhKND3Je9zZwkIBY2DxmlLcd5bm3edwQOugEA8xiOQfUhrrmPdg5ZdRS9NosdGpiZnmE2eYr6EVrCAEWUIcruH2m0c93R4PaXF1vW9LjF0SVMypU43J7wTvyMtu0lV5IiWtxjWJRuv5hoWWRRvszY6y4y0HuQ8/wADKD22wO+viVaZWKBzBcu/pElle8YeDUt9IOtVgsTw7zMZ4VDXlhRmwqCuET7MFIYQRBnMemttngz+o4EFaMtrj8or1l64nfE9JV7SiJuMJFkK3WBHpYhmEA4nRINhJtgrbI+CAaplEV60zdj7TYPjP3Bf6P3Btv8AJ3gv+b6y3n/jvBOJ5/dB+Pz+yEeItfx+yf5f6lu4P87Tu/N+p/wM/wCBn/Az/n4/0eKfrz+h5/S36g9vgfqBfxP1Ob8T9RhSD/HEYBEzf6pmLpsH1Dt7TCibNCzv3jSA95UfOWIOqvMKcU75fpDnu6kc/YrYOiWYdmWgXLuKiV8/SMDL6aOYG3+G4XmMIlqWfd+ftFeQe8K5KzbFhyVmXRN2PyQX6kHwfAjxr4Llp8cv1Psm/VPz0QSfOhNoqzi+I1DLeyO28Ur34PzN+xzkRgfL/tgtWr/quGBQ8mc21e02gntOiQ6UOhAHEp0lDiV6SmtSI0VKlSpUqVKiRLwRO4TiJx8raZz9pYrc+1/uMNr3t/EbaO+gPxLGSvZnlP1FbLfEPBdSIP2gMt8T7RhYKyct66SxcRP2BJwl4r+JtRdh/qAKWOiv1L8+ZLcPI/bN0/yPM3Lzn+ZtaeUz8C02NQ2k/wCOk2seDNkXgTZg9sB2L2SqJWxe0B4NKhK9J4aHQD0Cmh1DDD/Kc6bZQ8Szgiu4j0kegnZQ6CFu06aASipWlZlEqVKlSpxKlempUolRJRKiaBnSs61GJKlZlRCVP//Z" class="about-img" alt="Валерия Кудяшева">
       </div>
       <div class="about-content reveal">
-        <p class="about-text" data-key="about-p1">Я — Валерия Кудяшева, маркетолог с опытом в инфлюенс-маркетинге, B2B-продвижении, партнёрствах и выходе на новые рынки. Работаю в B2B и B2C уже <strong>5+ лет</strong>.</p>
-        <p class="about-text" data-key="about-p2">Сейчас работаю в <strong>МойСклад</strong> — веду инфлюенс-маркетинг и продвижение вебинаров (800+ регистраций по РФ, 600+ по СНГ), развиваю партнёрства с образовательными школами и вывожу бренд на казахстанский рынок.</p>
-        <p class="about-text" data-key="about-p3">Прохожу курс по бренд-стратегии в <strong>Яндекс Практикуме</strong> — чтобы соединить практический опыт с системным подходом к брендингу. Активно осваиваю <strong>AI-инструменты</strong> и применяю их в работе.</p>
-        <p class="about-text" data-key="about-skillbox">Выступала спикером модуля «Продвижение через блогеров» в курсе <a href="https://skillbox.ru/course/smm-marketer/" target="_blank" style="color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-light)"><strong>«SMM-специалист с нуля»</strong> на Skillbox</a>.</p>
+        <p class="about-text" data-key="about-p1">Я Валерия Кудяшева, маркетолог. Выстраиваю партнерские каналы, веду инфлюенс-маркетинг и запускаю новые направления. В маркетинге <strong>5+ лет</strong>: агентство, EdTech, B2B.</p>
+        <p class="about-text" data-key="about-p2">С июня 2024 по август 2026 работала в <strong>МоемСкладе</strong> менеджером по маркетингу и рекламе. Собрала партнерский канал с онлайн-школами, запустила маркетинг в Казахстане с нуля и разобралась, какие интеграции реально приводят пользователей, а какие только охваты.</p>
+        <p class="about-text" data-key="about-p3">Веду партнерства полным циклом: от первого контакта и переговоров до запуска и аналитики. Системно изучаю продуктовый маркетинг и <strong>AI в маркетинге</strong> и применяю это в работе.</p>
+        <p class="about-text" data-key="about-skillbox">Выступала спикером конференции по инфлюенс-маркетингу и приглашенным спикером модуля «Продвижение через блогеров» в курсе <a href="https://skillbox.ru/course/smm-marketer/" target="_blank" style="color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-light)"><strong>«SMM-специалист с нуля»</strong> на Skillbox</a>.</p>
         <div class="timeline">
           <div class="timeline-row">
-            <div class="t-year">2024 →</div>
-            <div><div class="t-name">МойСклад</div><div class="t-desc" data-key="tl-1">Инфлюенс, вебинары, B2B-партнёрства, СНГ (Казахстан)</div></div>
+            <div class="t-year">2024–2026</div>
+            <div><div class="t-name" data-key="tl-name-1">МойСклад</div><div class="t-desc" data-key="tl-1">Менеджер по маркетингу и рекламе. Партнерства с онлайн-школами, инфлюенс, вебинары, Казахстан</div></div>
           </div>
           <div class="timeline-row">
-            <div class="t-year">2024</div>
-            <div><div class="t-name">MST Digital Agency</div><div class="t-desc" data-key="tl-2">Тимлид. 30M+ охватов, CPV −20%</div></div>
+            <div class="t-year">2024–2026</div>
+            <div><div class="t-name">MST Digital Agency</div><div class="t-desc" data-key="tl-2">Параллельный проект: тимлид по инфлюенс-маркетингу в агентстве, кампании для FMCG и e-com</div></div>
           </div>
           <div class="timeline-row">
-            <div class="t-year">2023</div>
-            <div><div class="t-name">Роботекс</div><div class="t-desc" data-key="tl-3">Первое партнёрство со школой, 20+ клиентов</div></div>
+            <div class="t-year">2023–2024</div>
+            <div><div class="t-name" data-key="tl-name-3">Роботекс</div><div class="t-desc" data-key="tl-3">Параллельный проект: influence-менеджер, первое партнерство со школой, 20+ клиентов</div></div>
           </div>
           <div class="timeline-row">
-            <div class="t-year">2022</div>
+            <div class="t-year">2022–2024</div>
             <div><div class="t-name">i-Media</div><div class="t-desc" data-key="tl-4">E-com, банки, авто, медицина, B2B</div></div>
           </div>
         </div>
@@ -386,51 +560,170 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
   <div class="section-inner">
     <div class="services-header">
       <div>
-        <div class="section-tag reveal" data-key="services-tag">Услуги</div>
         <h2 class="section-title reveal" data-key="services-title">Маркетинг и продвижение<br><em>для вашего бизнеса</em></h2>
       </div>
-      <p class="services-note reveal" data-key="services-note">Работаю проектно — от стратегии до операционки. Инфлюенсеры, вебинары, партнёрства, офлайн.</p>
+      <p class="services-note reveal" data-key="services-note">Работаю проектно: от стратегии до операционки. Партнерства, спецпроекты, инфлюенсеры, вебинары.</p>
     </div>
     <div class="services-grid">
 
       <div class="price-card featured reveal">
         <div>
           <div class="price-icon dark">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="price-label" data-key="price-consult-label">Консультации</div>
+          <div class="price-title" data-key="price-consult-title">Консультация по маркетингу</div>
+          <div class="price-desc" data-key="price-consult-desc">Знакомимся, разбираем вашу задачу, определяем каналы и форматы. Первая встреча бесплатная.</div>
+          <div class="price-label get-label" data-key="get-label">Вы получите</div>
+          <ul class="price-includes">
+            <li data-key="cons-inc-1">Разбор вашей задачи на встрече</li>
+            <li data-key="cons-inc-2">Подробное резюме встречи, которое я отправлю вам в чат</li>
+            <li data-key="cons-inc-3">План действий после консультации</li>
+            <li data-key="cons-inc-4">Рекомендации: какие каналы и форматы стоит брать в работу</li>
+          </ul>
+        </div>
+        <div>
+          <div class="price-label" data-key="price-cost">Стоимость</div>
+          <div class="tiers">
+            <div class="tier-row"><div class="tier-label" data-key="cons-tier-0">Знакомство: 30–40 минут</div><div class="tier-price" data-key="cons-price-0">бесплатно</div></div>
+            <div class="tier-row"><div class="tier-label" data-key="cons-tier-1">1 консультация: 60 минут</div><div class="tier-price" data-key="cons-price-1">5 000 <em>₽</em></div></div>
+            <div class="tier-row"><div class="tier-label" data-key="cons-tier-2">Пакет: 2 консультации</div><div class="tier-price" data-key="cons-price-2">8 000 <em>₽</em></div></div>
+            <div class="tier-row"><div class="tier-label" data-key="cons-tier-3">Пакет: 3 консультации</div><div class="tier-price" data-key="cons-price-3">13 000 <em>₽</em></div></div>
+          </div>
+        </div>
+        <div>
+          <div class="price-label" data-key="price-fit">Подходит если</div>
+          <div class="price-desc" style="color:rgba(255,255,255,0.5);margin-top:8px" data-key="cons-fit">Нужен взгляд со стороны или непонятно, с чего начать. Если задача окажется больше, перейдем в проект.</div>
+          <div class="prepay" data-key="prepay-cons">Знакомство бесплатно, далее предоплата 50%</div>
+          <div class="svc-contact">
+            <a href="https://t.me/valeriakudyasheva?text=SVC_CONSULT" class="svc-btn svc-btn-tg"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg><span data-key="cons-btn">Записаться на знакомство</span></a>
+            <a href="mailto:valeriakudyasheva@gmail.com?subject=SVC_CONSULT" class="svc-btn svc-btn-mail" data-mail="CONSULT" aria-label="Написать на почту" title="Написать на почту"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="price-card reveal">
+        <div class="price-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+        </div>
+        <div class="price-label" data-key="price-proj-label">Проектная занятость</div>
+        <div class="price-title" data-key="price-proj-title">Проектная работа с маркетингом</div>
+        <div class="price-desc" data-key="price-proj-desc">Если задача больше консультации, беру ее в проект после знакомства: разбираюсь глубже и довожу до результата.</div>
+        <div class="price-label get-label" data-key="get-label">Вы получите</div>
+        <ul class="price-includes">
+          <li data-key="pj-inc-1">Разбор прошлых результатов</li>
+          <li data-key="pj-inc-2">Разбор аудитории и конкурентов</li>
+          <li data-key="pj-inc-3">Разбор каналов размещения</li>
+          <li data-key="pj-inc-4">Квартальная стратегия</li>
+          <li data-key="pj-inc-5">Рекомендации: куда и что стоит идти</li>
+          <li data-key="pj-inc-6">Регулярные созвоны и отчет по итогам месяца</li>
+        </ul>
+        <div class="card-foot">
+          <div class="price-amount" data-key="pj-price">от 35 000 <span>₽ в месяц</span></div>
+          <div class="price-note" data-key="pj-note">Берется после консультации. Состав работ определим по задаче.</div>
+          <div class="prepay" data-key="prepay">Предоплата 50%</div>
+          <div class="svc-contact">
+            <a href="https://t.me/valeriakudyasheva?text=SVC_PROJECT" class="svc-btn svc-btn-tg"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>Telegram</a>
+            <a href="mailto:valeriakudyasheva@gmail.com?subject=SVC_PROJECT" class="svc-btn svc-btn-mail" data-mail="PROJECT" aria-label="Написать на почту" title="Написать на почту"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="price-card reveal">
+        <div class="price-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <div class="price-label" data-key="price-strat-label">Стратегия</div>
+        <div class="price-title" data-key="price-strat-title">Диагностика и стратегия</div>
+        <div class="price-desc" data-key="price-strat-desc">Разберу, как устроен маркетинг компании: каналы, аудитория, бюджет, воронка.</div>
+        <div class="variant">
+          <div class="variant-head"><div class="variant-name" data-key="strat-tier-1">Мини-диагностика</div><div class="variant-price" data-key="strat-price-1">6 000 <em>₽</em></div></div>
+          <div class="variant-term" data-key="strat-term-1">Срок: 3 дня</div>
+          <ul class="price-includes">
+            <li data-key="strat-inc-1a">Разбор текущих каналов, аудитории и воронки</li>
+            <li data-key="strat-inc-1b">Список слабых мест и точек роста</li>
+            <li data-key="strat-inc-1c">3–5 приоритетных шагов на ближайший месяц</li>
+          </ul>
+        </div>
+        <div class="variant">
+          <div class="variant-head"><div class="variant-name" data-key="strat-tier-2">Детальная стратегия</div><div class="variant-price" data-key="strat-price-2">от 20 000 <em>₽</em></div></div>
+          <div class="variant-term" data-key="strat-term-2">Срок: 2 недели</div>
+          <ul class="price-includes">
+            <li data-key="strat-inc-2a">Документ со стратегией: аудитория, позиционирование, каналы и форматы</li>
+            <li data-key="strat-inc-2b">План запуска по неделям, бюджет и метрики</li>
+            <li data-key="strat-inc-2c">Созвон с разбором и ответами на вопросы</li>
+          </ul>
+        </div>
+        <div class="card-foot">
+          <div class="prepay" data-key="prepay">Предоплата 50%</div>
+          <div class="svc-contact">
+            <a href="https://t.me/valeriakudyasheva?text=SVC_STRATEGY" class="svc-btn svc-btn-tg"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>Telegram</a>
+            <a href="mailto:valeriakudyasheva@gmail.com?subject=SVC_STRATEGY" class="svc-btn svc-btn-mail" data-mail="STRATEGY" aria-label="Написать на почту" title="Написать на почту"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="price-card wide reveal">
+        <div>
+          <div class="price-icon">
             <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <div class="price-label" data-key="price-flagship-label">Флагман</div>
-          <div class="price-title" data-key="price-flagship-title">Работа с блогерами под ключ</div>
-          <div class="price-desc" data-key="price-flagship-desc">От стратегии до финального отчёта. Подберу блогеров, согласую ТЗ, проконтролирую размещения, оформлю маркировку.</div>
+          <div class="price-label" data-key="price-flagship-label">Партнерства</div>
+          <div class="price-title" data-key="price-flagship-title">Партнерский маркетинг и спецпроекты</div>
+          <div class="price-desc" data-key="price-flagship-desc">Выстрою партнерский канал и доведу совместные проекты до результата.</div>
+          <div class="price-label get-label" data-key="get-label">Вы получите</div>
           <ul class="price-includes">
-            <li data-key="price-includes-1">Подбор блогеров под задачу и аудиторию</li>
-            <li data-key="price-includes-2">Разработка ТЗ и согласование сценариев</li>
-            <li data-key="price-includes-3">Контроль выхода, маркировка ОРД</li>
-            <li data-key="price-includes-4">Итоговый отчёт с аналитикой</li>
+            <li data-key="pf-inc-1">Поиск партнеров и переговоры об условиях</li>
+            <li data-key="pf-inc-2">Совместные проекты: вебинары, интеграции в программы, подкасты, кейсы</li>
+            <li data-key="pf-inc-3">Спецпроекты и офлайн-мероприятия для лидеров мнений</li>
+            <li data-key="pf-inc-4">Сквозная аналитика и итоговый отчет</li>
           </ul>
         </div>
         <div>
           <div class="price-label" data-key="price-cost">Стоимость</div>
           <div class="tiers">
             <div class="tier-row">
-              <div class="tier-label" data-key="tier-1">до 5 блогеров</div>
-              <div class="tier-price" data-key="tier-price-1">20 000 <em>₽</em></div>
-            </div>
-            <div class="tier-row">
-              <div class="tier-label" data-key="tier-2">до 10 блогеров</div>
-              <div class="tier-price" data-key="tier-price-2">35 000 <em>₽</em></div>
-            </div>
-            <div class="tier-row">
-              <div class="tier-label" data-key="tier-3">15–25 блогеров</div>
-              <div class="tier-price" data-key="tier-price-3">60–65 000 <em>₽</em></div>
+              <div class="tier-label" data-key="pf-tier">Расчет под задачу</div>
+              <div class="tier-price" data-key="pf-tier-price">по запросу</div>
             </div>
           </div>
+          <div class="price-note" data-key="pf-cost-note">Зависит от задачи, сроков и бюджета проекта. Обсудим на коротком созвоне.</div>
         </div>
         <div>
           <div class="price-label" data-key="price-fit">Подходит если</div>
-          <div class="price-desc" style="color:rgba(255,255,255,0.45);margin-top:8px" data-key="price-flagship-fit">Нужно запустить или перезапустить работу с блогерами, выйти на новую аудиторию или масштабировать текущие кампании.</div>
+          <div class="price-note" data-key="price-flagship-fit">Нужно запустить партнерский канал, выйти на новый рынок или собрать совместный проект с онлайн-школой или брендом.</div>
+          <div class="prepay" data-key="prepay">Предоплата 50%</div>
           <div class="svc-contact">
-            <a href="https://t.me/valeriakudyasheva?text=SVC_FLAGSHIP" class="svc-btn svc-btn-tg" data-key="price-flagship-btn"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>Обсудить проект</a>
+            <a href="https://t.me/valeriakudyasheva?text=SVC_FLAGSHIP" class="svc-btn svc-btn-tg"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg><span data-key="price-flagship-btn">Обсудить проект</span></a>
             <a href="mailto:valeriakudyasheva@gmail.com?subject=SVC_FLAGSHIP" class="svc-btn svc-btn-mail" data-mail="FLAGSHIP" aria-label="Написать на почту" title="Написать на почту"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="price-card reveal">
+        <div class="price-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="price-label" data-key="price-blog-label">Инфлюенс-маркетинг</div>
+        <div class="price-title" data-key="price-blog-title">Работа с блогерами под ключ</div>
+        <div class="price-desc" data-key="price-blog-desc">От стратегии до финального отчета: подберу блогеров, согласую ТЗ, проконтролирую размещения.</div>
+        <div class="price-label get-label" data-key="get-label">Вы получите</div>
+        <ul class="price-includes">
+          <li data-key="price-includes-1">Подбор блогеров под задачу и аудиторию</li>
+          <li data-key="price-includes-2">Разработка ТЗ и согласование сценариев</li>
+          <li data-key="price-includes-3">Контроль выхода, маркировка ОРД</li>
+          <li data-key="price-includes-4">Итоговый отчет с аналитикой</li>
+        </ul>
+        <div class="card-foot">
+          <div class="tiers">
+            <div class="tier-row"><div class="tier-label" data-key="tier-1">до 5 блогеров</div><div class="tier-price" data-key="tier-price-1">20 000 <em>₽</em></div></div>
+            <div class="tier-row"><div class="tier-label" data-key="tier-2">до 10 блогеров</div><div class="tier-price" data-key="tier-price-2">35 000 <em>₽</em></div></div>
+            <div class="tier-row"><div class="tier-label" data-key="tier-3">15–25 блогеров</div><div class="tier-price" data-key="tier-price-3">60–65 000 <em>₽</em></div></div>
+          </div>
+          <div class="prepay" data-key="prepay">Предоплата 50%</div>
+          <div class="svc-contact">
+            <a href="https://t.me/valeriakudyasheva?text=SVC_BLOGGERS" class="svc-btn svc-btn-tg"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>Telegram</a>
+            <a href="mailto:valeriakudyasheva@gmail.com?subject=SVC_BLOGGERS" class="svc-btn svc-btn-mail" data-mail="BLOGGERS" aria-label="Написать на почту" title="Написать на почту"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
           </div>
         </div>
       </div>
@@ -441,46 +734,22 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
         </div>
         <div class="price-label" data-key="price-audit-label">Диагностика</div>
         <div class="price-title" data-key="price-audit-title">Аудит инфлюенс-маркетинга</div>
-        <div class="price-desc" data-key="price-audit-desc">Разберём, почему предыдущие размещения не сработали. Конкретные рекомендации на выходе.</div>
-        <div class="price-amount" data-key="price-audit-amount">15 000 <span>₽</span></div>
-        <div class="svc-contact">
-          <a href="https://t.me/valeriakudyasheva?text=SVC_AUDIT" class="svc-btn svc-btn-tg" data-key="svc-tg"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>Telegram</a>
-          <a href="mailto:valeriakudyasheva@gmail.com?subject=SVC_AUDIT" class="svc-btn svc-btn-mail" data-mail="AUDIT" aria-label="Написать на почту" title="Написать на почту"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
-        </div>
-      </div>
-
-      <div class="price-card reveal">
-        <div class="price-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        </div>
-        <div class="price-label" data-key="price-consult-label">Стратегия</div>
-        <div class="price-title" data-key="price-consult-title">Консультация по маркетингу</div>
-        <div class="price-desc" data-key="price-consult-desc">60 минут — разберём маркетинг, определим каналы и форматы. Транскрибация + план действий после.</div>
-        <div class="price-amount" data-key="price-consult-amount">5 000 <span>₽</span></div>
-        <div class="svc-contact">
-          <a href="https://t.me/valeriakudyasheva?text=SVC_CONSULT" class="svc-btn svc-btn-tg" data-key="svc-tg"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>Telegram</a>
-          <a href="mailto:valeriakudyasheva@gmail.com?subject=SVC_CONSULT" class="svc-btn svc-btn-mail" data-mail="CONSULT" aria-label="Написать на почту" title="Написать на почту"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
-        </div>
-      </div>
-
-      <div class="price-card reveal">
-        <div class="price-icon">
-          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-        </div>
-        <div class="price-label" data-key="price-offline-label">Офлайн и ивент</div>
-        <div class="price-title" data-key="price-offline-title">Маркетинг для офлайн-бизнеса</div>
-        <div class="price-desc" data-key="price-offline-desc">Помогу выстроить продвижение для офлайн-продукта или услуги: выбор каналов, работа с партнёрами, запуск первых кампаний.</div>
+        <div class="price-desc" data-key="price-audit-desc">Разберу, почему прошлые размещения не сработали, и скажу, что делать дальше.</div>
+        <div class="variant-term" data-key="audit-term">Срок: 1 неделя</div>
+        <div class="price-label get-label" data-key="get-label">Вы получите</div>
         <ul class="price-includes">
-          <li>Анализ аудитории и конкурентов</li>
-          <li>Подбор каналов продвижения под продукт</li>
-          <li>Партнёрства с нишевыми сообществами</li>
-          <li>Маркетинговая стратегия на старт</li>
+          <li data-key="audit-inc-1">Разбор прошлых размещений</li>
+          <li data-key="audit-inc-2">Проверка результатов: охваты, переходы, стоимость привлечения</li>
+          <li data-key="audit-inc-3">Стратегию под следующие размещения</li>
+          <li data-key="audit-inc-4">Рекомендации: что стоит говорить и куда стоит идти</li>
         </ul>
-        <div class="price-amount" style="margin-top:24px">По запросу</div>
-        <div style="font-size:13px;color:var(--gray-400);margin-top:8px">Подходит для производственных компаний, ивент-бизнеса и нишевых B2B-продуктов.</div>
-        <div class="svc-contact">
-          <a href="https://t.me/valeriakudyasheva?text=SVC_OFFLINE" class="svc-btn svc-btn-tg" data-key="svc-tg"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>Telegram</a>
-          <a href="mailto:valeriakudyasheva@gmail.com?subject=SVC_OFFLINE" class="svc-btn svc-btn-mail" data-mail="OFFLINE" aria-label="Написать на почту" title="Написать на почту"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+        <div class="card-foot">
+          <div class="price-amount" data-key="price-audit-amount">15 000 <span>₽</span></div>
+          <div class="prepay" data-key="prepay">Предоплата 50%</div>
+          <div class="svc-contact">
+            <a href="https://t.me/valeriakudyasheva?text=SVC_AUDIT" class="svc-btn svc-btn-tg"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>Telegram</a>
+            <a href="mailto:valeriakudyasheva@gmail.com?subject=SVC_AUDIT" class="svc-btn svc-btn-mail" data-mail="AUDIT" aria-label="Написать на почту" title="Написать на почту"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+          </div>
         </div>
       </div>
 
@@ -490,22 +759,21 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
 
 <section class="section cases" id="cases">
   <div class="section-inner">
-    <div class="section-tag reveal" data-key="cases-tag">Кейсы</div>
     <h2 class="section-title reveal" data-key="cases-title">Результаты в цифрах</h2>
-    <p class="section-subtitle reveal" data-key="cases-subtitle">Не охваты ради охватов — измеримые результаты для бизнеса</p>
-    <div class="sec-note" aria-hidden="true">именно это спрашивают на следующей встрече</div>
+    <p class="section-subtitle reveal" data-key="cases-subtitle">Не охваты ради охватов, а измеримые результаты для бизнеса</p>
+    <div class="sec-note" aria-hidden="true" data-key="sec-note">именно это спрашивают на следующей встрече</div>
     <div class="cases-grid">
       <div class="case-card reveal">
         <div class="case-chip" data-key="chip-1">B2B · Вебинары</div>
         <div class="case-num">2208<em data-key="case-1-suffix"> рег.</em></div>
         <div class="case-title" data-key="case-1-title">Реклама вебинаров через блогеров</div>
-        <div class="case-desc" data-key="case-1-desc">За 2025 год — 2208 регистраций по 970 руб./рег. В 2024 — 2204 по 840 руб. Стабильный результат год к году.</div>
+        <div class="case-desc" data-key="case-1-desc">За 2025 год: 2208 регистраций по 970 руб./рег. В 2024: 2204 по 840 руб. Стабильный результат год к году.</div>
       </div>
       <div class="case-card reveal">
         <div class="case-chip" data-key="chip-2">СНГ · Казахстан</div>
-        <div class="case-num">600<em>+</em></div>
+        <div class="case-num">500<em>+</em></div>
         <div class="case-title" data-key="case-2-title">Выход на казахстанский рынок</div>
-        <div class="case-desc" data-key="case-2-desc">10+ интеграций у блогеров. Охват 100 000+ просмотров. CPV до 3 руб. 600+ регистраций на вебинары, 100+ — в сервис. В 2026 — 70+ регистраций в сервис.</div>
+        <div class="case-desc" data-key="case-2-desc">10+ интеграций у блогеров. Охват 100 000+ просмотров. CPV до 3 руб. Более 500 регистраций за два года через вебинары и прямые размещения.</div>
       </div>
       <div class="case-card reveal">
         <div class="case-chip" data-key="chip-3">FMCG · Охваты</div>
@@ -513,7 +781,7 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
         <div class="case-title" data-key="case-3-title">Рост охватов для FMCG-бренда</div>
         <div class="case-desc" data-key="case-3-desc">20 000+ новых подписчиков по 280 руб. Снижение CPV на 20% за год. YouTube и Telegram.</div>
       </div>
-      <div class="case-card reveal"><div class="case-chip" data-key="chip-5">E-com · YouTube</div><div class="case-num">6,8<em>млн</em></div><div class="case-title" data-key="case-5-title">YouTube-кампания для «Берлинго»</div><div class="case-desc" data-key="case-5-desc">14 интеграций у блогеров (Ляйсан Утяшева, Masha Zoom). 6,8 млн просмотров, 445 тыс. реакций, 2 видео в трендах YouTube. Подбор по 25+ фильтрам.</div><a href="https://mstagency.ru/cases/68-mln-prosmotrov-dlya-berlingo-cherez-youtube-inflyuenserov/" target="_blank" data-key="read-case" style="display:inline-block;margin-top:20px;font-size:13px;color:var(--accent);font-weight:500;text-decoration:none;border-bottom:1px solid var(--accent-light);padding-bottom:2px">Читать кейс →</a></div><div class="case-card reveal"><div class="case-chip" data-key="chip-6">E-com · Flowwow</div><div class="case-num">0,79<em>₽</em></div><div class="case-title" data-key="case-6-title">Локальные блогеры для Flowwow</div><div class="case-desc" data-key="case-6-desc">Региональные блогеры в 8 городах, сплит 40/60 на 14 февраля и 8 марта. CPV снижен с 1,06 ₽ до 0,79 ₽, +20% к базе CRM, +15% установок приложения.</div><a href="https://mstagency.ru/cases/uvelichili-prodazhi-s-pomoshhyu-lokalnyh-blogerov/" target="_blank" data-key="read-case" style="display:inline-block;margin-top:20px;font-size:13px;color:var(--accent);font-weight:500;text-decoration:none;border-bottom:1px solid var(--accent-light);padding-bottom:2px">Читать кейс →</a></div><div class="case-card reveal"><div class="case-chip" data-key="chip-7">Edtech · Партнёрства</div><div class="case-num">739<em>рег.</em></div><div class="case-title" data-key="case-7-title">Партнёрства с онлайн-школами</div><div class="case-desc" data-key="case-7-desc">Уроки для Эдюсон, Синергии, МАЭД и Яндекс Практикума, совместные посты с Нетологией и Skillbox. 739 регистраций на вебинары: Синергия — 502, Эдюсон — 175, Практикум — 51, МАЭД — 11. 2025–2026.</div></div><div class="case-card reveal" style="grid-column:1/-1">
+      <div class="case-card reveal"><div class="case-chip" data-key="chip-5">E-com · YouTube</div><div class="case-num">6,8<em data-key="unit-mln">млн</em></div><div class="case-title" data-key="case-5-title">YouTube-кампания для «Берлинго»</div><div class="case-desc" data-key="case-5-desc">14 интеграций у блогеров (Ляйсан Утяшева, Masha Zoom). 6,8 млн просмотров, 445 тыс. реакций, 2 видео в трендах YouTube. Подбор по 25+ фильтрам.</div><a href="https://mstagency.ru/cases/68-mln-prosmotrov-dlya-berlingo-cherez-youtube-inflyuenserov/" target="_blank" data-key="read-case" style="display:inline-block;margin-top:20px;font-size:13px;color:var(--accent);font-weight:500;text-decoration:none;border-bottom:1px solid var(--accent-light);padding-bottom:2px">Читать кейс →</a></div><div class="case-card reveal"><div class="case-chip" data-key="chip-6">E-com · Flowwow</div><div class="case-num">0,79<em>₽</em></div><div class="case-title" data-key="case-6-title">Локальные блогеры для Flowwow</div><div class="case-desc" data-key="case-6-desc">Региональные блогеры в 8 городах, сплит 40/60 на 14 февраля и 8 марта. CPV снижен с 1,06 ₽ до 0,79 ₽, +20% к базе CRM, +15% установок приложения.</div><a href="https://mstagency.ru/cases/uvelichili-prodazhi-s-pomoshhyu-lokalnyh-blogerov/" target="_blank" data-key="read-case" style="display:inline-block;margin-top:20px;font-size:13px;color:var(--accent);font-weight:500;text-decoration:none;border-bottom:1px solid var(--accent-light);padding-bottom:2px">Читать кейс →</a></div><div class="case-card reveal"><div class="case-chip" data-key="chip-7">Edtech · Партнерства</div><div class="case-num">739<em data-key="unit-reg">рег.</em></div><div class="case-title" data-key="case-7-title">Партнерства с онлайн-школами</div><div class="case-desc" data-key="case-7-desc">Уроки и совместные посты с онлайн-школами, интеграция материалов о сервисе в программы партнеров. 739 регистраций на вебинары за 2025–2026.</div></div><div class="case-card reveal" style="grid-column:1/-1">
         <div class="case-chip" data-key="chip-4">E-com · Арт · MST Agency</div>
         <div class="case-mega-grid">
           <div><div class="case-num">50<em></em></div><div class="case-title" data-key="gamma-1" style="font-size:13px;color:var(--gray-400)">художников и арт-преподавателей</div></div>
@@ -522,7 +790,7 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
           <div><div class="case-num">0.5<em>₽</em></div><div class="case-title" data-key="gamma-4" style="font-size:13px;color:var(--gray-400)">средняя стоимость просмотра</div></div>
         </div>
         <div class="case-title" data-key="case-4-title">Интеграция бренда «Гамма» в образовательную среду художников</div>
-        <div class="case-desc" data-key="case-4-desc" style="margin-top:8px">Выстроили системную модель работы с нишевыми инфлюенсерами — 50 художников и арт-преподавателей. Вместо охватных размещений сделали ставку на профессиональное доверие и встроили продукт в реальный процесс обучения. Результат: 3 000 переходов в карточки товаров на маркетплейсах, 22% вовлечённости.</div>
+        <div class="case-desc" data-key="case-4-desc" style="margin-top:8px">Выстроили системную модель работы с нишевыми инфлюенсерами: 50 художников и арт-преподавателей. Вместо охватных размещений сделали ставку на профессиональное доверие. Результат: 3 000 переходов в карточки товаров на маркетплейсах, 22% вовлеченности.</div>
         <a href="https://mstagency.ru/cases/vovlekli-50-hudozhnikov-i-integrirovali-gammu-v-obrazovatelnuyu-sredu/" target="_blank" style="display:inline-block;margin-top:20px;font-size:13px;color:var(--accent);font-weight:500;text-decoration:none;border-bottom:1px solid var(--accent-light);padding-bottom:2px" data-key="read-case">Читать кейс →</a>
       </div>
     </div>
@@ -531,85 +799,158 @@ footer{padding:32px 40px;border-top:1px solid var(--gray-200);display:flex;justi
 
 <section class="section reviews" id="reviews">
   <div class="section-inner">
-    <div class="section-tag reveal" data-key="reviews-tag">Отзывы</div>
     <h2 class="section-title reveal" data-key="reviews-title">Что говорят клиенты</h2>
-    <div class="reviews-placeholder reveal">
-      <p data-key="reviews-placeholder">Отзывы клиентов появятся здесь совсем скоро</p>
+    <div class="reviews-grid">
+      <figure class="review-card reveal"><svg class="review-mark" viewBox="0 0 40 32" aria-hidden="true"><path d="M0 32V19C0 8 6 1.5 16 0l1.5 5C12 6.5 9.5 10 9.5 15H17v17H0Zm23 0V19C23 8 29 1.5 39 0l1.5 5C35 6.5 32.5 10 32.5 15H40v17H23Z"/></svg><blockquote data-key="rev-1">Спасибо большое, получила очень ценные советы! Дальше буду думать, что с этим делать.</blockquote><figcaption class="review-by"><img class="review-ava" src="data:image/jpeg;base64,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" alt=""><span class="review-who"><strong data-key="rev-1-name">Ирина Горшкова</strong><span data-key="rev-1-role">Врач-психиатр, соучредитель клиники DENIRA</span></span></figcaption></figure>
+      <figure class="review-card reveal"><svg class="review-mark" viewBox="0 0 40 32" aria-hidden="true"><path d="M0 32V19C0 8 6 1.5 16 0l1.5 5C12 6.5 9.5 10 9.5 15H17v17H0Zm23 0V19C23 8 29 1.5 39 0l1.5 5C35 6.5 32.5 10 32.5 15H40v17H23Z"/></svg><blockquote data-key="rev-2">Обратились к Валерии за консультацией по поводу оформления сайта и еще пары моментов нашей компании ПакВилл. Валерия не просто провела консультацию, но и сделала нам сайт согласно нашей системе продаж. Она четко и точно поняла структуру, сам продукт, помогла подчеркнуть достоинства нашего сервиса и удобство выбора нашей продукции. Будем обращаться еще. Спасибо за проделанную работу!</blockquote><figcaption class="review-by"><img class="review-ava" src="data:image/jpeg;base64,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" alt=""><span class="review-who"><strong data-key="rev-2-name">Тана</strong><span data-key="rev-2-role">Коммерческий директор, ПакВилл</span></span></figcaption></figure>
     </div>
   </div>
 </section>
 
 <section class="final-cta">
-  <div class="section-tag reveal" data-key="cta-tag">Начнём?</div>
-  <h2 class="cta-title reveal" data-key="cta-title">Давайте разберём<br>ваш <em>проект</em></h2>
-  <p class="cta-desc reveal" data-key="cta-desc">Расскажите, что не работает — и я скажу, можно ли это исправить</p>
+  <h2 class="cta-title reveal" data-key="cta-title">Давайте разберем<br>ваш <em>проект</em></h2>
+  <p class="cta-desc reveal" data-key="cta-desc">Расскажите, что не работает, и я постараюсь помочь</p>
   <div class="cta-btns reveal">
     <a href="https://t.me/valeriakudyasheva" class="btn-white" data-key="cta-btn1">Написать в Telegram</a>
-    <a href="mailto:valeriakudyasheva@gmail.com?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0" class="btn-ghost" data-key="cta-btn2">Написать на email</a>
+    <a href="mailto:valeriakudyasheva@gmail.com?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0" class="btn-ghost btn-mail"><span data-key="cta-btn2">Написать на email</span><small>valeriakudyasheva@gmail.com</small></a>
+    <a href="https://max.ru/u/f9LHodD0cOL4CejmIpXo-YxsTJsy8KWfuv__NMd8XISM0zmjLFUvv9UjcdU" class="btn-ghost" target="_blank" rel="noopener" data-key="cta-btn-max">Написать в MAX</a>
   </div>
-  <div class="cta-note"><svg viewBox="0 0 30 26" aria-hidden="true"><path d="M3 3 C 5 14, 12 22, 27 20 M27 20 L20 16 M27 20 L21 24"/></svg><span data-key="cta-note">пишите — отвечаю в течение пары дней</span></div>
+  <div class="cta-note"><svg viewBox="0 0 30 26" aria-hidden="true"><path d="M3 3 C 5 14, 12 22, 27 20 M27 20 L20 16 M27 20 L21 24"/></svg><span data-key="cta-note">пишите, отвечаю в течение пары дней</span></div>
 </section>
 
 <footer>
   <div data-key="footer-copy">© 2026 Валерия Кудяшева</div>
   <div class="footer-links">
     <a href="https://t.me/valeriakudyasheva">Telegram</a>
-    <a href="mailto:valeriakudyasheva@gmail.com?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0">Email</a>
+    <a href="https://max.ru/u/f9LHodD0cOL4CejmIpXo-YxsTJsy8KWfuv__NMd8XISM0zmjLFUvv9UjcdU" target="_blank" rel="noopener">MAX</a>
+    <a href="mailto:valeriakudyasheva@gmail.com?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0">valeriakudyasheva@gmail.com</a>
   </div>
 </footer>
 
 <script>
 const T = {
   ru: {
+    'rev-1-name':'Ирина Горшкова',
+    'rev-1-role':'Врач-психиатр, соучредитель клиники DENIRA',
+    'rev-2-name':'Тана',
+    'rev-2-role':'Коммерческий директор, ПакВилл',
+    'rev-2-mono':'ПВ',
+    'cta-btn-max':'Написать в MAX',
+    'tl-name-1':'МойСклад','tl-name-3':'Роботекс','unit-mln':'млн','unit-reg':'рег.','page-title':'Валерия Кудяшева. Маркетинг и продвижение','aria-mail':'Написать на почту','aria-menu':'Меню',
+    'pj-inc-6':'Регулярные созвоны и отчет по итогам месяца',
+    'prepay':'Предоплата 50%',
+    'prepay-cons':'Знакомство бесплатно, далее предоплата 50%',
+    'hero-note':'не «для галочки», а под задачу бизнеса',
+    'sec-note':'именно это спрашивают на следующей встрече',
+    'rev-1':'Спасибо большое, получила очень ценные советы! Дальше буду думать, что с этим делать.',
+    'rev-1-by':'Клиент после консультации',
+    'rev-2':'Обратились к Валерии за консультацией по поводу оформления сайта и еще пары моментов нашей компании ПакВилл. Валерия не просто провела консультацию, но и сделала нам сайт согласно нашей системе продаж. Она четко и точно поняла структуру, сам продукт, помогла подчеркнуть достоинства нашего сервиса и удобство выбора нашей продукции. Будем обращаться еще. Спасибо за проделанную работу!',
+    'rev-2-by':'ПакВилл · консультация и сайт',
+    'cons-inc-4':'Рекомендации: какие каналы и форматы стоит брать в работу',
+    'cons-tier-0':'Знакомство: 30–40 минут',
+    'cons-price-0':'бесплатно',
+    'cons-fit':'Нужен взгляд со стороны или непонятно, с чего начать. Если задача окажется больше, перейдем в проект.',
+    'cons-btn':'Записаться на знакомство',
+    'price-proj-label':'Проектная занятость',
+    'price-proj-title':'Проектная работа с маркетингом',
+    'price-proj-desc':'Если задача больше консультации, беру ее в проект после знакомства: разбираюсь глубже и довожу до результата.',
+    'pj-inc-1':'Разбор прошлых результатов',
+    'pj-inc-2':'Разбор аудитории и конкурентов',
+    'pj-inc-3':'Разбор каналов размещения',
+    'pj-inc-4':'Квартальная стратегия',
+    'pj-inc-5':'Рекомендации: куда и что стоит идти',
+    'pj-price':'от 35 000 <span>₽ в месяц</span>',
+    'pj-note':'Берется после консультации. Состав работ определим по задаче.',
+    'get-label':'Вы получите',
+    'audit-term':'Срок: 1 неделя',
+    'audit-inc-1':'Разбор прошлых размещений',
+    'audit-inc-2':'Проверка результатов: охваты, переходы, стоимость привлечения',
+    'audit-inc-3':'Стратегию под следующие размещения',
+    'audit-inc-4':'Рекомендации: что стоит говорить и куда стоит идти',
+    'strat-term-1':'Срок: 3 дня',
+    'strat-inc-1a':'Разбор текущих каналов, аудитории и воронки',
+    'strat-inc-1b':'Список слабых мест и точек роста',
+    'strat-inc-1c':'3–5 приоритетных шагов на ближайший месяц',
+    'strat-term-2':'Срок: 2 недели',
+    'strat-inc-2a':'Документ со стратегией: аудитория, позиционирование, каналы и форматы',
+    'strat-inc-2b':'План запуска по неделям, бюджет и метрики',
+    'strat-inc-2c':'Созвон с разбором и ответами на вопросы',
+    'cons-term':'Одна встреча: 60 минут',
+    'cons-inc-1':'Разбор вашей задачи на встрече',
+    'cons-inc-2':'Подробное резюме встречи, которое я отправлю вам в чат',
+    'cons-inc-3':'План действий после консультации',
+    'pf-inc-1':'Поиск партнеров и переговоры об условиях',
+    'pf-inc-2':'Совместные проекты: вебинары, интеграции в программы, подкасты, кейсы',
+    'pf-inc-3':'Спецпроекты и офлайн-мероприятия для лидеров мнений',
+    'pf-inc-4':'Сквозная аналитика и итоговый отчет',
+    'pf-tier':'Расчет под задачу',
+    'pf-tier-price':'по запросу',
+    'pf-cost-note':'Зависит от задачи, сроков и бюджета проекта. Обсудим на коротком созвоне.',
+    'price-blog-label':'Инфлюенс-маркетинг',
+    'price-blog-title':'Работа с блогерами под ключ',
+    'price-blog-desc':'От стратегии до финального отчета: подберу блогеров, согласую ТЗ, проконтролирую размещения.',
+    'price-strat-label':'Стратегия',
+    'price-strat-title':'Диагностика и стратегия',
+    'price-strat-desc':'Разберу, как устроен маркетинг компании: каналы, аудитория, бюджет, воронка.',
+    'strat-tier-1':'Мини-диагностика',
+    'strat-price-1':'6 000 <em>₽</em>',
+    'strat-tier-2':'Детальная стратегия',
+    'strat-price-2':'от 20 000 <em>₽</em>',
+    'cons-tier-1':'1 консультация: 60 минут',
+    'cons-price-1':'5 000 <em>₽</em>',
+    'cons-tier-2':'Пакет: 2 консультации',
+    'cons-price-2':'8 000 <em>₽</em>',
+    'cons-tier-3':'Пакет: 3 консультации',
+    'cons-price-3':'13 000 <em>₽</em>',
     'nav-about':'О себе','nav-services':'Услуги','nav-cases':'Кейсы',
-    'hero-h1':'Маркетинг,<br>который<br><em>работает</em>','hero-badge':'Маркетолог · B2B · Инфлюенс · СНГ',
-    'hero-desc':'Инфлюенс-маркетинг, вебинары, партнёрства с образовательными школами и выход на рынки СНГ. 5+ лет в B2B и B2C.',
+    'hero-h1':'Маркетинг,<br>который<br><em>работает</em>','hero-badge':'Партнерский маркетинг · Инфлюенс · СНГ',
+    'hero-desc':'Инфлюенс-маркетинг, вебинары, партнерства с образовательными школами и выход на рынки СНГ. 5+ лет в B2B и B2C.',
     'hero-btn1':'Написать в Telegram','hero-btn2':'Написать на почту','hero-btn3':'Смотреть услуги',
-    'res-label':'Мои результаты','res-1':'регистраций на вебинары','res-1-hand':'за два года работы','res-2':'охватов через блогеров','res-2-hand':'YouTube и Telegram','res-3':'регистраций в сервис из Казахстана','res-3-hand':'рынок подняла с нуля','res-4':'топовых онлайн-школ в партнёрах','res-4-hand':'Синергия, Эдюсон и другие',
+    'res-label':'Мои результаты','res-1':'регистраций через партнерский канал','res-1-hand':'5 онлайн-школ в партнерах','res-2':'охватов через блогеров','res-2-hand':'YouTube и Telegram','res-3':'регистраций в сервис из Казахстана','res-3-hand':'рынок подняла с нуля','res-4':'регистраций на вебинары','res-4-hand':'по РФ и СНГ',
     'about-tag':'Обо мне',
-    'about-p1':'Я — Валерия Кудяшева, маркетолог с опытом в инфлюенс-маркетинге, B2B-продвижении, партнёрствах и выходе на новые рынки. Работаю в B2B и B2C уже <strong>5+ лет</strong>.',
-    'about-p2':'Сейчас работаю в <strong>МойСклад</strong> — веду инфлюенс-маркетинг и продвижение вебинаров (800+ регистраций по РФ, 600+ по СНГ), развиваю партнёрства с образовательными школами и вывожу бренд на казахстанский рынок.',
-    'about-p3':'Прохожу курс по бренд-стратегии в <strong>Яндекс Практикуме</strong> — чтобы соединить практический опыт с системным подходом к брендингу. Активно осваиваю <strong>AI-инструменты</strong> и применяю их в работе.',
-    'about-skillbox':'Выступала спикером модуля «Продвижение через блогеров» в курсе <a href="https://skillbox.ru/course/smm-marketer/" target="_blank" style="color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-light)"><strong>«SMM-специалист с нуля»</strong> на Skillbox</a>.',
+    'about-p1':'Я Валерия Кудяшева, маркетолог. Выстраиваю партнерские каналы, веду инфлюенс-маркетинг и запускаю новые направления. В маркетинге <strong>5+ лет</strong>: агентство, EdTech, B2B.',
+    'about-p2':'С июня 2024 по август 2026 работала в <strong>МоемСкладе</strong> менеджером по маркетингу и рекламе. Собрала партнерский канал с онлайн-школами, запустила маркетинг в Казахстане с нуля и разобралась, какие интеграции реально приводят пользователей, а какие только охваты.',
+    'about-p3':'Веду партнерства полным циклом: от первого контакта и переговоров до запуска и аналитики. Системно изучаю продуктовый маркетинг и <strong>AI в маркетинге</strong> и применяю это в работе.',
+    'about-skillbox':'Выступала спикером конференции по инфлюенс-маркетингу и приглашенным спикером модуля «Продвижение через блогеров» в курсе <a href="https://skillbox.ru/course/smm-marketer/" target="_blank" style="color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-light)"><strong>«SMM-специалист с нуля»</strong> на Skillbox</a>.',
     'services-tag':'Услуги','services-title':'Маркетинг и продвижение<br><em>для вашего бизнеса</em>',
-    'services-note':'Работаю проектно — от стратегии до операционки. Инфлюенсеры, вебинары, партнёрства, офлайн.',
+    'services-note':'Работаю проектно: от стратегии до операционки. Партнерства, спецпроекты, инфлюенсеры, вебинары.',
     'cases-tag':'Кейсы','cases-title':'Результаты в цифрах',
-    'cases-subtitle':'Не охваты ради охватов — измеримые результаты для бизнеса',
+    'cases-subtitle':'Не охваты ради охватов, а измеримые результаты для бизнеса',
     'reviews-tag':'Отзывы','reviews-title':'Что говорят клиенты',
     'reviews-placeholder':'Отзывы клиентов появятся здесь совсем скоро',
-    'cta-tag':'Начнём?','cta-title':'Давайте разберём<br>ваш <em>проект</em>',
-    'cta-note':'пишите — отвечаю в течение пары дней',
-    'cta-desc':'Расскажите, что не работает — и я скажу, можно ли это исправить',
+    'cta-tag':'Начнем?','cta-title':'Давайте разберем<br>ваш <em>проект</em>',
+    'cta-note':'пишите, отвечаю в течение пары дней',
+    'cta-desc':'Расскажите, что не работает, и я постараюсь помочь',
     'cta-btn1':'Написать в Telegram','cta-btn2':'Написать на email',
-    'price-flagship-label':'Флагман','price-flagship-title':'Работа с блогерами под ключ',
-    'price-flagship-desc':'От стратегии до финального отчёта. Подберу блогеров, согласую ТЗ, проконтролирую размещения, оформлю маркировку.',
+    'price-flagship-label':'Партнерства','price-flagship-title':'Партнерский маркетинг и спецпроекты',
+    'price-flagship-desc':'Выстрою партнерский канал и доведу совместные проекты до результата.',
     'price-audit-label':'Диагностика','price-audit-title':'Аудит инфлюенс-маркетинга',
-    'price-audit-desc':'Разберём, почему предыдущие размещения не сработали. Конкретные рекомендации на выходе.',
-    'price-consult-label':'Стратегия','price-consult-title':'Консультация по маркетингу',
-    'price-consult-desc':'60 минут — разберём маркетинг, определим каналы и форматы. Транскрибация + план действий после.',
+    'price-audit-desc':'Разберу, почему прошлые размещения не сработали, и скажу, что делать дальше.',
+    'price-consult-label':'Консультации','price-consult-title':'Консультация по маркетингу',
+    'price-consult-desc':'Знакомимся, разбираем вашу задачу, определяем каналы и форматы. Первая встреча бесплатная.',
     'price-offline-label':'Офлайн и ивент','price-offline-title':'Маркетинг для офлайн-бизнеса',
-    'price-offline-desc':'Помогу выстроить продвижение для офлайн-продукта или услуги: выбор каналов, работа с партнёрами, запуск первых кампаний.',
-    'price-flagship-fit':'Нужно запустить или перезапустить работу с блогерами, выйти на новую аудиторию или масштабировать текущие кампании.',
+    'price-offline-desc':'Помогу выстроить продвижение для офлайн-продукта или услуги: выбор каналов, работа с партнерами, запуск первых кампаний.',
+    'price-flagship-fit':'Нужно запустить партнерский канал, выйти на новый рынок или собрать совместный проект с онлайн-школой или брендом.',
     'price-flagship-btn':'Обсудить проект','svc-tg':'Написать в Telegram',
     'tier-1':'до 5 блогеров','tier-2':'до 10 блогеров','tier-3':'15–25 блогеров',
     'price-audit-amount':'15 000 ₽','price-consult-amount':'5 000 ₽',
     'price-includes-1':'Подбор блогеров под задачу и аудиторию',
     'price-includes-2':'Разработка ТЗ и согласование сценариев',
     'price-includes-3':'Контроль выхода, маркировка ОРД',
-    'price-includes-4':'Итоговый отчёт с аналитикой',
+    'price-includes-4':'Итоговый отчет с аналитикой',
     'price-cost':'Стоимость','price-fit':'Подходит если',
-    'stat-1':'лет в маркетинге и рекламе','stat-2':'охватов через блогеров',
+    'stat-1':'лет в маркетинге и рекламе','stat-2':'согласованных ТЗ и брифов',
     'stat-3':'размещений с маркировкой','stat-4':'руб./мес. максимальный бюджет',
-    'tl-1':'Инфлюенс, вебинары, B2B-партнёрства, СНГ (Казахстан)','tl-2':'Тимлид. 30M+ охватов, CPV −20%',
-    'tl-3':'Первое партнёрство со школой, 20+ клиентов','tl-4':'E-com, банки, авто, медицина, B2B',
+    'tl-1':'Менеджер по маркетингу и рекламе. Партнерства с онлайн-школами, инфлюенс, вебинары, Казахстан','tl-2':'Параллельный проект: тимлид по инфлюенс-маркетингу в агентстве, кампании для FMCG и e-com',
+    'tl-3':'Параллельный проект: influence-менеджер, первое партнерство со школой, 20+ клиентов','tl-4':'E-com, банки, авто, медицина, B2B',
     'case-1-title':'Реклама вебинаров через блогеров',
-    'case-1-desc':'За 2025 год — 2208 регистраций по 970 руб./рег. В 2024 — 2204 по 840 руб. Стабильный результат год к году.',
-    'case-2-title':'Выход на казахстанский рынок','chip-5':'E-com · YouTube','case-5-title':'YouTube-кампания для «Берлинго»','case-5-desc':'14 интеграций у блогеров (Ляйсан Утяшева, Masha Zoom). 6,8 млн просмотров, 445 тыс. реакций, 2 видео в трендах YouTube. Подбор по 25+ фильтрам.','chip-6':'E-com · Flowwow','case-6-title':'Локальные блогеры для Flowwow','case-6-desc':'Региональные блогеры в 8 городах, сплит 40/60 на 14 февраля и 8 марта. CPV снижен с 1,06 ₽ до 0,79 ₽, +20% к базе CRM, +15% установок приложения.','chip-7':'Edtech · Партнёрства','case-7-title':'Партнёрства с онлайн-школами','case-7-desc':'Уроки для Эдюсон, Синергии, МАЭД и Яндекс Практикума, совместные посты с Нетологией и Skillbox. 739 регистраций на вебинары: Синергия — 502, Эдюсон — 175, Практикум — 51, МАЭД — 11. 2025–2026.',
-    'case-2-desc':'10+ интеграций у блогеров. Охват 100 000+ просмотров. CPV до 3 руб. 600+ регистраций на вебинары, 100+ — в сервис. В 2026 — 70+ регистраций в сервис.',
+    'case-1-desc':'За 2025 год: 2208 регистраций по 970 руб./рег. В 2024: 2204 по 840 руб. Стабильный результат год к году.',
+    'case-2-title':'Выход на казахстанский рынок','chip-5':'E-com · YouTube','case-5-title':'YouTube-кампания для «Берлинго»','case-5-desc':'14 интеграций у блогеров (Ляйсан Утяшева, Masha Zoom). 6,8 млн просмотров, 445 тыс. реакций, 2 видео в трендах YouTube. Подбор по 25+ фильтрам.','chip-6':'E-com · Flowwow','case-6-title':'Локальные блогеры для Flowwow','case-6-desc':'Региональные блогеры в 8 городах, сплит 40/60 на 14 февраля и 8 марта. CPV снижен с 1,06 ₽ до 0,79 ₽, +20% к базе CRM, +15% установок приложения.','chip-7':'Edtech · Партнерства','case-7-title':'Партнерства с онлайн-школами','case-7-desc':'Уроки и совместные посты с онлайн-школами, интеграция материалов о сервисе в программы партнеров. 739 регистраций на вебинары за 2025–2026.',
+    'case-2-desc':'10+ интеграций у блогеров. Охват 100 000+ просмотров. CPV до 3 руб. Более 500 регистраций за два года через вебинары и прямые размещения.',
     'case-3-title':'Рост охватов для FMCG-бренда',
     'case-3-desc':'20 000+ новых подписчиков по 280 руб. Снижение CPV на 20% за год. YouTube и Telegram.',
     'case-4-title':'Интеграция бренда «Гамма» в образовательную среду художников',
-    'case-4-desc':'Выстроили системную модель работы с нишевыми инфлюенсерами — 50 художников и арт-преподавателей. Вместо охватных размещений сделали ставку на профессиональное доверие. Результат: 3 000 переходов в карточки товаров на маркетплейсах, 22% вовлечённости.',
+    'case-4-desc':'Выстроили системную модель работы с нишевыми инфлюенсерами: 50 художников и арт-преподавателей. Вместо охватных размещений сделали ставку на профессиональное доверие. Результат: 3 000 переходов в карточки товаров на маркетплейсах, 22% вовлеченности.',
     'footer-copy':'© 2026 Валерия Кудяшева',
     'nav-logo':'Валерия Кудяшева','nav-cta':'Написать',
     'tier-price-1':'20 000 <em>₽</em>','tier-price-2':'35 000 <em>₽</em>','tier-price-3':'60–65 000 <em>₽</em>','case-1-suffix':' рег.',
@@ -618,35 +959,107 @@ const T = {
     'gamma-3':'рост брендовых запросов','gamma-4':'средняя стоимость просмотра','read-case':'Читать кейс →'
   },
   en: {
+    'rev-1-name':'Irina Gorshkova',
+    'rev-1-role':'Psychiatrist, co-founder of the DENIRA clinic',
+    'rev-2-name':'Tana',
+    'rev-2-role':'Commercial director, PakVill',
+    'rev-2-mono':'PV',
+    'cta-btn-max':'Message on MAX',
+    'tl-name-1':'MoySklad','tl-name-3':'Robotex','unit-mln':'M','unit-reg':' reg.','page-title':'Valeria Kudyasheva. Marketing and promotion','aria-mail':'Write an email','aria-menu':'Menu',
+    'pj-inc-6':'Regular calls and a monthly results report',
+    'prepay':'50% prepayment',
+    'prepay-cons':'Intro call is free, then 50% prepayment',
+    'hero-note':'not for show, but for a business goal',
+    'sec-note':'this is exactly what gets asked at the next meeting',
+    'rev-1':'Thank you so much, I received very valuable advice! Next I will think about what to do with it.',
+    'rev-1-by':'Client after a consultation',
+    'rev-2':'We came to Valeria for a consultation on our website and a couple of other things for our company PakVill. Valeria not only held the consultation but also built us a website that follows our sales system. She clearly and accurately understood the structure and the product itself, and helped highlight the strengths of our service and how easy it is to choose our products. We will come back. Thank you for the work!',
+    'rev-2-by':'PakVill · consultation and website',
+    'cons-inc-4':'Recommendations: which channels and formats to pick',
+    'cons-tier-0':'Intro call: 30–40 minutes',
+    'cons-price-0':'free',
+    'cons-fit':'You need an outside view or are not sure where to start. If the task turns out bigger, we move on to a project.',
+    'cons-btn':'Book an intro call',
+    'price-proj-label':'Project work',
+    'price-proj-title':'Project-based marketing support',
+    'price-proj-desc':'If the task is bigger than a consultation, I take it on as a project after the intro: I dig deeper and lead it to results.',
+    'pj-inc-1':'Review of past results',
+    'pj-inc-2':'Audience and competitor analysis',
+    'pj-inc-3':'Analysis of placement channels',
+    'pj-inc-4':'Quarterly strategy',
+    'pj-inc-5':'Recommendations: where to go and what to do',
+    'pj-price':'from ~$380 <span>USD / month</span>',
+    'pj-note':'Taken on after a consultation. Scope of work depends on the task.',
+    'get-label':'You get',
+    'audit-term':'Timeline: 1 week',
+    'audit-inc-1':'Review of past placements',
+    'audit-inc-2':'Results check: reach, clicks, acquisition cost',
+    'audit-inc-3':'Strategy for the next placements',
+    'audit-inc-4':'Recommendations: what to say and where to go',
+    'strat-term-1':'Timeline: 3 days',
+    'strat-inc-1a':'Review of current channels, audience and funnel',
+    'strat-inc-1b':'List of weak spots and growth points',
+    'strat-inc-1c':'3–5 priority steps for the next month',
+    'strat-term-2':'Timeline: 2 weeks',
+    'strat-inc-2a':'Strategy document: audience, positioning, channels and formats',
+    'strat-inc-2b':'Launch plan by week, budget and metrics',
+    'strat-inc-2c':'A call to walk through it and answer questions',
+    'cons-term':'One session: 60 minutes',
+    'cons-inc-1':'Review of your task in the session',
+    'cons-inc-2':'A detailed summary of the session, sent to you in chat',
+    'cons-inc-3':'Action plan after the consultation',
+    'pf-inc-1':'Partner search and negotiation of terms',
+    'pf-inc-2':'Joint projects: webinars, integrations into programs, podcasts, case studies',
+    'pf-inc-3':'Special projects and offline events for opinion leaders',
+    'pf-inc-4':'End-to-end analytics and final report',
+    'pf-tier':'Priced per task',
+    'pf-tier-price':'on request',
+    'pf-cost-note':'Depends on the task, timing and project budget. We will discuss it on a short call.',
+    'price-blog-label':'Influencer marketing',
+    'price-blog-title':'Influencer campaigns end-to-end',
+    'price-blog-desc':'From strategy to final report: I select bloggers, approve briefs and control placements.',
+    'price-strat-label':'Strategy',
+    'price-strat-title':'Diagnostics & strategy',
+    'price-strat-desc':'I review how your marketing works: channels, audience, budget, funnel.',
+    'strat-tier-1':'Mini diagnostics',
+    'strat-price-1':'~$65 <em>USD</em>',
+    'strat-tier-2':'Detailed strategy',
+    'strat-price-2':'from ~$220 <em>USD</em>',
+    'cons-tier-1':'1 consultation: 60 minutes',
+    'cons-price-1':'~$55 <em>USD</em>',
+    'cons-tier-2':'Package: 2 consultations',
+    'cons-price-2':'~$90 <em>USD</em>',
+    'cons-tier-3':'Package: 3 consultations',
+    'cons-price-3':'~$145 <em>USD</em>',
     'nav-about':'About','nav-services':'Services','nav-cases':'Cases',
-    'hero-h1':'Marketing<br>that<br><em>works</em>','hero-badge':'Marketer · B2B · Influencer · CIS',
+    'hero-h1':'Marketing<br>that<br><em>works</em>','hero-badge':'Partnership marketing · Influencer · CIS',
     'hero-desc':'Influencer marketing, webinars, educational partnerships and CIS market expansion. 5+ years in B2B and B2C.',
     'hero-btn1':'Write on Telegram','hero-btn2':'Email me','hero-btn3':'View services',
-    'res-label':'My results','res-1':'webinar registrations','res-1-hand':'over two years of work','res-2':'reach via bloggers','res-2-hand':'YouTube and Telegram','res-3':'service sign-ups from Kazakhstan','res-3-hand':'built the market from zero','res-4':'top online schools as partners','res-4-hand':'Synergy, Eduson and others',
+    'res-label':'My results','res-1':'registrations via the partner channel','res-1-hand':'5 online schools as partners','res-2':'reach via bloggers','res-2-hand':'YouTube and Telegram','res-3':'service sign-ups from Kazakhstan','res-3-hand':'built the market from zero','res-4':'webinar registrations','res-4-hand':'across Russia and CIS',
     'about-tag':'About me',
-    'about-p1':'I am Valeria Kudyasheva, a marketer with experience in influencer marketing, B2B promotion, partnerships and market expansion. <strong>5+ years</strong> in B2B and B2C.',
-    'about-p2':'Currently at <strong>MoySklad</strong> — managing influencer campaigns, promoting webinars (800+ registrations in Russia, 600+ in CIS), developing school partnerships, and growing the brand in Kazakhstan.',
-    'about-p3':'Taking a brand strategy course at <strong>Yandex Practicum</strong>. Actively using <strong>AI tools</strong> in my daily work.',
-    'about-skillbox':'Speaker for the module "Promotion through bloggers" in the course <a href="https://skillbox.ru/course/smm-marketer/" target="_blank" style="color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-light)"><strong>"SMM Specialist from Scratch"</strong> on Skillbox</a>.',
+    'about-p1':'I am Valeria Kudyasheva, a marketer. I build partner channels, run influencer marketing and launch new business lines. <strong>5+ years</strong> in marketing: agency, EdTech, B2B.',
+    'about-p2':'From June 2024 to August 2026 I worked at <strong>MoySklad</strong> as a marketing and advertising manager. Built a partner channel with online schools, launched marketing in Kazakhstan from scratch and worked out which integrations really bring users and which only bring reach.',
+    'about-p3':'I run partnerships end to end: from first contact and negotiation to launch and analytics. Studying product marketing and <strong>AI in marketing</strong> and applying it at work.',
+    'about-skillbox':'Speaker at an influencer marketing conference and guest speaker of the module "Promotion through bloggers" in the course <a href="https://skillbox.ru/course/smm-marketer/" target="_blank" style="color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-light)"><strong>"SMM Specialist from Scratch"</strong> at Skillbox</a>.',
     'services-tag':'Services','services-title':'Marketing & promotion<br><em>for your business</em>',
-    'services-note':'I work on a project basis — from strategy to day-to-day operations. Influencers, webinars, partnerships, offline.',
+    'services-note':'I work on a project basis: from strategy to day-to-day operations. Partnerships, special projects, influencers, webinars.',
     'cases-tag':'Cases','cases-title':'Results in numbers',
-    'cases-subtitle':'Not reach for reach sake — measurable business results',
+    'cases-subtitle':'Not reach for reach’s sake, but measurable business results',
     'reviews-tag':'Reviews','reviews-title':'What clients say',
     'reviews-placeholder':'Client reviews coming soon',
     'cta-tag':'Ready to start?','cta-title':'Let us talk about<br>your <em>project</em>',
-    'cta-note':'drop me a line — I usually reply within a couple of days',
-    'cta-desc':'Tell me what is not working — and I will tell you if I can fix it',
+    'cta-note':'drop me a line, I usually reply within a couple of days',
+    'cta-desc':'Tell me what is not working and I will do my best to help',
     'cta-btn1':'Write on Telegram','cta-btn2':'Write an email',
-    'price-flagship-label':'Flagship','price-flagship-title':'Influencer campaigns end-to-end',
-    'price-flagship-desc':'From strategy to final report. I select bloggers, approve briefs, control placements, handle ad labeling.',
+    'price-flagship-label':'Partnerships','price-flagship-title':'Partnership marketing & special projects',
+    'price-flagship-desc':'I build a partner channel and take joint projects to results.',
     'price-audit-label':'Diagnostics','price-audit-title':'Influencer marketing audit',
-    'price-audit-desc':'We figure out why previous placements did not work. Concrete recommendations as output.',
-    'price-consult-label':'Strategy','price-consult-title':'Marketing consultation',
-    'price-consult-desc':'60 minutes — we review your marketing, define channels and formats. Transcript + action plan after.',
+    'price-audit-desc':'I work out why past placements did not work and tell you what to do next.',
+    'price-consult-label':'Consultations','price-consult-title':'Marketing consultation',
+    'price-consult-desc':'We get acquainted, review your task and define channels and formats. The first call is free.',
     'price-offline-label':'Offline & events','price-offline-title':'Marketing for offline businesses',
     'price-offline-desc':'I will help build promotion for an offline product or service: channel selection, partner work, launching first campaigns.',
-    'price-flagship-fit':'You need to launch or relaunch influencer work, reach a new audience, or scale current campaigns.',
+    'price-flagship-fit':'You need to launch a partner channel, enter a new market, or set up a joint project with an online school or a brand.',
     'price-flagship-btn':'Discuss the project','svc-tg':'Write on Telegram',
     'tier-1':'up to 5 bloggers','tier-2':'up to 10 bloggers','tier-3':'15–25 bloggers',
     'price-audit-amount':'~$165','price-consult-amount':'~$55',
@@ -655,18 +1068,18 @@ const T = {
     'price-includes-3':'Placement control, ad labeling',
     'price-includes-4':'Final report with analytics',
     'price-cost':'Cost','price-fit':'Suitable if',
-    'stat-1':'years in marketing','stat-2':'reach via bloggers',
+    'stat-1':'years in marketing','stat-2':'approved briefs and tech specs',
     'stat-3':'placements with labeling','stat-4':'RUB/mo max budget',
-    'tl-1':'Influencer, webinars, B2B partnerships, CIS (Kazakhstan)','tl-2':'Team lead. 30M+ reach, CPV −20%',
-    'tl-3':'First school partnership, 20+ clients','tl-4':'E-com, banks, auto, medicine, B2B',
+    'tl-1':'Marketing & advertising manager. Online-school partnerships, influencer, webinars, Kazakhstan','tl-2':'Side project: influencer marketing team lead at the agency, FMCG and e-com campaigns',
+    'tl-3':'Side project: influence manager, first school partnership, 20+ clients','tl-4':'E-com, banks, auto, medicine, B2B',
     'case-1-title':'Webinar promotion via bloggers',
     'case-1-desc':'2025: 2,208 registrations at 970 RUB each. 2024: 2,204 at 840 RUB. Consistent results year over year.',
-    'case-2-title':'Entry into Kazakhstan market','chip-5':'E-com · YouTube','case-5-title':'YouTube campaign for Berlingo','case-5-desc':'14 blogger integrations (Lyaysan Utyasheva, Masha Zoom). 6.8M views, 445K reactions, 2 videos hit YouTube trends. Bloggers picked via 25+ filters.','chip-6':'E-com · Flowwow','case-6-title':'Local bloggers for Flowwow','case-6-desc':'Regional bloggers in 8 cities, 40/60 split for Feb 14 and Mar 8. CPV cut from 1.06 to 0.79 RUB, +20% CRM base, +15% app installs.','chip-7':'Edtech · Partnerships','case-7-title':'Partnerships with online schools','case-7-desc':'Lessons for Eduson, Synergy, MAED and Yandex Praktikum, joint posts with Netology and Skillbox. 739 webinar registrations: Synergy — 502, Eduson — 175, Praktikum — 51, MAED — 11. 2025–2026.',
-    'case-2-desc':'10+ blogger integrations. 100,000+ views. CPV under 3 RUB. 600+ webinar registrations, 100+ to the service. In 2026 — 70+ service registrations.',
+    'case-2-title':'Entry into Kazakhstan market','chip-5':'E-com · YouTube','case-5-title':'YouTube campaign for Berlingo','case-5-desc':'14 blogger integrations (Lyaysan Utyasheva, Masha Zoom). 6.8M views, 445K reactions, 2 videos hit YouTube trends. Bloggers picked via 25+ filters.','chip-6':'E-com · Flowwow','case-6-title':'Local bloggers for Flowwow','case-6-desc':'Regional bloggers in 8 cities, 40/60 split for Feb 14 and Mar 8. CPV cut from 1.06 to 0.79 RUB, +20% CRM base, +15% app installs.','chip-7':'Edtech · Partnerships','case-7-title':'Partnerships with online schools','case-7-desc':'Lessons and joint posts with online schools, service materials integrated into partner programs. 739 webinar registrations in 2025–2026.',
+    'case-2-desc':'10+ blogger integrations. 100,000+ views. CPV under 3 RUB. 500+ registrations over two years via webinars and direct placements.',
     'case-3-title':'Reach growth for FMCG brand',
     'case-3-desc':'20,000+ new followers at 280 RUB each. CPV reduced by 20% in one year. YouTube and Telegram.',
     'case-4-title':'Integrating Gamma brand into the art education space',
-    'case-4-desc':'Built a systematic model with 50 niche influencers — artists and art educators. Focused on professional trust over reach. Result: 3,000 clicks to marketplace listings, 22% engagement.',
+    'case-4-desc':'Built a systematic model with 50 niche influencers: artists and art educators. Focused on professional trust over reach. Result: 3,000 clicks to marketplace listings, 22% engagement.',
     'footer-copy':'© 2026 Valeria Kudyasheva',
     'nav-logo':'Valeria Kudyasheva','nav-cta':'Contact',
     'tier-price-1':'~$245 <em>USD</em>','tier-price-2':'~$380 <em>USD</em>','tier-price-3':'~$680 <em>USD</em>','case-1-suffix':' reg.',
@@ -678,31 +1091,39 @@ const T = {
 
 var SVC_MSG = {
   ru: {
-    FLAGSHIP: 'Здравствуйте, Валерия! Пишу с сайта. Интересует услуга: Работа с блогерами под ключ.',
+    FLAGSHIP: 'Здравствуйте, Валерия! Пишу с сайта. Интересует услуга: Партнерский маркетинг и спецпроекты.',
+    BLOGGERS: 'Здравствуйте, Валерия! Пишу с сайта. Интересует услуга: Работа с блогерами под ключ.',
     AUDIT: 'Здравствуйте, Валерия! Пишу с сайта. Интересует услуга: Аудит инфлюенс-маркетинга.',
-    CONSULT: 'Здравствуйте, Валерия! Пишу с сайта. Интересует услуга: Консультация по маркетингу.',
-    OFFLINE: 'Здравствуйте, Валерия! Пишу с сайта. Интересует услуга: Маркетинг для офлайн-бизнеса.'
+    STRATEGY: 'Здравствуйте, Валерия! Пишу с сайта. Интересует услуга: Диагностика и стратегия.',
+    PROJECT: 'Здравствуйте, Валерия! Пишу с сайта. Интересует услуга: Проектная работа с маркетингом.',
+    CONSULT: 'Здравствуйте, Валерия! Пишу с сайта. Хочу записаться на знакомство или консультацию по маркетингу.'
   },
   en: {
-    FLAGSHIP: 'Hi Valeria! Writing from your site. Interested in: Influencer campaigns end-to-end.',
+    FLAGSHIP: 'Hi Valeria! Writing from your site. Interested in: Partnership marketing and special projects.',
+    BLOGGERS: 'Hi Valeria! Writing from your site. Interested in: Influencer campaigns end-to-end.',
     AUDIT: 'Hi Valeria! Writing from your site. Interested in: Influencer marketing audit.',
-    CONSULT: 'Hi Valeria! Writing from your site. Interested in: Marketing consultation.',
-    OFFLINE: 'Hi Valeria! Writing from your site. Interested in: Marketing for offline businesses.'
+    STRATEGY: 'Hi Valeria! Writing from your site. Interested in: Diagnostics and strategy.',
+    PROJECT: 'Hi Valeria! Writing from your site. Interested in: Project-based marketing support.',
+    CONSULT: 'Hi Valeria! Writing from your site. I would like to book an intro call or a marketing consultation.'
   }
 };
 
 var SVC_SUBJECT = {
   ru: {
-    FLAGSHIP: 'Запрос с сайта: Работа с блогерами под ключ',
+    FLAGSHIP: 'Запрос с сайта: Партнерский маркетинг и спецпроекты',
+    BLOGGERS: 'Запрос с сайта: Работа с блогерами под ключ',
     AUDIT: 'Запрос с сайта: Аудит инфлюенс-маркетинга',
-    CONSULT: 'Запрос с сайта: Консультация по маркетингу',
-    OFFLINE: 'Запрос с сайта: Маркетинг для офлайн-бизнеса'
+    STRATEGY: 'Запрос с сайта: Диагностика и стратегия',
+    PROJECT: 'Запрос с сайта: Проектная работа с маркетингом',
+    CONSULT: 'Запрос с сайта: Знакомство и консультация'
   },
   en: {
-    FLAGSHIP: 'Request from site: Influencer campaigns end-to-end',
+    FLAGSHIP: 'Request from site: Partnership marketing and special projects',
+    BLOGGERS: 'Request from site: Influencer campaigns end-to-end',
     AUDIT: 'Request from site: Influencer marketing audit',
-    CONSULT: 'Request from site: Marketing consultation',
-    OFFLINE: 'Request from site: Marketing for offline businesses'
+    STRATEGY: 'Request from site: Diagnostics and strategy',
+    PROJECT: 'Request from site: Project-based marketing support',
+    CONSULT: 'Request from site: Intro call and consultation'
   }
 };
 
@@ -739,6 +1160,13 @@ function applyLang() {
       els[i].innerHTML = T[lang][key];
     }
   }
+  document.documentElement.lang = lang;
+  document.title = T[lang]['page-title'];
+  document.querySelectorAll('.svc-btn-mail').forEach(function(a) {
+    a.setAttribute('aria-label', T[lang]['aria-mail']);
+    a.setAttribute('title', T[lang]['aria-mail']);
+  });
+  document.getElementById('nav-toggle').setAttribute('aria-label', T[lang]['aria-menu']);
   applyServiceLinks();
   document.getElementById('lang-btn').textContent = lang === 'ru' ? 'EN' : 'RU';
 }
@@ -814,6 +1242,19 @@ window.onload = function() {
   }, {threshold: 0.2});
   resRows.forEach(function(el) { resObs.observe(el); });
 
+  var statObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        var c = e.target.querySelector('.res-count');
+        var idx = Array.prototype.indexOf.call(statItems, e.target);
+        if (c) setTimeout(function() { animateCount(c); }, 150 + idx * 120);
+        statObs.unobserve(e.target);
+      }
+    });
+  }, {threshold: 0.4});
+  var statItems = document.querySelectorAll('.stat-item');
+  statItems.forEach(function(el) { statObs.observe(el); });
+
   var notes = document.querySelectorAll('.hero-note,.sec-note,.cta-note,.underline-draw');
   var noteObs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
@@ -828,6 +1269,24 @@ window.onload = function() {
     });
   }, {threshold: 0.4});
   notes.forEach(function(el) { noteObs.observe(el); });
+
+  document.querySelectorAll('.price-card,.case-card,.stat-item,.hero-results').forEach(function(el) {
+    el.addEventListener('pointermove', function(e) {
+      if (e.pointerType !== 'mouse') return;
+      var r = el.getBoundingClientRect();
+      el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+
+  var navLinks = document.querySelectorAll('.nav-links a[href^="#"]:not(.nav-cta)');
+  var secObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (!e.isIntersecting) return;
+      navLinks.forEach(function(a) { a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id); });
+    });
+  }, {rootMargin: '-45% 0px -50% 0px'});
+  ['about', 'services', 'cases'].forEach(function(id) { var s = document.getElementById(id); if (s) secObs.observe(s); });
 
   var cta = document.querySelector('.final-cta');
   if (cta) {
